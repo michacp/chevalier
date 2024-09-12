@@ -1,0 +1,94 @@
+{
+  "NAVBAR": {
+    "HOME": "Inicio",
+    "ABOUT": "Sobre Nosotros",
+    "SERVICES": "Nuestros Servicios",
+    "PRODUCTS": "Productos",
+    "LANGUAGE": "Idioma"
+  },
+"CAROUSEL": {
+    "SLIDE1": {
+      "TITLE": "Corte de cabello profesional",
+      "DESCRIPTION": "Consigue un estilo moderno y personalizado."
+    },
+    "SLIDE2": {
+      "TITLE": "Productos de alta calidad",
+      "DESCRIPTION": "Ofrecemos productos premium para el cuidado de tu cabello y barba."
+    },
+    "SLIDE3": {
+      "TITLE": "Servicios excepcionales",
+      "DESCRIPTION": "Barberos expertos para un look impecable."
+    }
+  },
+  "EXPERIENCE": {
+    "TITLE": "Nuestra Experiencia",
+    "DESCRIPTION": "Con más de 4 años ofreciendo servicios de barbería profesional, garantizamos un cuidado excepcional de tu cabello y barba."
+  },
+  "GALLERY":{
+    "MEDIA_DESCRIPTION_1":"Experimenta el arte del cuidado personal con nuestros barberos profesionales, garantizando un look preciso y con estilo en cada visita.",
+    "MEDIA_DESCRIPTION_2":"Nuestros servicios de cuidado premium para la barba dejarán tu barba suave, saludable y perfectamente arreglada.",
+    "MEDIA_DESCRIPTION_3":"Combinamos tradición y técnicas modernas para ofrecer el corte de cabello perfecto que se adapte a tu personalidad."
+  },
+  "SERVICES": {
+    "TITLE": "Nuestros Servicios",
+    "GENERAL_CUT": "Corte general (cejas)",
+    "GENERAL_CUT_DESC": "El corte perfecto para tus cejas, perfilado y estilizado con precisión.",
+    "BLADE_SHADE": "Sombreado con navaja (cejas)",
+    "BLADE_SHADE_DESC": "Un sombreado con navaja para resaltar y definir tus cejas.",
+    "BEARD_TRIM": "Perfilado de barba",
+    "BEARD_TRIM_DESC": "Mantén tu barba con un perfilado preciso y elegante.",
+    "FACIAL_CLEANSE": "Limpieza facial",
+    "FACIAL_CLEANSE_DESC": "Limpieza profunda que revitaliza tu rostro.",
+    "TRIBAL_DESIGN": "Tribales y diseño",
+    "TRIBAL_DESIGN_DESC": "Diseños únicos y modernos para expresar tu estilo.",
+    "BEARD_SHADE": "Sombreado de barba",
+    "BEARD_SHADE_DESC": "Dale a tu barba un sombreado suave y uniforme.",
+    "BLACK_MASK": "Mascarilla negra",
+    "BLACK_MASK_DESC": "Limpieza intensa con nuestra mascarilla negra para eliminar impurezas.",
+    "HAIR_DYE": "Tinturado de cabello",
+    "HAIR_DYE_DESC": "Colores vibrantes y duraderos para tu cabello.",
+    "HIGHLIGHTS": "Mechas",
+    "HIGHLIGHTS_DESC": "Añade luz y profundidad a tu cabello con mechas.",
+    "PRICE_4": "4 USD",
+    "PRICE_5": "5 USD",
+    "PRICE_10": "10 USD",
+    "PRICE_8": "8 USD",
+    "PRICE_3": "3 USD",
+    "PRICE_30_40": "30-40 USD",
+    "PRICE_10_25": "10-25 USD"
+  },
+
+"PRODUCTS": {
+  "TITLE": "Nuestros Productos",
+  "HAIR_GEL": "Gel para el Cabello",
+  "HAIR_GEL_DESCRIPTION": "Mantén tu cabello estilizado y fresco todo el día con nuestro gel para el cabello premium.",
+  "SHAVING_CREAM": "Crema de Afeitar",
+  "SHAVING_CREAM_DESCRIPTION": "Crema de afeitar suave y cómoda para un afeitado perfecto.",
+  "BEARD_OIL": "Aceite para la Barba",
+  "BEARD_OIL_DESCRIPTION": "Nutre y acondiciona tu barba con nuestro aceite para la barba orgánico." 
+},
+"CONTACT": {
+  "TITLE": "Contáctenos",
+  "PHONE": "Teléfono",
+  "ADDRESS": "Dirección",
+  "EMAIL": "Correo electrónico",
+  "HOURS": "Horario de atención",
+  "HOURS_WEEKDAYS": "Días de semana",
+  "HOURS_WEEKENDS": "Fines de semana"
+},
+"FOOTER": {
+  "CONTACT_INFO": "Información de contacto",
+  "PHONE": "Teléfono",
+  "ADDRESS": "Dirección",
+  "EMAIL": "Correo electrónico",
+  "LINKS": "Enlaces útiles",
+  "HOME": "Inicio",
+  "SERVICES": "Nuestros Servicios",
+  "PRODUCTS": "Productos",
+  "CONTACT_US": "Contáctenos",
+  "SOCIAL": "Redes sociales",
+  "COPYRIGHT": "Todos los derechos reservados"
+}
+  
+  
+}

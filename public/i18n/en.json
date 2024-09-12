@@ -1,0 +1,87 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "ABOUT": "About Us",
+    "SERVICES": "Our Services",
+    "PRODUCTS": "Products",
+    "LANGUAGE": "Language"
+  },
+  "CAROUSEL": {
+    "SLIDE1": {
+      "TITLE": "Professional Haircut",
+      "DESCRIPTION": "Get a modern and personalized style."
+    },
+    "SLIDE2": {
+      "TITLE": "High-quality Products",
+      "DESCRIPTION": "We offer premium products for hair and beard care."
+    },
+    "SLIDE3": {
+      "TITLE": "Exceptional Services",
+      "DESCRIPTION": "Expert barbers for a flawless look."
+    }
+  },
+  "GALLERY":{
+    "MEDIA_DESCRIPTION_1":"Experience the art of grooming with our professional barbers, ensuring a precise and stylish look every time.",
+    "MEDIA_DESCRIPTION_2":"Our premium beard care services leave your beard feeling soft, healthy, and perfectly groomed.",
+    "MEDIA_DESCRIPTION_3":"We combine tradition and modern techniques to deliver the perfect haircut that suits your personality."
+  },
+  "SERVICES": {
+    "TITLE": "Our Services",
+    "GENERAL_CUT": "General Cut (Eyebrows)",
+    "GENERAL_CUT_DESC": "The perfect cut for your eyebrows, precise and styled.",
+    "BLADE_SHADE": "Blade Shading (Eyebrows)",
+    "BLADE_SHADE_DESC": "Blade shading to enhance and define your eyebrows.",
+    "BEARD_TRIM": "Beard Trim",
+    "BEARD_TRIM_DESC": "Keep your beard well-shaped with a precise trim.",
+    "FACIAL_CLEANSE": "Facial Cleanse",
+    "FACIAL_CLEANSE_DESC": "Deep cleansing that revitalizes your face.",
+    "TRIBAL_DESIGN": "Tribal and Design",
+    "TRIBAL_DESIGN_DESC": "Unique, modern designs to express your style.",
+    "BEARD_SHADE": "Beard Shading",
+    "BEARD_SHADE_DESC": "Give your beard a soft, even shading.",
+    "BLACK_MASK": "Black Mask",
+    "BLACK_MASK_DESC": "Intense cleansing with our black mask to remove impurities.",
+    "HAIR_DYE": "Hair Dye",
+    "HAIR_DYE_DESC": "Vibrant, long-lasting colors for your hair.",
+    "HIGHLIGHTS": "Highlights",
+    "HIGHLIGHTS_DESC": "Add light and depth to your hair with highlights.",
+    "PRICE_4": "4 USD",
+    "PRICE_5": "5 USD",
+    "PRICE_10": "10 USD",
+    "PRICE_8": "8 USD",
+    "PRICE_3": "3 USD",
+    "PRICE_30_40": "30-40 USD",
+    "PRICE_10_25": "10-25 USD"
+  },
+  "PRODUCTS": {
+    "TITLE": "Our Products",
+    "HAIR_GEL": "Hair Gel",
+    "HAIR_GEL_DESCRIPTION": "Keep your hair styled and fresh all day with our premium hair gel.",
+    "SHAVING_CREAM": "Shaving Cream",
+    "SHAVING_CREAM_DESCRIPTION": "Smooth and comfortable shaving cream for the perfect shave.",
+    "BEARD_OIL": "Beard Oil",
+    "BEARD_OIL_DESCRIPTION": "Nourish and condition your beard with our organic beard oil." 
+  },
+  "CONTACT": {
+    "TITLE": "Contact Us",
+    "PHONE": "Phone",
+    "ADDRESS": "Address",
+    "EMAIL": "Email",
+    "HOURS": "Opening Hours",
+    "HOURS_WEEKDAYS": "Weekdays",
+    "HOURS_WEEKENDS": "Weekends"
+  },
+  "FOOTER": {
+    "CONTACT_INFO": "Contact Information",
+    "PHONE": "Phone",
+    "ADDRESS": "Address",
+    "EMAIL": "Email",
+    "LINKS": "Useful Links",
+    "HOME": "Home",
+    "SERVICES": "Our Services",
+    "PRODUCTS": "Products",
+    "CONTACT_US": "Contact Us",
+    "SOCIAL": "Social Media",
+    "COPYRIGHT": "All rights reserved"
+  }
+}

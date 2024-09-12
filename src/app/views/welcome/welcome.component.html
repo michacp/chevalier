@@ -1,0 +1,126 @@
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button *ngFor="let image of images; let i = index" type="button" data-bs-target="#carouselExample" 
+        [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-label]="'Slide ' + (i + 1)">
+      </button>
+    </div>
+  
+    <div class="carousel-inner">
+      <div *ngFor="let image of images; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img [src]="image.path" class="d-block w-100" alt="Slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ image.titleKey | translate }}</h5>
+          <p>{{ image.descriptionKey | translate }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Controles de navegación -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Sección sobre nuestra experiencia -->
+<section class="experience-section py-5">
+    <div class="container text-center">
+      <h2>{{ experienceTitleKey | translate }}</h2>
+      <p class="lead">{{ experienceDescriptionKey | translate }}</p>
+    </div>
+  </section>
+
+  <section class="media-gallery">
+    <div class="media-item">
+      <img src="img/gallery/1.jpeg" alt="Modern kitchen flooring">
+      <p>{{ 'GALLERY.MEDIA_DESCRIPTION_1' | translate }}</p>
+    </div>
+    <div class="media-item">
+      <img src="img/gallery/2.jpeg" alt="Luxurious carpet installation">
+      <p>{{ 'GALLERY.MEDIA_DESCRIPTION_2' | translate }}</p>
+    </div>
+    <div class="media-item">
+      <img src="img/gallery/3.jpeg" alt="Custom tile work">
+      <p>{{ 'GALLERY.MEDIA_DESCRIPTION_3' | translate }}</p>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <h2>{{ 'SERVICES.TITLE' | translate }}</h2>
+    
+    <div class="services-container">
+      <mat-card class="service-card" *ngFor="let service of services">
+        <mat-card-header>
+          <mat-card-title>{{ service.name | translate }}</mat-card-title>
+          <mat-card-subtitle>{{ service.price | translate }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="service.image" alt="{{ service.name }}">
+        <mat-card-content>
+          <p>{{ service.description | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <div class="products-section">
+    <h2>{{ 'PRODUCTS.TITLE' | translate }}</h2>
+    <div class="products-container">
+      <div class="product-card" *ngFor="let product of products">
+        <mat-card>
+          <img mat-card-image [src]="product.image" alt="{{ product.name | translate }}">
+          <mat-card-title>{{ product.name | translate }}</mat-card-title>
+          <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+          <mat-card-content>
+            <p>{{ product.description | translate }}</p>
+          </mat-card-content> 
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <h2>{{ 'CONTACT.TITLE' | translate }}</h2>
+    <div class="contact-container">
+      <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'CONTACT.PHONE' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>0984287409</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'CONTACT.ADDRESS' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Luis Cordero 4-09 y Sucre</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'CONTACT.EMAIL' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>contacto&#64;chevalier.com</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'CONTACT.HOURS' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ 'CONTACT.HOURS_WEEKDAYS' | translate }}: 9:00 AM - 7:00 PM</p>
+          <p>{{ 'CONTACT.HOURS_WEEKENDS' | translate }}: 10:00 AM - 6:00 PM</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
