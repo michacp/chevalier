@@ -22,7 +22,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from './layout/footer/footer.component'; 
+import { FooterComponent } from './layout/footer/footer.component';
+import { AboutusComponent } from './views/aboutus/aboutus.component';
+import { BannerComponent } from './layout/banner/banner.component'; 
 
  
 
@@ -37,7 +39,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     WelcomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutusComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

@@ -83,5 +83,38 @@
     "CONTACT_US": "Contact Us",
     "SOCIAL": "Social Media",
     "COPYRIGHT": "All rights reserved"
+  },
+"ABOUT_US": {
+    "TITLE": "About Us",
+    "HISTORY": {
+      "TITLE": "History of the Barber Shop",
+      "DESCRIPTION": "CHEVALIER was born from the dissatisfaction of its founder after receiving poor service in a barbershop. He decided to open his own barbershop, with the goal of offering exceptional and personalized service to all clients."
+    },
+    "MISSION": {
+      "TITLE": "Mission",
+      "DESCRIPTION": "To create and provide professionals, services, and high-quality products focused on haircuts, barbering, and image consulting for men, in an exclusive, pleasant, safe, and calm space."
+    },
+    "VISION": {
+      "TITLE": "Vision",
+      "DESCRIPTION": "To be the leading and most important barbershop in Ecuador within the next 10 years, relying on the innovation and creativity of our team in creating styles, trends, and experiences for the utmost satisfaction of our clients."
+    },
+    "TEAM": {
+      "TITLE": "Our Team"
+    },
+    "VALUES": {
+      "TITLE": "Our Values",
+      "DESCRIPTION": "At CHEVALIER, we value the quality of our service, attention to detail, and customer satisfaction. Our team is committed to making every visit an unforgettable experience."
+    },
+    "EXPERIENCE": {
+      "TITLE": "Customer Experience",
+      "DESCRIPTION": "When you enter CHEVALIER, you are welcomed into a cozy, elegant, and exclusive environment. From the moment you arrive, you will feel attended to by professionals who care about your style and well-being."
+    },
+    "CONTACT": {
+      "TITLE": "Contact Information",
+      "ADDRESS": "Luis Cordero 4-09 y Sucre",
+      "PHONE": "Phone: 0984287409",
+      "EMAIL": "Email: barber@chevalier.com",
+      "SOCIAL_MEDIA": "Follow us on Facebook, Instagram, and TikTok."
+    }
   }
 }

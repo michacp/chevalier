@@ -88,7 +88,39 @@
   "CONTACT_US": "Contáctenos",
   "SOCIAL": "Redes sociales",
   "COPYRIGHT": "Todos los derechos reservados"
-}
-  
+}, 
+"ABOUT_US": {
+    "TITLE": "Sobre Nosotros",
+    "HISTORY": {
+      "TITLE": "Historia de la Barbería",
+      "DESCRIPTION": "CHEVALIER nació de la insatisfacción de su fundador al recibir un mal servicio en una barbería. Decidió abrir su propia barbería, con el objetivo de ofrecer un servicio excepcional y personalizado a todos sus clientes."
+    },
+    "MISSION": {
+      "TITLE": "Misión",
+      "DESCRIPTION": "Crear y proveer profesionales, servicios y productos de alta calidad enfocados en corte, barbería y asesoría de imagen en caballeros, en un espacio exclusivo, agradable, seguro y tranquilo."
+    },
+    "VISION": {
+      "TITLE": "Visión",
+      "DESCRIPTION": "Ser la barbería pionera más importante del Ecuador en los próximos 10 años apoyándonos en la innovación y creatividad de nuestros colaboradores a la hora de crear estilos, tendencias y experiencias para la máxima satisfacción de nuestros clientes."
+    },
+    "TEAM": {
+      "TITLE": "Nuestro Equipo"
+    },
+    "VALUES": {
+      "TITLE": "Nuestros Valores",
+      "DESCRIPTION": "En CHEVALIER valoramos la calidad de nuestro servicio, la atención al detalle, y la satisfacción del cliente. Nuestro equipo está comprometido en hacer que cada visita sea una experiencia inolvidable."
+    },
+    "EXPERIENCE": {
+      "TITLE": "Experiencia del Cliente",
+      "DESCRIPTION": "Cuando entras a CHEVALIER, te recibimos en un ambiente acogedor, elegante y exclusivo. Desde el momento en que llegas, te sentirás atendido por profesionales que se preocupan por tu estilo y bienestar."
+    },
+    "CONTACT": {
+      "TITLE": "Información de Contacto",
+      "ADDRESS": "Luis Cordero 4-09 y Sucre",
+      "PHONE": "Teléfono: 0984287409",
+      "EMAIL": "Correo: barber@chevalier.com",
+      "SOCIAL_MEDIA": "Síguenos en Facebook, Instagram y TikTok."
+    }
+  }
   
 }
