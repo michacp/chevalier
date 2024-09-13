@@ -55,12 +55,26 @@
   },
   "PRODUCTS": {
     "TITLE": "Our Products",
-    "HAIR_GEL": "Hair Gel",
-    "HAIR_GEL_DESCRIPTION": "Keep your hair styled and fresh all day with our premium hair gel.",
-    "SHAVING_CREAM": "Shaving Cream",
-    "SHAVING_CREAM_DESCRIPTION": "Smooth and comfortable shaving cream for the perfect shave.",
-    "BEARD_OIL": "Beard Oil",
-    "BEARD_OIL_DESCRIPTION": "Nourish and condition your beard with our organic beard oil." 
+    "PRODUCT1": {
+      "TITLE": "Molding Wax",
+      "DESCRIPTION": "Provides ultimate hold and volume, while smoothing and giving shine to the hair."
+    },
+    "PRODUCT2": {
+      "TITLE": "OSSION Wax",
+      "DESCRIPTION": "Gives your hair shine and strength."
+    },
+    "PRODUCT3": {
+      "TITLE": "OSSION Wax",
+      "DESCRIPTION": "Gives your hair shine and strength."
+    },
+    "PRODUCT4": {
+      "TITLE": "Perfumed Talcum Powder",
+      "DESCRIPTION": "For professional and daily use."
+    },
+    "PRODUCT5": {
+      "TITLE": "Minoxidil 10% Trioxidil 5%",
+      "DESCRIPTION": "For beard and hair growth."
+    }
   },
   "CONTACT": {
     "TITLE": "Contact Us",

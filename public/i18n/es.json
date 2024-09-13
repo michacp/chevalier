@@ -60,12 +60,26 @@
 
 "PRODUCTS": {
   "TITLE": "Nuestros Productos",
-  "HAIR_GEL": "Gel para el Cabello",
-  "HAIR_GEL_DESCRIPTION": "Mantén tu cabello estilizado y fresco todo el día con nuestro gel para el cabello premium.",
-  "SHAVING_CREAM": "Crema de Afeitar",
-  "SHAVING_CREAM_DESCRIPTION": "Crema de afeitar suave y cómoda para un afeitado perfecto.",
-  "BEARD_OIL": "Aceite para la Barba",
-  "BEARD_OIL_DESCRIPTION": "Nutre y acondiciona tu barba con nuestro aceite para la barba orgánico." 
+  "PRODUCT1":{
+          "TITLE": "Cera Moldeadora",
+      "DESCRIPTION": "Proporciona retención definitiva y volumen, al tiempo que suaviza y da brillo al cabello."
+  },
+  "PRODUCT2":{
+    "TITLE": "Cera OSSION",
+"DESCRIPTION": "Otorga un efecto de brillo y fuerza a tu cabello."
+},
+"PRODUCT3":{
+    "TITLE": "Cera OSSION",
+"DESCRIPTION": "Otorga un efecto de brillo y fuerza a tu cabello."
+},
+"PRODUCT4":{
+  "TITLE": "Talco Perfumano",
+"DESCRIPTION": "Para uso profesional y diario."
+},
+"PRODUCT5":{
+  "TITLE": "Minoxidil 10% Trioxidil 5%",
+"DESCRIPTION": "Para crecimiento de barba y cabello."
+}
 },
 "CONTACT": {
   "TITLE": "Contáctenos",

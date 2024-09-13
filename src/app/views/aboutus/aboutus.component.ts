@@ -8,23 +8,30 @@ import { Component } from '@angular/core';
 export class AboutusComponent {
   teamMembers = [
     {
+      name: 'Ana González',
+      specialty: 'Experta en tratamientos capilares',
+      bio: 'Ana es conocida por su habilidad en tratamientos capilares y cuidado del cabello.',
+      photo: 'img/team/1.jpg'
+    },
+    {
       name: 'Juan Pérez',
       specialty: 'Especialista en cortes modernos',
       bio: 'Con más de 10 años de experiencia en barbería, Juan es un experto en crear looks modernos y a la moda.',
-      photo: 'assets/images/juan.jpg'
+      photo: 'img/team/2.jpg'
     },
     {
       name: 'Carlos Sánchez',
       specialty: 'Barbero experto en perfilado de barba',
       bio: 'Carlos se especializa en el perfilado de barbas y brinda un servicio de excelencia.',
-      photo: 'assets/images/carlos.jpg'
+      photo: 'img/team/3.jpg'
     },
     {
-      name: 'Ana González',
-      specialty: 'Experta en tratamientos capilares',
-      bio: 'Ana es conocida por su habilidad en tratamientos capilares y cuidado del cabello.',
-      photo: 'assets/images/ana.jpg'
+      name: 'Carlos Sánchez',
+      specialty: 'Barbero experto en perfilado de barba',
+      bio: 'Carlos se especializa en el perfilado de barbas y brinda un servicio de excelencia.',
+      photo: 'img/team/4.jpg'
     }
+
   ]; 
 
 }

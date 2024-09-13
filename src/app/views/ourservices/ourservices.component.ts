@@ -1,5 +1,5 @@
-import { Component, ElementRef, AfterViewInit } from '@angular/core';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { Component, ElementRef } from '@angular/core';  
+
 @Component({
   selector: 'app-ourservices',
   templateUrl: './ourservices.component.html',
