@@ -1,15 +1,15 @@
 <header class="navbar-container" [ngClass]="{ 'scrolled': isScrolled }">
   <nav mat-toolbar class="navbar">
-    <div class="navbar-left">
+    <div class="navbar-left" routerLink="">
       <img src="img/cara.png" alt="Logo" class="navbar-logo">
-      <span class="navbar-title">CHEVALIER</span>
+      <span class="navbar-title" routerLink="">CHEVALIER</span>
     </div>
 
     <div class="navbar-center">
       <a mat-button routerLink="">{{ 'NAVBAR.HOME' | translate }}</a>
       <a mat-button routerLink="/aboutus">{{ 'NAVBAR.ABOUT' | translate }}</a>
-      <a mat-button routerLink="/nuestros-servicios">{{ 'NAVBAR.SERVICES' | translate }}</a>
-      <a mat-button routerLink="/productos">{{ 'NAVBAR.PRODUCTS' | translate }}</a>
+      <a mat-button routerLink="/ourservices">{{ 'NAVBAR.SERVICES' | translate }}</a>
+      <a mat-button routerLink="/products">{{ 'NAVBAR.PRODUCTS' | translate }}</a>
     </div>
 
     <div class="navbar-right">

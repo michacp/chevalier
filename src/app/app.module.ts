@@ -24,7 +24,9 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AboutusComponent } from './views/aboutus/aboutus.component';
-import { BannerComponent } from './layout/banner/banner.component'; 
+import { BannerComponent } from './layout/banner/banner.component';
+import { OurservicesComponent } from './views/ourservices/ourservices.component';
+import { ProductsComponent } from './views/products/products.component'; 
 
  
 
@@ -41,7 +43,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavbarComponent,
     FooterComponent,
     AboutusComponent,
-    BannerComponent
+    BannerComponent,
+    OurservicesComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
