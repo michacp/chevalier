@@ -27,7 +27,7 @@ export class TiktokVideoComponent implements OnChanges {
   //`https://www.tiktok.com/embed/${this.videoId}`
   updateVideoUrl(): void {
     this.tiktokUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.tiktok.com/embed/${this.videoId}`
+      `https://www.tiktok.com/embed/v2/${this.videoId}`
     );
   }
  
