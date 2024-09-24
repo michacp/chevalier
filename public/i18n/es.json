@@ -135,6 +135,89 @@
       "EMAIL": "Correo: barber@chevalier.com",
       "SOCIAL_MEDIA": "Síguenos en Facebook, Instagram y TikTok."
     }
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Política de Privacidad",
+    "INTRO": "En Chevalier Barber Shop, respetamos y valoramos la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas a través de nuestro sitio web.",
+    "SECTION_1": {
+      "TITLE": "1. Información que Recopilamos",
+      "CONTENT": "Cuando visitas nuestro sitio web, podemos recopilar la siguiente información: Datos personales: Nombre, correo electrónico, número de teléfono, dirección u otra información que proporcionas al contactarnos o al reservar un servicio. Datos de navegación: Información sobre tu visita, como tu dirección IP, tipo de navegador y páginas visitadas."
+    },
+    "SECTION_2": {
+      "TITLE": "2. Uso de la Información",
+      "CONTENT": "La información que recopilamos se utiliza para los siguientes fines: Proporcionar y mejorar nuestros servicios. Gestionar reservas y consultas. Enviar actualizaciones, promociones y noticias relacionadas con Chevalier Barber Shop. Mejorar la experiencia del usuario en nuestro sitio web."
+    },
+    "SECTION_3": {
+      "TITLE": "3. Compartición de la Información",
+      "CONTENT": "No compartimos tu información personal con terceros, excepto en los siguientes casos: Cuando sea necesario para cumplir con la ley. Si es requerido para procesar pagos o reservas."
+    },
+    "SECTION_4": {
+      "TITLE": "4. Seguridad",
+      "CONTENT": "Nos comprometemos a proteger tu información personal. Usamos medidas de seguridad adecuadas para evitar el acceso no autorizado y la divulgación de tu información."
+    },
+    "SECTION_5": {
+      "TITLE": "5. Derechos del Usuario",
+      "CONTENT": "Tienes el derecho de acceder, corregir o eliminar tu información personal. Para ejercer estos derechos, puedes contactarnos en chevalierbarbershop13@gmail.com."
+    },
+    "SECTION_6": {
+      "TITLE": "6. Cookies",
+      "CONTENT": "Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Puedes deshabilitar las cookies en la configuración de tu navegador."
+    },
+    "SECTION_7": {
+      "TITLE": "7. Cambios en la Política de Privacidad",
+      "CONTENT": "Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios se publicarán en esta página."
+    },
+    "SECTION_8": {
+      "TITLE": "8. Contacto",
+      "CONTENT": "Si tienes preguntas sobre nuestra Política de Privacidad, puedes contactarnos en chevalierbarbershop13@gmail.com."
+    },
+    "SECTION_9": {
+      "TITLE": "9. Integración con Facebook",
+      "CONTENT": "Si utilizas nuestros servicios a través de Facebook, podemos recibir información como tu nombre y dirección de correo electrónico. Esta información se usa únicamente para los fines descritos anteriormente. Política de Privacidad de Facebook: https://www.facebook.com/policy.php"
+    }
+  },
+  "TERMS": {
+    "TITLE": "Condiciones del Servicio",
+    "SECTION_1_TITLE": "1. Aceptación de los términos",
+    "SECTION_1_DESCRIPTION": "Al acceder y utilizar el sitio web de Chevalier Barber Shop, aceptas cumplir con estas Condiciones del Servicio y cualquier ley aplicable. Si no estás de acuerdo con estos términos, por favor no utilices nuestros servicios.",
+    "SECTION_2_TITLE": "2. Servicios ofrecidos",
+    "SECTION_2_DESCRIPTION": "Chevalier Barber Shop ofrece servicios de barbería y productos a la venta. Nos reservamos el derecho de modificar o descontinuar nuestros servicios en cualquier momento sin previo aviso.",
+    "SECTION_3_TITLE": "3. Reservas y cancelaciones",
+    "SECTION_3_DESCRIPTION": "Las reservas para servicios pueden realizarse a través de nuestro sitio web o por contacto directo. Nos reservamos el derecho de rechazar o cancelar una reserva en caso de disponibilidad limitada o en circunstancias especiales. Si deseas cancelar una reserva, debes hacerlo con al menos 3 horas de anticipación.",
+    "SECTION_4_TITLE": "4. Precios y pagos",
+    "SECTION_4_DESCRIPTION": "Los precios de los servicios y productos ofrecidos están indicados en el sitio web y están sujetos a cambios sin previo aviso. Los pagos deben realizarse al finalizar el servicio o al realizar la compra de productos, a través de los métodos de pago aceptados en nuestro establecimiento o sitio web.",
+    "SECTION_5_TITLE": "5. Propiedad intelectual",
+    "SECTION_5_DESCRIPTION": "Todo el contenido de este sitio web, incluidos textos, imágenes, gráficos, logotipos y otros materiales, es propiedad de Chevalier Barber Shop o de sus licenciantes y está protegido por las leyes de propiedad intelectual. No se permite su uso sin el consentimiento previo y por escrito de Chevalier Barber Shop.",
+    "SECTION_6_TITLE": "6. Limitación de responsabilidad",
+    "SECTION_6_DESCRIPTION": "Chevalier Barber Shop no será responsable por ningún daño directo, indirecto, incidental o consecuente derivado del uso de nuestros servicios o del sitio web. Nos reservamos el derecho de actualizar, modificar o eliminar cualquier información en el sitio sin previo aviso.",
+    "SECTION_7_TITLE": "7. Enlaces a terceros",
+    "SECTION_7_DESCRIPTION": "Este sitio web puede contener enlaces a sitios web de terceros. No nos hacemos responsables del contenido o prácticas de dichos sitios externos.",
+    "SECTION_8_TITLE": "8. Modificaciones a los términos",
+    "SECTION_8_DESCRIPTION": "Nos reservamos el derecho de modificar estas Condiciones del Servicio en cualquier momento. Los cambios se publicarán en esta página y entrarán en vigor inmediatamente después de su publicación.",
+    "SECTION_9_TITLE": "9. Ley aplicable",
+    "SECTION_9_DESCRIPTION": "Estas Condiciones del Servicio se rigen por las leyes vigentes en Ecuador. Cualquier disputa relacionada con el uso de nuestros servicios o del sitio web se resolverá en los tribunales competentes de dicha jurisdicción.",
+    "SECTION_10_TITLE": "10. Contacto",
+    "SECTION_10_DESCRIPTION": "Si tienes alguna pregunta o inquietud sobre estas Condiciones del Servicio, puedes contactarnos en chevalierbarbershop13@gmail.com."
+  },
+  "DATA_DELETION": {
+    "TITLE": "Instrucciones para la Eliminación de Datos",
+    "INTRO": "En Chevalier Barber Shop, valoramos tu privacidad y te ofrecemos la opción de eliminar los datos personales que has compartido con nosotros. Si deseas solicitar la eliminación de tus datos, sigue los pasos a continuación:",
+    
+    "REQUEST_TITLE": "1. Solicitud de Eliminación de Datos",
+    "REQUEST_DESC": "Para solicitar la eliminación de tus datos personales, envía un correo electrónico a chevalierbarbershop13@gmail.com con la siguiente información:",
+    "REQUEST_NAME": "Tu nombre completo.",
+    "REQUEST_EMAIL": "La dirección de correo electrónico asociada a tu cuenta o reserva.",
+    "REQUEST_DESCRIPTION": "Una descripción de los datos que deseas eliminar (por ejemplo, información de contacto, historial de reservas, etc.).",
+    
+    "PROCESS_TITLE": "2. Proceso de Eliminación",
+    "PROCESS_DESC": "Una vez recibida tu solicitud, procederemos a eliminar tus datos en un plazo de 30 días. Te notificaremos cuando el proceso haya sido completado.",
+    
+    "CONSIDERATIONS_TITLE": "3. Consideraciones Importantes",
+    "CONSIDERATIONS_DESC": "La eliminación de tus datos puede afectar tu acceso a servicios previamente contratados o reservas en curso. Algunos datos podrían ser retenidos por razones legales o de cumplimiento, según lo requieran las leyes aplicables.",
+    "CONSIDERATIONS_ACCESS": "La eliminación de tus datos puede afectar el acceso a servicios previamente contratados o reservas en curso.",
+    "CONSIDERATIONS_RETENTION": "Algunos datos pueden ser retenidos por razones legales o de cumplimiento, según lo requerido por las leyes vigentes.",
+    
+    "CONTACT": "Si tienes alguna duda sobre el proceso de eliminación de datos, no dudes en contactarnos a través del mismo correo chevalierbarbershop13@gmail.com."
   }
   
 }
