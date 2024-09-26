@@ -11,20 +11,23 @@
                   <img [src]="photo.source" alt="Photo" class="d-block w-100 fixed-size-photo">
                 </a>
   
-                <!-- Imagen del usuario y nombre en la esquina superior izquierda -->
-                <div *ngIf="photo.from" class="position-absolute top-0 start-0 p-2 d-flex align-items-center">
-                  <a [href]="profileLink(photo.from.id)" target="_blank" rel="noopener noreferrer">
-                    <img [src]="profilePictureUrl(photo.from.id)" alt="{{ photo.from.name }}" class="profile-img me-2">
-                  </a>
-                  <p class="mb-0 text-white">{{ photo.from.name }}</p>
-                </div>
+<!-- Imagen del usuario y nombre en la esquina superior izquierda -->
+<div *ngIf="photo.from" class="position-absolute top-0 start-0 p-2 d-flex align-items-center profile-container" style="z-index: 1000;">
+    <a [href]="profileLink(photo.from.id)" target="_blank" rel="noopener noreferrer">
+      <img [src]="profilePictureUrl(photo.from.id)" alt="{{ photo.from.name }}" class="profile-img me-2">
+    </a>
+    <!-- Nombre del usuario que solo se mostrará al hacer hover sobre la imagen -->
+    <a [href]="profileLink(photo.from.id)" target="_blank" rel="noopener noreferrer" class="profile-name-link">
+      <p class="mb-0 text-white profile-name">{{ photo.from.name }}</p>
+    </a>
+  </div>
   
-                <!-- Ícono de Facebook en la esquina superior derecha -->
-                <div class="position-absolute top-0 end-0 p-2">
-                  <a [href]="photo.link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook text-white fa-2x"></i>
-                  </a>
-                </div>
+<!-- Ícono de Facebook en la esquina superior derecha -->
+<div class="position-absolute top-0 end-0 p-2 icon-facebook">
+    <a [href]="photo.link" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+  </div>
   
                 <!-- Información sobre la imagen (título, likes) dentro de la foto -->
                 <div class="photo-overlay position-absolute bottom-0 start-0 p-3 text-white">
