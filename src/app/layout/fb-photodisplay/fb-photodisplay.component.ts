@@ -1,14 +1,13 @@
-// test.component.ts
 import { Component } from '@angular/core';
-import { FacebookApiService } from '../../service/facebook-api/facebook-api.service'; 
+import { FacebookApiService } from '../../service/facebook-api/facebook-api.service';
 import { ListfacebookphotosI } from '../../models/tiktok.inteface';
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  selector: 'app-fb-photodisplay',
+  templateUrl: './fb-photodisplay.component.html',
+  styleUrl: './fb-photodisplay.component.css'
 })
-export class TestComponent {
- 
+export class FbPhotodisplayComponent {
+
   photos:ListfacebookphotosI []=[];
 
   constructor(private facebookApiService: FacebookApiService ) { }
@@ -33,5 +32,4 @@ export class TestComponent {
   profileLink(userId: string): string {
     return `https://www.facebook.com/${userId}`;
   }
- 
 }

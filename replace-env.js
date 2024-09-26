@@ -5,6 +5,7 @@ const envConfigFile = `
 export const environment = {
   production: true,
   apiUrl: '${process.env.API_URL}', 
+  facebook_token: '${process.env.API_FACE}',
 };
 `;
 

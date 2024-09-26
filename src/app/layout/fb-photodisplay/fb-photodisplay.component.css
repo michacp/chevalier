@@ -1,0 +1,51 @@
+/* Ajuste de la imagen principal */
+.fixed-size-photo {
+    width: 100%; /* Ancho completo para ajustar bien */
+    height: 400px; /* Altura fija */
+    object-fit: cover; /* Mantiene proporciones sin deformar */
+    border-radius: 10px;
+  }
+  
+  /* Imagen del perfil del usuario en la esquina superior izquierda */
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  /* Ícono de Facebook en la esquina superior derecha */
+  .fab.fa-facebook {
+    color: white;
+  }
+  
+  /* Superposición de la información de la foto dentro de la imagen */
+  .photo-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  /* Título de la foto */
+  .photo-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Likes */
+  .photo-likes {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+  /* Texto Chevalier centrado */
+  .chevalier-info {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  

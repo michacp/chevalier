@@ -32,7 +32,8 @@ import { TiktokVideoComponent } from './layout/tiktok-video/tiktok-video.compone
 import { TiktokCarrucelComponent } from './layout/tiktok-carrucel/tiktok-carrucel.component';
 import { PrivacyPolicyComponent } from './views/privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './views/terms-of-service/terms-of-service.component';
-import { DataDeletionComponent } from './views/data-deletion/data-deletion.component';  
+import { DataDeletionComponent } from './views/data-deletion/data-deletion.component';
+import { FbPhotodisplayComponent } from './layout/fb-photodisplay/fb-photodisplay.component';  
  
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
@@ -56,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TiktokCarrucelComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
-    DataDeletionComponent
+    DataDeletionComponent,
+    FbPhotodisplayComponent
   ],
   imports: [
     BrowserModule,

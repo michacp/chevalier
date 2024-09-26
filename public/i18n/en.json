@@ -213,5 +213,10 @@
     "CONSIDERATIONS_RETENTION": "Some data may be retained for legal or compliance reasons, as required by applicable laws.",
     
     "CONTACT": "If you have any questions about the data deletion process, feel free to contact us at chevalierbarbershop13@gmail.com."
+  },
+  "FACEBOOK":{
+    "NO_TITLE": "No title available",
+    "LIKES": "Likes",
+    "CHEVALIER_INFO": "Chevalier barbershop offers the best hairdressing and personal care services."
   }
 }

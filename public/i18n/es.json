@@ -218,6 +218,11 @@
     "CONSIDERATIONS_RETENTION": "Algunos datos pueden ser retenidos por razones legales o de cumplimiento, según lo requerido por las leyes vigentes.",
     
     "CONTACT": "Si tienes alguna duda sobre el proceso de eliminación de datos, no dudes en contactarnos a través del mismo correo chevalierbarbershop13@gmail.com."
+  },
+  "FACEBOOK":{
+    "NO_TITLE": "Sin título disponible",
+    "LIKES": "Me gusta",
+    "CHEVALIER_INFO": "La barbería Chevalier ofrece los mejores servicios de peluquería y cuidado personal."
   }
   
 }
