@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component   } from '@angular/core';
 import { FacebookApiService } from '../../service/facebook-api/facebook-api.service';
 import { ListfacebookphotosI } from '../../models/tiktok.inteface';
 @Component({
@@ -7,7 +7,7 @@ import { ListfacebookphotosI } from '../../models/tiktok.inteface';
   styleUrl: './fb-photodisplay.component.css'
 })
 export class FbPhotodisplayComponent {
-
+ 
   photos:ListfacebookphotosI []=[];
 
   constructor(private facebookApiService: FacebookApiService ) { }
@@ -32,4 +32,5 @@ export class FbPhotodisplayComponent {
   profileLink(userId: string): string {
     return `https://www.facebook.com/${userId}`;
   }
+ 
 }

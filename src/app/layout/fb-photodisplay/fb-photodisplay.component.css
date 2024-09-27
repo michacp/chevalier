@@ -130,3 +130,49 @@
 
  
  
+/* Estilo para los indicadores del carrusel */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px; /* Ajusta la posición vertical */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
+/* Estilo para los indicadores del carrusel */
+.carousel-indicators {
+  position: absolute;
+  top: 10px; /* Cambiamos a la parte superior */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  margin: 0; /* Elimina el margen extra */
+}
+
+/* Indicadores normales (no activos) */
+.carousel-indicators button {
+  width: 40px; /* Anchura más grande para barras */
+  height: 5px;  /* Altura pequeña para hacer una barra */
+  background-color: rgba(255, 255, 255, 0.5); /* Color blanco translúcido */
+  border: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Indicador activo */
+.carousel-indicators .active {
+  background-color: #FFD700; /* Color dorado cuando está activo */
+}
+
+/* Efecto hover en los indicadores */
+.carousel-indicators button:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Color más claro al hacer hover */
+}

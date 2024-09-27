@@ -3,6 +3,12 @@
     <!-- Mitad izquierda con el carrusel -->
     <div class="col-md-6">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<!-- Indicadores -->
+<div class="carousel-indicators">
+  <button *ngFor="let photo of photos; let i = index" type="button" data-bs-target="#carouselExampleControls" 
+    [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-label]="'Slide ' + (i + 1)">
+  </button>
+</div>
         <div class="carousel-inner">
           <div class="carousel-item" *ngFor="let photo of photos; let i = index" [ngClass]="{ 'active': i === 0 }">
             <div class="photo-container position-relative">
@@ -31,7 +37,7 @@
 
               <!-- Ícono de Facebook en la esquina superior derecha -->
               <div class="position-absolute top-0 end-0 p-2 icon-facebook">
-                <a [href]="photo.link" target="_blank" rel="noopener noreferrer">
+                <a [href]="profileLink(photo.from.id)" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-facebook text-white fa-2x"></i>
                 </a>
               </div>
@@ -40,7 +46,7 @@
 <div class="photo-overlay position-absolute bottom-0 start-0 p-3 text-white" style="z-index: 11;">
   <!-- Número de likes con icono clicable -->
   <div *ngIf="photo.likes" class="photo-likes d-flex align-items-center">
-    <a [href]="profileLink(photo.from.id)" target="_blank" rel="noopener noreferrer" class="likes-link d-flex align-items-center">
+    <a [href]="photo.link" target="_blank" rel="noopener noreferrer" class="likes-link d-flex align-items-center">
       <i class="fas fa-thumbs-up me-2"></i> <!-- Icono de me gusta -->
       <p class="mb-0">{{ photo.likes.summary.total_count }} {{ 'FACEBOOK.LIKES' | translate }}</p>
     </a>

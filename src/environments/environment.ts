@@ -4,5 +4,5 @@ export const environment = {
   production: false,
   apiUrl: 'https://localhost:3050',
   webSocket:'wss://localhost:3050',
-  facebook_token:'EAAVtYZCepZB6QBOwav1qnGOBNZCKI470IN7xWpHXtgnOkor9PRg5e8U9OLoZBqJ0JZBskZBPI7mhAwopmKMsDptctzIRrb51WyVd5ZAerRhPZCGzTJSvqj23psP83SqvpZCiPdVrFpvt4NzxjBobQ038toiEgnebRvwlQbgaHrNBI9feD1dZAlZCZBNXqTWYY9nQ8jkQJBuA9RauAGKlsuTqtQZDZD'
+  facebook_token:'EAAVtYZCepZB6QBO6A5jA0QTyesIWlx5ZBZCBNWHShsX60UnoIioLUZA21NyKaSTuNism8ZBbp1ZCEZCEiUJ1Cy7qcfk1g9OYvHjJDFV65riRpUdtudeeGfS4lCXsxB4qHCrsRaM7P0J0H7dlV6Tl3EkrobkU4zhxQAdAEJRQUsTwhkAZAjLV8YhsioTgChsn2FFdyEUpzUYtRCUIKYerkNgZDZD'
   };
