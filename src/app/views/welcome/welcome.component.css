@@ -218,3 +218,11 @@
         height: 100%;
       }
   }
+
+
+  .custom-container {
+    max-width: 1115px;
+    margin-left: auto;
+    margin-right: auto;
+   
+  }
