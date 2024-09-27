@@ -28,14 +28,14 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 2;
+  z-index: 11;
 }
 
 .profile-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  z-index: 600;
+  z-index:11;
 }
 
 .profile-name {
@@ -58,22 +58,43 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 2;
+  z-index: 11;
   font-size: 24px;
   color: white;
 }
 
-/* Superposición de la información de la foto */
-.photo-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+/* Superposición de la información de la foto (ajustada al contenido necesario) */
+.photo-overlay { 
   color: white;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  display: inline-block; /* Ajusta el ancho al contenido */
   font-size: 14px;
   padding: 10px;
-  z-index: 1;
+  z-index: 11; /* Asegurando que esté por encima */
   border-radius: 0 0 10px 10px;
+}
+
+/* Estilo del icono de me gusta dentro del enlace */
+.photo-likes i.fas.fa-thumbs-up {
+  font-size: 18px;
+  color: white; /* Color del icono de me gusta */
+  cursor: pointer; /* Indica que es clicable */
+}
+
+/* Ajuste del enlace de likes */
+.likes-link {
+  text-decoration: none;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+
+/* Subrayar y cambiar el color cuando el mouse pasa sobre el enlace de likes */
+.likes-link:hover {
+  text-decoration: underline;
+  color: #FFD700; /* Color al hacer hover */
 }
 
 .chevalier-info {
@@ -99,5 +120,13 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  z-index: 500;
+  z-index: 10;
 }
+/* Ajuste del carrusel para bordes redondeados */
+.carousel {
+  border-radius: 20px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que las imágenes no se salgan de los bordes */
+}
+
+ 
+ 
