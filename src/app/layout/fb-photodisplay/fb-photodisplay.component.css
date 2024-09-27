@@ -19,7 +19,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    z-index: 1000; /* Para estar por encima del contenido del carrusel */
+    z-index: 600; /* Para estar por encima del contenido del carrusel */
   }
   
   .profile-name {
