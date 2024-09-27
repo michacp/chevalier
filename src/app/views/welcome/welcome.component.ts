@@ -6,11 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
-  images = [
-    { path: 'img/carrucel/1.jpg',titleKey:"CAROUSEL.SLIDE1.TITLE", descriptionKey: 'CAROUSEL.SLIDE1.DESCRIPTION' },
-    { path: 'img/carrucel/2.jpg',titleKey:"CAROUSEL.SLIDE2.TITLE", descriptionKey: 'CAROUSEL.SLIDE2.DESCRIPTION' },
-    { path: 'img/carrucel/3.jpg',titleKey:"CAROUSEL.SLIDE3.TITLE", descriptionKey: 'CAROUSEL.SLIDE3.DESCRIPTION' }
-  ];
+
   services = [
     {
       name: 'SERVICES.GENERAL_CUT',
