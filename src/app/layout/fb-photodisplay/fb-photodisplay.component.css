@@ -1,107 +1,103 @@
 /* Ajuste de la imagen principal */
 .fixed-size-photo {
-    width: 100%; /* Ancho completo para ajustar bien */
-    height: 400px; /* Altura fija */
-    object-fit: cover; /* Mantiene proporciones sin deformar */
-    border-radius: 10px;
-    position: relative; /* Necesario para la superposición de otros elementos */
-  }
-  
-  /* Imagen del perfil del usuario en la esquina superior izquierda */
-  .profile-container {
-    position: absolute;
-    top: 10px; /* Ajuste desde la parte superior de la imagen */
-    left: 10px; /* Ajuste desde el lado izquierdo de la imagen */
-    z-index: 2; /* Asegura que esté por encima de otros elementos */
-  }
-  
-  .profile-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    z-index: 600; /* Para estar por encima del contenido del carrusel */
-  }
-  
-  .profile-name {
-    visibility: hidden; /* Oculto inicialmente */
-    text-decoration: underline; /* Subrayar el nombre */
-    margin-left: 10px; /* Separar el nombre de la imagen */
-    color: white; /* Color del texto */
-    font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Animación suave */
-  }
-  
-  .profile-container:hover .profile-name {
-    visibility: visible;
-    opacity: 1; /* Mostrar el nombre con animación */
-  }
-  
-  /* Ícono de Facebook en la esquina superior derecha */
-  .icon-facebook {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-    font-size: 24px;
-    color: white;
-  }
-  
-  /* Superposición de la información de la foto dentro de la imagen */
-  .photo-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-    z-index: 1;
-    border-radius: 0 0 10px 10px;
-  }
-  
-  /* Título de la foto */
-  .photo-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Likes */
-  .photo-likes {
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
-  /* Texto Chevalier centrado */
-  .chevalier-info {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Para centrar verticalmente en la mitad derecha */
-  }
-  
-  /* Contenedor personalizado con márgenes laterales */
-  .custom-container {
-    max-width: 1150px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+  width: 100%; /* Ancho completo para ajustar bien */
+  height: 400px; /* Altura fija */
+  object-fit: contain; /* Ajusta la imagen al contenedor sin deformarla */
+  background-color: black; /* Color de fondo para rellenar las áreas vacías */
+  border-radius: 10px;
+  position: relative; /* Necesario para la superposición de otros elementos */
+}
 
+/* Imagen del perfil del usuario en la esquina superior izquierda */
+.profile-container {
+  position: absolute;
+  top: 10px; /* Ajuste desde la parte superior de la imagen */
+  left: 10px; /* Ajuste desde el lado izquierdo de la imagen */
+  z-index: 2; /* Asegura que esté por encima de otros elementos */
+}
 
- 
- 
-  
-  /* Ajuste adicional para evitar superposición con otros elementos */
-  .carousel-control-prev,
-  .carousel-control-next {
-    z-index: 500; /* Asegura que los controles no estén por encima del ícono */
-  }
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 600; /* Para estar por encima del contenido del carrusel */
+}
+
+.profile-name {
+  visibility: hidden; /* Oculto inicialmente */
+  text-decoration: underline; /* Subrayar el nombre */
+  margin-left: 10px; /* Separar el nombre de la imagen */
+  color: white; /* Color del texto */
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Animación suave */
+}
+
+.profile-container:hover .profile-name {
+  visibility: visible;
+  opacity: 1; /* Mostrar el nombre con animación */
+}
+
+/* Ícono de Facebook en la esquina superior derecha */
+.icon-facebook {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  font-size: 24px;
+  color: white;
+}
+
+/* Superposición de la información de la foto dentro de la imagen */
+.photo-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Título de la foto */
+.photo-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Likes */
+.photo-likes {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Texto Chevalier centrado */
+.chevalier-info {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Para centrar verticalmente en la mitad derecha */
+}
+
+/* Contenedor personalizado con márgenes laterales */
+.custom-container {
+  max-width: 1115px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajuste adicional para evitar superposición con otros elementos */
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 500; /* Asegura que los controles no estén por encima del ícono */
+}

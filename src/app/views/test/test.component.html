@@ -1,7 +1,9 @@
 <div *ngFor="let photo of photos" class="photo-container">
   <!-- Enlace a la foto en Facebook -->
   <a [href]="photo.link" target="_blank" rel="noopener noreferrer">
-    <img [src]="photo.source" alt="Photo" style="max-width: 100%; height: auto;">
+    <div class="image-wrapper">
+      <img [src]="photo.source" alt="Photo">
+    </div>
   </a>
 
   <!-- Título de la foto -->
@@ -13,7 +15,7 @@
   <!-- Imagen del usuario y enlace al perfil -->
   <div *ngIf="photo.from">
     <a [href]="profileLink(photo.from.id)" target="_blank" rel="noopener noreferrer">
-      <img [src]="profilePictureUrl(photo.from.id)" alt="{{ photo.from.name }}" style="width: 50px; height: 50px; border-radius: 50%;">
+      <img [src]="profilePictureUrl(photo.from.id)" alt="{{ photo.from.name }}" class="profile-pic">
     </a>
     <p>{{ photo.from.name }}</p>
   </div>
