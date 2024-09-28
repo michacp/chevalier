@@ -20,10 +20,10 @@
       "DESCRIPTION": "Expert barbers for a flawless look."
     }
   },
-  "GALLERY":{
-    "MEDIA_DESCRIPTION_1":"Experience the art of grooming with our professional barbers, ensuring a precise and stylish look every time.",
-    "MEDIA_DESCRIPTION_2":"Our premium beard care services leave your beard feeling soft, healthy, and perfectly groomed.",
-    "MEDIA_DESCRIPTION_3":"We combine tradition and modern techniques to deliver the perfect haircut that suits your personality."
+  "GALLERY": {
+    "MEDIA_DESCRIPTION_1": "Experience the art of grooming with our professional barbers, ensuring a precise and stylish look every time.",
+    "MEDIA_DESCRIPTION_2": "Our premium beard care services leave your beard feeling soft, healthy, and perfectly groomed.",
+    "MEDIA_DESCRIPTION_3": "We combine tradition and modern techniques to deliver the perfect haircut that suits your personality."
   },
   "SERVICES": {
     "TITLE": "Our Services",
@@ -96,9 +96,15 @@
     "PRODUCTS": "Products",
     "CONTACT_US": "Contact Us",
     "SOCIAL": "Social Media",
-    "COPYRIGHT": "All rights reserved"
+    "COPYRIGHT": "All rights reserved",
+    "LEGAL": {
+      "NAME": "Legal",
+      "TERMS_OF_SERVICE": "Terms of Service",
+      "PRIVACY_POLICY": "Privacy Policy",
+      "DATA_DELETION": "Data Deletion"
+    }
   },
-"ABOUT_US": {
+  "ABOUT_US": {
     "TITLE": "About Us",
     "HISTORY": {
       "TITLE": "History of the Barber Shop",
@@ -197,24 +203,20 @@
   "DATA_DELETION": {
     "TITLE": "Data Deletion Instructions",
     "INTRO": "At Chevalier Barber Shop, we value your privacy and offer you the option to delete the personal data you have shared with us. If you wish to request the deletion of your data, please follow the steps below:",
-    
     "REQUEST_TITLE": "1. Data Deletion Request",
     "REQUEST_DESC": "To request the deletion of your personal data, send an email to chevalierbarbershop13@gmail.com with the following information:",
     "REQUEST_NAME": "Your full name.",
     "REQUEST_EMAIL": "The email address associated with your account or booking.",
     "REQUEST_DESCRIPTION": "A description of the data you wish to delete (e.g., contact information, booking history, etc.).",
-    
     "PROCESS_TITLE": "2. Deletion Process",
     "PROCESS_DESC": "Once we receive your request, we will process the deletion of your data within 30 days. We will notify you once the process is complete.",
-    
     "CONSIDERATIONS_TITLE": "3. Important Considerations",
     "CONSIDERATIONS_DESC": "Deleting your data may affect access to previously contracted services or ongoing bookings. Some data may be retained for legal or compliance reasons, as required by applicable laws.",
     "CONSIDERATIONS_ACCESS": "Deleting your data may affect access to previously contracted services or ongoing bookings.",
     "CONSIDERATIONS_RETENTION": "Some data may be retained for legal or compliance reasons, as required by applicable laws.",
-    
     "CONTACT": "If you have any questions about the data deletion process, feel free to contact us at chevalierbarbershop13@gmail.com."
   },
-  "FACEBOOK":{
+  "FACEBOOK": {
     "NO_TITLE": "No title available",
     "LIKES": "Likes",
     "CHEVALIER_INFO": "Chevalier barbershop offers the best hairdressing and personal care services."

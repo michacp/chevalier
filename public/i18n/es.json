@@ -101,7 +101,13 @@
   "PRODUCTS": "Productos",
   "CONTACT_US": "Contáctenos",
   "SOCIAL": "Redes sociales",
-  "COPYRIGHT": "Todos los derechos reservados"
+  "COPYRIGHT": "Todos los derechos reservados",
+    "LEGAL": {
+      "NAME": "Legal",
+      "TERMS_OF_SERVICE": "Términos de Servicio",
+      "PRIVACY_POLICY": "Política de Privacidad",
+      "DATA_DELETION": "Política de Privacidad"
+    }
 }, 
 "ABOUT_US": {
     "TITLE": "Sobre Nosotros",

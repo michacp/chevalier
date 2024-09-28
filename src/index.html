@@ -1,8 +1,68 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>WebChevalier</title>
+  <meta charset="UTF-8">
+  <!-- Title of the page -->
+  <title>Chevalier Barber Shop | Corte de cabello, sombreado de barba y más en Azogues, Ecuador</title>
+
+  <!-- Etiquetas SEO en español -->
+  <meta name="description" content="Chevalier Barber Shop en Azogues, Cañar. Servicios profesionales como corte de cabello, sombreado de barba, limpieza facial, tinturado de cabello, mechas, y más. ¡Visítanos para una experiencia de primera!">
+  <meta name="keywords" content="barbería en Azogues, corte de cabello en Azogues, arreglo de barba, sombreado de barba, limpieza facial, tinturado de cabello, mechas, barbería Ecuador, Chevalier Barber Shop">
+
+  <!-- Etiquetas OG y Twitter -->
+  <meta property="og:title" content="Chevalier Barber Shop | Corte de cabello y más en Azogues">
+  <meta property="og:description" content="Barbería profesional en Azogues con cortes de cabello modernos, sombreado de barba, limpieza facial y más. Visítanos en Luis Cordero 4-09 y Sucre.">
+  <meta property="og:image" content="https://chevalierbarbershop.com/img/cara.png">
+  <meta property="og:url" content="https://chevalierbarbershop.com/">
+
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarberShop",
+      "name": "Chevalier Barber Shop",
+      "image": "https://chevalierbarbershop.com/img/cara.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Luis Cordero 4-09 y Sucre",
+        "addressLocality": "Azogues",
+        "addressRegion": "Cañar",
+        "addressCountry": "Ecuador"
+      },
+      "telephone": "0963607460",
+      "url": "https://chevalierbarbershop.com/",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "service": [
+        {
+          "@type": "Service",
+          "name": "Corte General",
+          "description": "Cortes de cabello modernos y clásicos para hombres en Azogues.",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Service",
+          "name": "General Haircut",
+          "description": "Modern and classic haircuts for men in Azogues.",
+          "inLanguage": "en"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Base URL and icons -->
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="img/cara.png">
@@ -12,6 +72,6 @@
 
 </head>
 <body class="mat-typography">
-  <app-root></app-root> 
+  <app-root></app-root>
 </body>
 </html>
