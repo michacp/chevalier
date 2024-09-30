@@ -19,10 +19,7 @@ export class NavbarComponent {
     this.isScrolled = window.scrollY > 50;
   }
 
-  changeLanguage(lang: string) {
-    // console.log(event)
-    // const selectElement = event.target as HTMLSelectElement; // Convertimos el EventTarget en HTMLSelectElement
-    // const language = selectElement.value; // Ahora podemos acceder a la propiedad value
+  changeLanguage(lang: string) { 
      
     this.translate.use(lang);
   }
