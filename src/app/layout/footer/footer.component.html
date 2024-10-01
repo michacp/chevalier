@@ -2,16 +2,16 @@
     <div class="footer-container">
       <!-- Logo y nombre de la empresa -->
       <div class="footer-column">
-        <img src="img/cara.png" alt="Logo" class="footer-logo" />
+        <img src="img/caranav.png" alt="Logo" class="footer-logo" />
         <h3>CHEVALIER</h3>
       </div>
   
       <!-- Información de contacto -->
       <div class="footer-column">
         <h4>{{ 'FOOTER.CONTACT_INFO' | translate }}</h4>
-        <p>{{ 'FOOTER.PHONE' | translate }}: 0984287409</p>
-        <p>{{ 'FOOTER.ADDRESS' | translate }}: Luis Cordero 4-09 y Sucre</p>
-        <p>{{ 'FOOTER.EMAIL' | translate }}: contacto&#64;chevalier.com</p>
+        <p>{{ 'FOOTER.PHONE' | translate }}: {{personalDAta.phone}}</p>
+        <p>{{ 'FOOTER.ADDRESS' | translate }}: {{personalDAta.adress}}</p>
+        <p>{{ 'FOOTER.EMAIL' | translate }}: {{personalDAta.email}}</p>
       </div>
   
       <!-- Enlaces útiles -->
@@ -35,9 +35,9 @@
       <!-- Redes sociales -->
       <div class="footer-column">
         <h4>{{ 'FOOTER.SOCIAL' | translate }}</h4>
-        <a href="#"><mat-icon>facebook</mat-icon></a>
-        <a href="#"><mat-icon>instagram</mat-icon></a>
-        <a href="#"><mat-icon>tiktok</mat-icon></a>
+        <a [href]="socialLinks.facebook" target="_blank"><mat-icon>facebook</mat-icon></a>
+        <a [href]="socialLinks.instagram" target="_blank"><mat-icon>instagram</mat-icon></a>
+        <a  [href]="socialLinks.tiktok" target="_blank"><mat-icon>tiktok</mat-icon></a>
       </div>
     </div>
   

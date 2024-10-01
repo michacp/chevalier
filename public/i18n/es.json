@@ -87,8 +87,8 @@
   "ADDRESS": "Dirección",
   "EMAIL": "Correo electrónico",
   "HOURS": "Horario de atención",
-  "HOURS_WEEKDAYS": "Días de semana",
-  "HOURS_WEEKENDS": "Fines de semana"
+  "HOURS_WEEKDAYS": "Lunes a Sábado",
+  "HOURS_WEEKENDS": "Domingo"
 },
 "FOOTER": {
   "CONTACT_INFO": "Información de contacto",

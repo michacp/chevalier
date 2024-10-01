@@ -1,5 +1,6 @@
-import { Component , HostListener } from '@angular/core';
+import { Component  } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DataService } from '../../service/data/data.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,18 +10,24 @@ export class NavbarComponent {
   isScrolled = false;
   languages = ['en', 'es'];
   selectedLanguage = 'es';
-
-  constructor(private translate: TranslateService) {
+  socialLinks: any;
+  constructor(private translate: TranslateService,private dataService: DataService) {
     this.translate.setDefaultLang(this.selectedLanguage);
   }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+ 
+  ngOnInit(): void { 
+    this.socialLinks = this.dataService.socialLinks;
   }
-
   changeLanguage(lang: string) { 
      
     this.translate.use(lang);
+  }
+
+  isMenuOpen = false;
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

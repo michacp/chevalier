@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DataService } from '../../service/data/data.service';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
-
+  personalDAta:any;
   services = [
     {
       name: 'SERVICES.GENERAL_CUT',
@@ -51,10 +52,10 @@ export class WelcomeComponent {
   experienceTitleKey = 'EXPERIENCE.TITLE';
   experienceDescriptionKey = 'EXPERIENCE.DESCRIPTION';
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService,private dataService: DataService) { }
 
   ngOnInit(): void {
- 
+    this.personalDAta=this.dataService.dataPersonal;
   }
  
 }

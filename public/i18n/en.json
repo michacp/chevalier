@@ -82,8 +82,8 @@
     "ADDRESS": "Address",
     "EMAIL": "Email",
     "HOURS": "Opening Hours",
-    "HOURS_WEEKDAYS": "Weekdays",
-    "HOURS_WEEKENDS": "Weekends"
+    "HOURS_WEEKDAYS": "Monday to Saturday",
+    "HOURS_WEEKENDS": "Sunday"
   },
   "FOOTER": {
     "CONTACT_INFO": "Contact Information",

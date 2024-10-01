@@ -1,15 +1,15 @@
-
-
 <app-carrucelwelcome></app-carrucelwelcome>
 
-<div class="container-fluid mt-4 custom-container"  > 
-<!-- Seccion del carrucel ticktock -->
-<app-tiktok-carrucel></app-tiktok-carrucel>
-<!-- Seccion del carrucel facebook -->
- <app-fb-photodisplay></app-fb-photodisplay>
+
+<div class="container-fluid mt-4 custom-container">
+
+  <!-- Seccion del carrucel ticktock -->
+  <app-tiktok-carrucel></app-tiktok-carrucel>
+  <!-- Seccion del carrucel facebook -->
+  <app-fb-photodisplay></app-fb-photodisplay>
 
   <!-- Sección sobre nuestra experiencia -->
-<section class="experience-section py-5">
+  <section class="experience-section py-5">
     <div class="container text-center">
       <h2>{{ experienceTitleKey | translate }}</h2>
       <p class="lead">{{ experienceDescriptionKey | translate }}</p>
@@ -33,7 +33,7 @@
 
   <section class="services-section">
     <h2>{{ 'SERVICES.TITLE' | translate }}</h2>
-    
+
     <div class="services-container">
       <mat-card class="service-card" *ngFor="let service of services">
         <mat-card-header>
@@ -58,7 +58,7 @@
           <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
           <mat-card-content>
             <p>{{ product.description | translate }}</p>
-          </mat-card-content> 
+          </mat-card-content>
         </mat-card>
       </div>
     </div>
@@ -72,35 +72,35 @@
           <mat-card-title>{{ 'CONTACT.PHONE' | translate }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>0984287409</p>
+          <p>{{personalDAta.phone}}</p>
         </mat-card-content>
       </mat-card>
-  
+
       <mat-card class="contact-card">
         <mat-card-header>
           <mat-card-title>{{ 'CONTACT.ADDRESS' | translate }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>Luis Cordero 4-09 y Sucre</p>
+          <p>{{personalDAta.adress}}</p>
         </mat-card-content>
       </mat-card>
-  
+
       <mat-card class="contact-card">
         <mat-card-header>
           <mat-card-title>{{ 'CONTACT.EMAIL' | translate }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>contacto&#64;chevalier.com</p>
+          <p>{{personalDAta.email}}</p>
         </mat-card-content>
       </mat-card>
-  
+
       <mat-card class="contact-card">
         <mat-card-header>
           <mat-card-title>{{ 'CONTACT.HOURS' | translate }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>{{ 'CONTACT.HOURS_WEEKDAYS' | translate }}: 9:00 AM - 7:00 PM</p>
-          <p>{{ 'CONTACT.HOURS_WEEKENDS' | translate }}: 10:00 AM - 6:00 PM</p>
+          <p>{{ 'CONTACT.HOURS_WEEKDAYS' | translate }}: 8:00 AM - 8:00 PM</p>
+          <p>{{ 'CONTACT.HOURS_WEEKENDS' | translate }}: 9:00 AM - 7:00 PM</p>
         </mat-card-content>
       </mat-card>
     </div>
