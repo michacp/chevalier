@@ -1,6 +1,6 @@
 
   .experience-section {
-    background-color: #f8f9fa; /* Color de fondo claro */
+    background-color: #ffffff; /* Color de fondo claro */
     padding: 50px 0;
   }
   
@@ -14,75 +14,151 @@
     color: #6c757d;
   }
 
+/* galleria */
+.media-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 20px;
+}
 
-  .media-gallery {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 40px 20px;
-    gap: 20px;
-  }
-  
-  .media-item {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .media-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .media-item p {
-    font-size: 1rem;
-    color: #7f8c8d;
-  }
+.media-item {
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+}
 
+.image-container {
+  width: 300px; /* Fijar el ancho de las imágenes */
+  height: 225px; /* Mantener relación 4:3 (300x225) */
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto; /* Centramos el contenedor de la imagen */
+}
+
+.image-container img {
+  width: 300px; /* Fijar el tamaño de la imagen */
+  height: 225px; /* Mantener relación de aspecto */
+  object-fit: cover; /* Asegura que la imagen se recorte si es necesario */
+  transition: transform 0.3s ease;
+}
+
+.media-item p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.media-item:hover .image-container img {
+  transform: translateY(-10px); /* Mueve la imagen hacia arriba */
+}
+
+.media-item:hover p {
+  color: #34495e;
+  transform: translateY(-10px); /* Mueve el texto hacia arriba */
+}
+
+.media-item:hover {
+  transform: translateY(-10px); /* Mueve todo el item hacia arriba */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Hover effect */
+.media-item:hover .image-container img {
+  transform: translateY(-10px); /* Mueve la imagen hacia arriba */
+}
+
+.media-item:hover p {
+  color: #34495e;
+  transform: translateY(-10px); /* Mueve el texto hacia arriba */
+}
+
+.media-item:hover {
+  transform: translateY(-10px); /* Mueve todo el item hacia arriba */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* servicios */
   .services-section {
-    padding: 40px 20px; /* Aumenta el padding para más espacio */
-    background-color: #f9f9f9;
+    padding: 40px 20px;
+    background-color: #ffffff;
   }
   
   .services-section h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5rem;
-    color: #1a1a1a; /* Letras negras para el título */
+    color: #333333;
   }
   
   .services-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Aumenta el espacio entre las tarjetas */
-    align-items: stretch; /* Estira las tarjetas para igualar su altura */
+    justify-content: space-between;
+    align-items: stretch;
   }
   
   .service-card {
-    width: 395px; /* Ancho mayor para hacer la tarjeta más grande */
+    width: 300px; /* Tamaño fijo para todas las tarjetas */
+    height: 500px; /* Altura fija */
     margin: 20px;
-    background-color: #e1e3f7; /* Gris claro para las tarjetas */
-    color: #1a1a1a; /* Letras negras para el contenido */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #1a1a1a;
     border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    transition: transform 0.3s ease; /* Suaviza el efecto hover */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
   }
   
   .service-card:hover {
-    transform: translateY(-10px); /* Eleva la tarjeta en hover */
+    transform: translateY(-10px);
   }
   
   .service-card img {
-    margin-top: 50px;
-    height: 200px;
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
-
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 10px;
-    /* border-top-left-radius: 10px;
-    border-top-right-radius: 10px; Bordes redondeados solo arriba */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #dddddd;
   }
+  
+  mat-card-content {
+    flex-grow: 1; /* Para llenar el espacio restante con contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .service-card p {
+    margin: 10px 0;
+    flex-grow: 1; /* Asegura que el texto no cambie el tamaño de la tarjeta */
+  }
+  
+  mat-card-footer {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  mat-card-title {
+    font-size: 1.3rem; /* Título más pequeño */
+    color: #1a1a1a;
+  }
+  
+  mat-card-subtitle {
+    font-size: 1rem; /* Subtítulo más pequeño */
+    color: #888888;
+  }
+  
+ 
  
   mat-card {
     background-color: #f8e1b4  ; 
@@ -129,50 +205,78 @@
   }
 
 
-  
+  /* productos */
 
   .products-section {
     padding: 40px 20px;
-    background-color: #f4f4f4;
+    background-color: #ffffff; /* Fondo blanco elegante */
   }
   
   .products-section h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5rem;
-    color: #1a1a1a; /* Color negro para el título */
+    color: #333333; /* Tono gris oscuro */
+    font-weight: 600; /* Más grosor para el título */
   }
   
   .products-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 10px; /* Reduce el espacio entre las tarjetas */
     align-items: stretch;
   }
   
   .product-card {
     width: 300px;
-    margin: 20px;
-    background-color: #f8e1b4 ; /* Color dorado suave con !important */
+    margin: 10px; /* Reduce el margen de las tarjetas */
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ocultar los bordes redondeados */
   }
   
   .product-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hacer hover */
   }
   
   .product-card img {
-    height: 200px;
     width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* Mantener relación 4:3 */
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
   
+  mat-card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333333; /* Tono gris oscuro */
+    margin: 15px 0 5px;
+  }
+  
+  mat-card-subtitle {
+    font-size: 1rem;
+    color: #888888; /* Color gris */
+  }
+  
+  mat-card-content p {
+    font-size: 0.95rem;
+    color: #555555; /* Tono gris medio */
+  }
+  
+  mat-card {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  
 
-
+/* contacto */
   .contact-section {
     padding: 40px;
     background-color: #f9f9f9;

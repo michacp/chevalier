@@ -1,4 +1,4 @@
-import { Component  } from '@angular/core';
+import { Component, HostListener  } from '@angular/core';
 import { DataService } from '../../service/data/data.service';
 @Component({
   selector: 'app-footer',
@@ -14,5 +14,17 @@ export class FooterComponent {
   ngOnInit(): void { 
     this.socialLinks = this.dataService.socialLinks;
     this.personalDAta=this.dataService.dataPersonal;
+  }
+  isInView = false;
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const footer = document.querySelector('.footer-section');
+    const rect = footer?.getBoundingClientRect();
+    if (rect && rect.top < window.innerHeight) {
+      this.isInView = true;
+    } else {
+      this.isInView = false;
+    }
   }
 }

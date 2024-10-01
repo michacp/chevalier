@@ -20,6 +20,10 @@
       "DESCRIPTION": "Expert barbers for a flawless look."
     }
   },
+  "EXPERIENCE": {
+    "TITLE": "Our Experience",
+    "DESCRIPTION": "With over 4 years of providing professional barber services, we guarantee exceptional care for your hair and beard. Our skilled barbers are dedicated to delivering personalized styles and ensuring that every visit leaves you looking and feeling your best. We take pride in using high-quality products and staying updated with the latest trends to meet all your grooming needs."
+  },
   "GALLERY": {
     "MEDIA_DESCRIPTION_1": "Experience the art of grooming with our professional barbers, ensuring a precise and stylish look every time.",
     "MEDIA_DESCRIPTION_2": "Our premium beard care services leave your beard feeling soft, healthy, and perfectly groomed.",

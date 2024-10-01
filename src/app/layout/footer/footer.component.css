@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
   }
   
   .footer-container {
@@ -54,3 +56,10 @@
     color: #f0d19a; /* Color dorado para los íconos */
   }
   
+ 
+  .footer-section.in-view {
+    opacity: 1;
+  }
+  .contact-info p {
+    font-size: 0.7rem; /* Ajusta el tamaño de las letras aquí */
+  }
