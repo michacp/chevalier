@@ -34,7 +34,8 @@ import { PrivacyPolicyComponent } from './views/privacy-policy/privacy-policy.co
 import { TermsOfServiceComponent } from './views/terms-of-service/terms-of-service.component';
 import { DataDeletionComponent } from './views/data-deletion/data-deletion.component';
 import { FbPhotodisplayComponent } from './layout/fb-photodisplay/fb-photodisplay.component';
-import { CarrucelwelcomeComponent } from './layout/carrucelwelcome/carrucelwelcome.component';  
+import { CarrucelwelcomeComponent } from './layout/carrucelwelcome/carrucelwelcome.component';
+import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';  
  
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
@@ -60,7 +61,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TermsOfServiceComponent,
     DataDeletionComponent,
     FbPhotodisplayComponent,
-    CarrucelwelcomeComponent
+    CarrucelwelcomeComponent,
+    FeedbackFormComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { TestComponent } from './views/test/test.component';
 import { PrivacyPolicyComponent } from './views/privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './views/terms-of-service/terms-of-service.component';
 import { DataDeletionComponent } from './views/data-deletion/data-deletion.component';
+import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
 const routes: Routes = [
   
   {path:'',component:WelcomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'privacy-policy',component:PrivacyPolicyComponent },
   {path:'terms-of-service',component:TermsOfServiceComponent },
   {path:'data-deletion',component:DataDeletionComponent },
+  {path:'comments',component:FeedbackFormComponent  },
 ];
 
 @NgModule({

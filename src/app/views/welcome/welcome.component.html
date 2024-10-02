@@ -74,42 +74,33 @@
   <section class="contact-section">
     <h2>{{ 'CONTACT.TITLE' | translate }}</h2>
     <div class="contact-container">
-      <mat-card class="contact-card">
-        <mat-card-header>
-          <mat-card-title>{{ 'CONTACT.PHONE' | translate }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{personalDAta.phone}}</p>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="contact-card">
-        <mat-card-header>
-          <mat-card-title>{{ 'CONTACT.ADDRESS' | translate }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{personalDAta.adress}}</p>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="contact-card">
-        <mat-card-header>
-          <mat-card-title>{{ 'CONTACT.EMAIL' | translate }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{personalDAta.email}}</p>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="contact-card">
-        <mat-card-header>
-          <mat-card-title>{{ 'CONTACT.HOURS' | translate }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ 'CONTACT.HOURS_WEEKDAYS' | translate }}: 8:00 AM - 8:00 PM</p>
-          <p>{{ 'CONTACT.HOURS_WEEKENDS' | translate }}: 9:00 AM - 7:00 PM</p>
-        </mat-card-content>
-      </mat-card>
+      <div class="contact-item">
+        <h3>{{ 'CONTACT.PHONE' | translate }}</h3>
+        <p>{{personalDAta.phone}}</p>
+      </div>
+  
+      <div class="contact-item">
+        <h3>{{ 'CONTACT.ADDRESS' | translate }}</h3>
+        <p>{{personalDAta.adress}}</p>
+      </div>
+  
+      <div class="contact-item">
+        <h3>{{ 'CONTACT.EMAIL' | translate }}</h3>
+        <p>{{personalDAta.email}}</p>
+      </div>
+  
+      <div class="contact-item">
+        <h3>{{ 'CONTACT.HOURS' | translate }}</h3>
+        <div class="hours-section">
+          <p>{{ 'CONTACT.HOURS_WEEKDAYS' | translate }}</p>
+          <p>8:00 AM - 8:00 PM</p>
+          <p>{{ 'CONTACT.HOURS_WEEKENDS' | translate }}</p>
+          <p>9:00 AM - 7:00 PM</p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <app-feedback-form></app-feedback-form>
+  
 </div>

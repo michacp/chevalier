@@ -4,6 +4,7 @@
     "ABOUT": "About Us",
     "SERVICES": "Our Services",
     "PRODUCTS": "Products",
+    "COMMENTS": "Commnets",
     "LANGUAGE": "Language"
   },
   "CAROUSEL": {
@@ -88,6 +89,16 @@
     "HOURS": "Opening Hours",
     "HOURS_WEEKDAYS": "Monday to Saturday",
     "HOURS_WEEKENDS": "Sunday"
+  },
+  "FEEDBACK": {
+    "TITLE": "Comments, Suggestions, and Recommendations",
+    "DESCRIPTION": "We value your feedback.",
+    "DETAILS": "We want to hear your comments, suggestions, and recommendations to continuously improve our services.",
+    "DETAILS1":"Your comments are completely anonymous.",
+    "LABEL": "Write your comments here:",
+    "PLACEHOLDER": "Write your comments, suggestions, or recommendations...",
+    "ANONYMOUS_MESSAGE": "This form is completely anonymous.",
+    "SUBMIT": "Submit"
   },
   "FOOTER": {
     "CONTACT_INFO": "Contact Information",

@@ -4,6 +4,7 @@
     "ABOUT": "Nosotros",
     "SERVICES": "Servicios",
     "PRODUCTS": "Productos",
+    "COMMENTS": "Comentarios",
     "LANGUAGE": "Idioma"
   },
 "CAROUSEL": {
@@ -89,6 +90,16 @@
   "HOURS": "Horario de atención",
   "HOURS_WEEKDAYS": "Lunes a Sábado",
   "HOURS_WEEKENDS": "Domingo"
+},
+"FEEDBACK": {
+  "TITLE": "Comentarios, Sugerencias y Recomendaciones",
+  "DESCRIPTION": "Nos importa tu opinión.",
+  "DETAILS": "Queremos escuchar tus comentarios, sugerencias y recomendaciones para mejorar continuamente nuestros servicios.",
+  "DETAILS1":"Tus comentarios son totalmente anónimos.",
+  "LABEL": "Escribe tus comentarios aquí:",
+  "PLACEHOLDER": "Escribe tus comentarios, sugerencias o recomendaciones...",
+  "ANONYMOUS_MESSAGE": "Este formulario es totalmente anónimo.",
+  "SUBMIT": "Enviar"
 },
 "FOOTER": {
   "CONTACT_INFO": "Información de contacto",
