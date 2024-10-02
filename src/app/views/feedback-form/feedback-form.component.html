@@ -1,4 +1,4 @@
-<app-banner [title]="'NAVBAR.COMMENTS'" [pageName]="'NAVBAR.COMMENTS'"></app-banner>
+<app-banner *ngIf="isCommentsPage()" [title]="'NAVBAR.COMMENTS'" [pageName]="'NAVBAR.COMMENTS'"></app-banner>
 <section class="feedback-section">
     <h2>{{ 'FEEDBACK.TITLE' | translate }}</h2>
   
