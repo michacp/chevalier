@@ -1,95 +1,115 @@
-  /* sugerencias  */
-  .feedback-section {
-    padding: 40px;
-    background-color: #f9f9f9;
-  }
-  
-  .feedback-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-    color: #1a1a1a;
-  }
-  
+  /* sugerencias  */.feedback-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.feedback-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+
+.feedback-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre los elementos */
+}
+
+.feedback-description, .feedback-form {
+  flex: 1;
+  padding: 20px;
+  max-width: 45%;
+}
+
+.feedback-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-form label {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.feedback-form .anonymous-message {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.feedback-form button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-form button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.feedback-left p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+.feedback-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
   .feedback-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
-  }
-  
-  .feedback-description {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    max-width: 45%;
-    font-size: 1.1rem;
-    color: #1a1a1a;
-    text-align: center; /* Para centrar horizontalmente el texto */
-  }
-  
-  .feedback-form {
-    flex: 1;
-    padding: 20px;
-    max-width: 45%;
-    display: flex;
     flex-direction: column;
+    align-items: center; /* Centrar los elementos en columnas */
   }
-  
-  .feedback-form label {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #1a1a1a;
+
+  .feedback-description, .feedback-form {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
   }
-  
-  .feedback-form textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    font-size: 1rem;
-  }
-  
-  .feedback-form .anonymous-message {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-bottom: 20px;
-  }
-  
-  .feedback-form button {
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .feedback-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .feedback-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    height: 100%; /* Asegura que ocupe toda la altura disponible */
-    text-align: center; /* Centra el texto */
-  }
-  
-  .feedback-left p {
-    margin-bottom: 20px; /* Espacio entre los párrafos */
-    font-size: 1.2rem; /* Ajusta el tamaño del texto */
-    color: #1a1a1a;
-  }
-  
-  .feedback-left p:last-child {
-    margin-bottom: 0; /* Elimina el margen en el último párrafo */
+}
+
+
+  .custom-container {
+    max-width: 1115px;
+    margin-left: auto;
+    margin-right: auto;
+   
   }

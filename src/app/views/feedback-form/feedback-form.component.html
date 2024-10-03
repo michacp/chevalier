@@ -1,5 +1,6 @@
 <app-banner *ngIf="isCommentsPage()" [title]="'NAVBAR.COMMENTS'" [pageName]="'NAVBAR.COMMENTS'"></app-banner>
-<section class="feedback-section">
+<div class="container-fluid mt-4 custom-container">
+  <section class="feedback-section">
     <h2>{{ 'FEEDBACK.TITLE' | translate }}</h2>
   
     <div class="feedback-container">
@@ -11,11 +12,20 @@
         </div>
       </div>
   
-      <form class="feedback-form">
+      <form id="demo-form"  >
         <label for="comments">{{ 'FEEDBACK.LABEL' | translate }}</label>
         <textarea id="comments" placeholder="{{ 'FEEDBACK.PLACEHOLDER' | translate }}"></textarea>
         <p class="anonymous-message">{{ 'FEEDBACK.ANONYMOUS_MESSAGE' | translate }}</p>
-        <button type="submit">{{ 'FEEDBACK.SUBMIT' | translate }}</button>
+        <button (click)="onSubmit()" class="g-recaptcha" data-sitekey="6Le83VUqAAAAAAdwGCtIGFF5QTEc82FNsFYWIbKt">
+          Submit
+        </button>
+        <!-- <button class="g-recaptcha"
+                data-sitekey="6Le83VUqAAAAAAdwGCtIGFF5QTEc82FNsFYWIbKt"
+                data-callback="onSubmit"
+                data-action="submit">
+          {{ 'FEEDBACK.SUBMIT' | translate }}
+        </button> -->
       </form>
     </div>
   </section>
+</div>
