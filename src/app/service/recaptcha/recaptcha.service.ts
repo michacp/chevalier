@@ -31,15 +31,15 @@ url: string = `${this.apiUrl}/`
   }
 
   // Enviar los datos al backend usando Axios
-  async sendFeedback(data: { comments: string, recaptchaToken: string }): Promise<any> {
+  async sendFeedback(data: any): Promise<any> {
     try {
-      const response = await axios.post(this.url + 'submit-feedback', {comments:data.comments}, {
+      const response = await axios.post(this.url + 'submit-feedback', {comments:data.comment}, {
         headers: {
           'Content-Type': 'application/json',
-          'recaptcha-token': data.recaptchaToken // Envía el token en los headers
+          'recaptcha-token': data.token // Envía el token en los headers
         }
       });
-      return response.data;
+      return  response.data;
     } catch (error) {
       throw error;
     }

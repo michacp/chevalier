@@ -20,7 +20,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AboutusComponent } from './views/aboutus/aboutus.component';
 import { BannerComponent } from './layout/banner/banner.component';
@@ -36,8 +36,7 @@ import { DataDeletionComponent } from './views/data-deletion/data-deletion.compo
 import { FbPhotodisplayComponent } from './layout/fb-photodisplay/fb-photodisplay.component';
 import { CarrucelwelcomeComponent } from './layout/carrucelwelcome/carrucelwelcome.component';
 import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
-import { TermsComponent } from './views/terms/terms.component';  
- 
+import { TermsComponent } from './views/terms/terms.component';   
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
 }
@@ -76,6 +75,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSelectModule, 
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule ,
     HttpClientModule,
     MatCardModule, 
     TranslateModule.forRoot({

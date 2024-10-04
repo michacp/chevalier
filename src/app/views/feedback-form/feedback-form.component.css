@@ -1,13 +1,10 @@
-  /* sugerencias  */.feedback-section {
+.feedback-section {
   padding: 40px;
   background-color: #f9f9f9;
-}
-
-.feedback-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: #1a1a1a;
+  height: 500px; /* Establece un alto fijo para toda la sección */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .feedback-container {
@@ -15,98 +12,117 @@
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
-  gap: 20px; /* Espacio entre los elementos */
-}
-
-.feedback-description, .feedback-form {
-  flex: 1;
-  padding: 20px;
-  max-width: 45%;
+  gap: 20px;
+  height: 100%; /* Asegúrate de que el contenedor ocupe todo el alto de la sección */
 }
 
 .feedback-description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.1rem;
-  color: #1a1a1a;
-  text-align: center;
+  flex: 1;
+  padding: 20px;
+  max-width: 50%; /* Ocupa la mitad izquierda */
 }
 
-.feedback-form {
+.custom-feedback-form {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 50%; /* Ocupa la mitad derecha */
+  height: 100%; /* Ocupa todo el alto */
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Asegura que el contenido esté espaciado */
 }
 
-.feedback-form label {
+.custom-feedback-form-label {
+  font-size: 1.1rem;
+  color: #333;
   margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #1a1a1a;
+  font-weight: 600;
 }
 
-.feedback-form textarea {
+.custom-feedback-textarea {
   width: 100%;
   height: 150px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
+  padding: 15px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.feedback-form .anonymous-message {
-  font-size: 0.9rem;
-  color: #6c757d;
+.custom-feedback-textarea:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.custom-anonymous-message {
+  font-size: 0.85rem;
+  color: #888;
   margin-bottom: 20px;
+  font-style: italic;
 }
 
-.feedback-form button {
-  padding: 10px 20px;
+.custom-feedback-button {
+  width: 100%;
+  padding: 12px 20px;
   font-size: 1.1rem;
   color: #fff;
   background-color: #007bff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.feedback-form button:hover {
+.custom-feedback-button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
-.feedback-left {
+.custom-feedback-button:active {
+  transform: translateY(0);
+}
+
+/* Mensaje de éxito */
+.success-message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   text-align: center;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ocupa el mismo espacio que el formulario */
 }
 
-.feedback-left p {
+.success-icon {
+  font-size: 3rem;
+  color: #28a745;
   margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #1a1a1a;
 }
 
-.feedback-left p:last-child {
-  margin-bottom: 0;
+.success-message p {
+  font-size: 1.5rem;
+  color: #28a745;
 }
 
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
-  .feedback-container {
-    flex-direction: column;
-    align-items: center; /* Centrar los elementos en columnas */
-  }
-
-  .feedback-description, .feedback-form {
-    max-width: 100%; /* Ocupa todo el ancho disponible */
+  .feedback-description, .custom-feedback-form {
+    max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
   }
 }
 
 
+/*  */
   .custom-container {
     max-width: 1115px;
     margin-left: auto;

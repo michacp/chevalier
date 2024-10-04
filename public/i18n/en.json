@@ -94,11 +94,13 @@
     "TITLE": "Comments, Suggestions, and Recommendations",
     "DESCRIPTION": "We value your feedback.",
     "DETAILS": "We want to hear your comments, suggestions, and recommendations to continuously improve our services.",
-    "DETAILS1":"Your comments are completely anonymous.",
+    "DETAILS1": "Your comments are completely anonymous.",
     "LABEL": "Write your comments here:",
     "PLACEHOLDER": "Write your comments, suggestions, or recommendations...",
     "ANONYMOUS_MESSAGE": "This form is completely anonymous.",
-    "SUBMIT": "Submit"
+    "SUBMIT": "Submit",
+    "SUCCESS_MESSAGE": "Thank you for your feedback!",
+    "SUBMITTING": "Submitting..."
   },
   "FOOTER": {
     "CONTACT_INFO": "Contact Information",
@@ -236,17 +238,35 @@
     "LIKES": "Likes",
     "CHEVALIER_INFO": "Chevalier barbershop offers the best hairdressing and personal care services."
   },
-  "TERMSSERVICE":{
-    "TERMS_TITLE": "Terms of Service",
-    "TERMS_1": "By accessing and using the Chevalier Barber Shop website, you agree to comply with these Terms of Service and any applicable laws. If you do not agree with these terms, please do not use our services.",
-    "TERMS_2": "Chevalier Barber Shop offers barbering services and products for sale. We reserve the right to modify or discontinue our services at any time without prior notice.",
-    "TERMS_3": "Reservations for services can be made through our website or by direct contact. We reserve the right to reject or cancel a reservation in case of limited availability or under special circumstances. If you wish to cancel a reservation, you must do so at least 3 hours in advance.",
-    "TERMS_4": "The prices for services and products offered are listed on the website and are subject to change without notice. Payments must be made upon completion of the service or when purchasing products, through the accepted payment methods in our establishment or on the website.",
-    "TERMS_5": "All content on this website, including texts, images, graphics, logos, and other materials, is the property of Chevalier Barber Shop or its licensors and is protected by intellectual property laws. Its use is not allowed without the prior written consent of Chevalier Barber Shop.",
-    "TERMS_6": "Chevalier Barber Shop will not be responsible for any direct, indirect, incidental, or consequential damages arising from the use of our services or the website. We reserve the right to update, modify, or delete any information on the site without prior notice.",
-    "TERMS_7": "This website may contain links to third-party websites. We are not responsible for the content or practices of such external sites.",
-    "TERMS_8": "We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page and will take effect immediately after publication.",
-    "TERMS_9": "These Terms of Service are governed by the laws in force in Ecuador. Any dispute related to the use of our services or the website will be resolved in the competent courts of that jurisdiction.",
-    "TERMS_10": "If you have any questions or concerns about these Terms of Service, you can contact us at chevalierbarbershop13@gmail.com."
+"TERMSSERVICE": {
+    "TERM_1_TITLE": "Acceptance of the Terms",
+    "TERM_1_DESC": "By accessing and using the Chevalier Barber Shop website, you agree to comply with these Terms of Service and any applicable laws. If you do not agree to these terms, please do not use our services.",
+    
+    "TERM_2_TITLE": "Services Offered",
+    "TERM_2_DESC": "Chevalier Barber Shop offers barber services and products for sale. We reserve the right to modify or discontinue our services at any time without prior notice.",
+    
+    "TERM_3_TITLE": "Reservations and Cancellations",
+    "TERM_3_DESC": "Reservations for services can be made through our website or by direct contact. We reserve the right to reject or cancel a reservation in case of limited availability or under special circumstances. If you wish to cancel a reservation, you must do so at least 3 hours in advance.",
+    
+    "TERM_4_TITLE": "Prices and Payments",
+    "TERM_4_DESC": "The prices of the services and products offered are listed on the website and are subject to change without prior notice. Payments must be made upon completion of the service or when purchasing products, through the accepted payment methods at our establishment or website.",
+    
+    "TERM_5_TITLE": "Intellectual Property",
+    "TERM_5_DESC": "All content on this website, including texts, images, graphics, logos, and other materials, is the property of Chevalier Barber Shop or its licensors and is protected by intellectual property laws. Its use is not permitted without prior written consent from Chevalier Barber Shop.",
+    
+    "TERM_6_TITLE": "Limitation of Liability",
+    "TERM_6_DESC": "Chevalier Barber Shop will not be responsible for any direct, indirect, incidental, or consequential damages arising from the use of our services or the website. We reserve the right to update, modify, or delete any information on the site without prior notice.",
+    
+    "TERM_7_TITLE": "Third-Party Links",
+    "TERM_7_DESC": "This website may contain links to third-party websites. We are not responsible for the content or practices of these external sites.",
+    
+    "TERM_8_TITLE": "Modifications to the Terms",
+    "TERM_8_DESC": "We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page and will take effect immediately upon publication.",
+    
+    "TERM_9_TITLE": "Governing Law",
+    "TERM_9_DESC": "These Terms of Service are governed by the laws in force in Ecuador. Any dispute related to the use of our services or website will be resolved in the competent courts of that jurisdiction.",
+    
+    "TERM_10_TITLE": "Contact",
+    "TERM_10_DESC": "If you have any questions or concerns about these Terms of Service, you can contact us at chevalierbarbershop13@gmail.com."
   }
 }

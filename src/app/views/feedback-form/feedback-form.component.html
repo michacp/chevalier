@@ -1,7 +1,6 @@
 <app-banner *ngIf="isCommentsPage()" [title]="'NAVBAR.COMMENTS'" [pageName]="'NAVBAR.COMMENTS'"></app-banner>
 <div class="container-fluid mt-4 custom-container">
-  <section class="feedback-section">
-    <h2>{{ 'FEEDBACK.TITLE' | translate }}</h2>
+  <section class="feedback-section"> 
   
     <div class="feedback-container">
       <div class="feedback-description">
@@ -12,20 +11,22 @@
         </div>
       </div>
   
-      <form id="demo-form"  >
-        <label for="comments">{{ 'FEEDBACK.LABEL' | translate }}</label>
-        <textarea id="comments" placeholder="{{ 'FEEDBACK.PLACEHOLDER' | translate }}"></textarea>
-        <p class="anonymous-message">{{ 'FEEDBACK.ANONYMOUS_MESSAGE' | translate }}</p>
-        <button (click)="onSubmit()" class="g-recaptcha" data-sitekey="6Le83VUqAAAAAAdwGCtIGFF5QTEc82FNsFYWIbKt">
-          Submit
+      <!-- Mostrar el formulario si el comentario no ha sido enviado -->
+      <form *ngIf="!isFeedbackSent" id="demo-form" [formGroup]="commentsForm" class="custom-feedback-form">
+        <label for="comments" class="custom-feedback-form-label">{{ 'FEEDBACK.LABEL' | translate }}</label>
+        <textarea formControlName="comment" placeholder="{{ 'FEEDBACK.PLACEHOLDER' | translate }}" class="custom-feedback-textarea"></textarea>
+        <p class="custom-anonymous-message">{{ 'FEEDBACK.ANONYMOUS_MESSAGE' | translate }}</p>
+        <button (click)="onSubmit()" type="submit" class="custom-feedback-button" [disabled]="isSubmitting">
+          <!-- Cambiar el texto del botón mientras se envía el formulario -->
+          {{ isSubmitting ? ('FEEDBACK.SUBMITTING' | translate) : ('FEEDBACK.SUBMIT' | translate) }}
         </button>
-        <!-- <button class="g-recaptcha"
-                data-sitekey="6Le83VUqAAAAAAdwGCtIGFF5QTEc82FNsFYWIbKt"
-                data-callback="onSubmit"
-                data-action="submit">
-          {{ 'FEEDBACK.SUBMIT' | translate }}
-        </button> -->
       </form>
+  
+      <!-- Mostrar la animación de éxito si el comentario fue enviado -->
+      <div *ngIf="isFeedbackSent" class="success-message">
+        <div class="success-icon">✔️</div>
+        <p>{{ 'FEEDBACK.SUCCESS_MESSAGE' | translate }}</p>
+      </div>
     </div>
   </section>
 </div>
