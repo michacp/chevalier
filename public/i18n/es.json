@@ -240,6 +240,19 @@
     "NO_TITLE": "Sin título disponible",
     "LIKES": "Me gusta",
     "CHEVALIER_INFO": "La barbería Chevalier ofrece los mejores servicios de peluquería y cuidado personal."
+  },
+  "TERMSSERVICE":{
+    "TERMS_TITLE": "Condiciones del Servicio",
+    "TERMS_1": "Al acceder y utilizar el sitio web de Chevalier Barber Shop, aceptas cumplir con estas Condiciones del Servicio y cualquier ley aplicable. Si no estás de acuerdo con estos términos, por favor no utilices nuestros servicios.",
+    "TERMS_2": "Chevalier Barber Shop ofrece servicios de barbería y productos a la venta. Nos reservamos el derecho de modificar o descontinuar nuestros servicios en cualquier momento sin previo aviso.",
+    "TERMS_3": "Las reservas para servicios pueden realizarse a través de nuestro sitio web o por contacto directo. Nos reservamos el derecho de rechazar o cancelar una reserva en caso de disponibilidad limitada o en circunstancias especiales. Si deseas cancelar una reserva, debes hacerlo con al menos 3 horas de anticipación.",
+    "TERMS_4": "Los precios de los servicios y productos ofrecidos están indicados en el sitio web y están sujetos a cambios sin previo aviso. Los pagos deben realizarse al finalizar el servicio o al realizar la compra de productos, a través de los métodos de pago aceptados en nuestro establecimiento o sitio web.",
+    "TERMS_5": "Todo el contenido de este sitio web, incluidos textos, imágenes, gráficos, logotipos y otros materiales, es propiedad de Chevalier Barber Shop o de sus licenciantes y está protegido por las leyes de propiedad intelectual. No se permite su uso sin el consentimiento previo y por escrito de Chevalier Barber Shop.",
+    "TERMS_6": "Chevalier Barber Shop no será responsable por ningún daño directo, indirecto, incidental o consecuente derivado del uso de nuestros servicios o del sitio web. Nos reservamos el derecho de actualizar, modificar o eliminar cualquier información en el sitio sin previo aviso.",
+    "TERMS_7": "Este sitio web puede contener enlaces a sitios web de terceros. No nos hacemos responsables del contenido o prácticas de dichos sitios externos.",
+    "TERMS_8": "Nos reservamos el derecho de modificar estas Condiciones del Servicio en cualquier momento. Los cambios se publicarán en esta página y entrarán en vigor inmediatamente después de su publicación.",
+    "TERMS_9": "Estas Condiciones del Servicio se rigen por las leyes vigentes en Ecuador. Cualquier disputa relacionada con el uso de nuestros servicios o del sitio web se resolverá en los tribunales competentes de dicha jurisdicción.",
+    "TERMS_10": "Si tienes alguna pregunta o inquietud sobre estas Condiciones del Servicio, puedes contactarnos en chevalierbarbershop13@gmail.com."
   }
   
 }

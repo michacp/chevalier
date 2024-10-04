@@ -235,5 +235,18 @@
     "NO_TITLE": "No title available",
     "LIKES": "Likes",
     "CHEVALIER_INFO": "Chevalier barbershop offers the best hairdressing and personal care services."
+  },
+  "TERMSSERVICE":{
+    "TERMS_TITLE": "Terms of Service",
+    "TERMS_1": "By accessing and using the Chevalier Barber Shop website, you agree to comply with these Terms of Service and any applicable laws. If you do not agree with these terms, please do not use our services.",
+    "TERMS_2": "Chevalier Barber Shop offers barbering services and products for sale. We reserve the right to modify or discontinue our services at any time without prior notice.",
+    "TERMS_3": "Reservations for services can be made through our website or by direct contact. We reserve the right to reject or cancel a reservation in case of limited availability or under special circumstances. If you wish to cancel a reservation, you must do so at least 3 hours in advance.",
+    "TERMS_4": "The prices for services and products offered are listed on the website and are subject to change without notice. Payments must be made upon completion of the service or when purchasing products, through the accepted payment methods in our establishment or on the website.",
+    "TERMS_5": "All content on this website, including texts, images, graphics, logos, and other materials, is the property of Chevalier Barber Shop or its licensors and is protected by intellectual property laws. Its use is not allowed without the prior written consent of Chevalier Barber Shop.",
+    "TERMS_6": "Chevalier Barber Shop will not be responsible for any direct, indirect, incidental, or consequential damages arising from the use of our services or the website. We reserve the right to update, modify, or delete any information on the site without prior notice.",
+    "TERMS_7": "This website may contain links to third-party websites. We are not responsible for the content or practices of such external sites.",
+    "TERMS_8": "We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page and will take effect immediately after publication.",
+    "TERMS_9": "These Terms of Service are governed by the laws in force in Ecuador. Any dispute related to the use of our services or the website will be resolved in the competent courts of that jurisdiction.",
+    "TERMS_10": "If you have any questions or concerns about these Terms of Service, you can contact us at chevalierbarbershop13@gmail.com."
   }
 }
