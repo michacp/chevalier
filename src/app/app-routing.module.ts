@@ -10,6 +10,7 @@ import { TermsOfServiceComponent } from './views/terms-of-service/terms-of-servi
 import { DataDeletionComponent } from './views/data-deletion/data-deletion.component';
 import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
 import { TermsComponent } from './views/terms/terms.component';
+import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
 const routes: Routes = [
   
   {path:'',component:WelcomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'data-deletion',component:DataDeletionComponent },
   {path:'comments',component:FeedbackFormComponent  },
   {path:'terms',component:TermsComponent  },
+  {path:'linkssocial',component:SocialMediaLinksComponent  },
 ];
 
 @NgModule({

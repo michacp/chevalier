@@ -36,7 +36,8 @@ import { DataDeletionComponent } from './views/data-deletion/data-deletion.compo
 import { FbPhotodisplayComponent } from './layout/fb-photodisplay/fb-photodisplay.component';
 import { CarrucelwelcomeComponent } from './layout/carrucelwelcome/carrucelwelcome.component';
 import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
-import { TermsComponent } from './views/terms/terms.component';   
+import { TermsComponent } from './views/terms/terms.component';
+import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';   
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
 }
@@ -63,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FbPhotodisplayComponent,
     CarrucelwelcomeComponent,
     FeedbackFormComponent,
-    TermsComponent
+    TermsComponent,
+    SocialMediaLinksComponent
   ],
   imports: [
     BrowserModule,
