@@ -18,7 +18,7 @@ export class DataService {
     facebook: 'https://www.facebook.com/chevalierbarberia',
     instagram: 'https://www.instagram.com/chevalier_barber/?hl=es',
     tiktok: 'https://www.tiktok.com/@chevalierbarber',
-    youtube:'https://www.youtube.com'
+    youtube:'https://www.youtube.com/channel/UCfYUUwl0Vm3qV3wlIkW9Ntg'
   };
   constructor() { }
 }

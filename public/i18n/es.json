@@ -5,7 +5,8 @@
     "SERVICES": "Servicios",
     "PRODUCTS": "Productos",
     "COMMENTS": "Comentarios",
-    "LANGUAGE": "Idioma"
+    "LANGUAGE": "Idioma",
+    "SOCIAL": "Redes Sociales"
   },
 "CAROUSEL": {
     "SLIDE1": {
@@ -86,7 +87,7 @@
   "TITLE": "Contáctenos",
   "PHONE": "Teléfono",
   "ADDRESS": "Dirección",
-  "EMAIL": "Correo electrónico",
+  "EMAIL": "Email",
   "HOURS": "Horario de atención",
   "HOURS_WEEKDAYS": "Lunes a Sábado",
   "HOURS_WEEKENDS": "Domingo"
