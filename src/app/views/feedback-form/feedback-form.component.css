@@ -1,7 +1,7 @@
 .feedback-section {
   padding: 40px;
   background-color: #f9f9f9;
-  height: 500px; /* Establece un alto fijo para toda la sección */
+  min-height: 500px; /* Cambia de 'height' a 'min-height' */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,6 +118,20 @@
 @media (max-width: 768px) {
   .feedback-description, .custom-feedback-form {
     max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+  }
+  .feedback-section {
+    flex-direction: column; /* Apilar los elementos en lugar de mantenerlos en una fila */
+    align-items: stretch;
+  }
+
+  .feedback-container {
+    flex-direction: column;
+    gap: 20px; /* Añadir espacio entre los elementos */
+  }
+
+  .feedback-description, .custom-feedback-form {
+    max-width: 100%;
+    height: auto; /* Elimina la altura fija para pantallas pequeñas */
   }
 }
 
