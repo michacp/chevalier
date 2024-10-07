@@ -46,7 +46,12 @@
   object-fit: cover; /* Ajusta la imagen sin distorsión */
   border-radius: 15px 15px 0 0;
 }
-
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
 /* Adaptar tarjetas en pantallas pequeñas */
 @media (max-width: 768px) {
   .team-members {

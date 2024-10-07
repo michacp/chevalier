@@ -54,22 +54,4 @@
   }
  
 }
-
-.contact-container {
-  display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
-  gap: 40px; /* Espacio entre los items */
-  flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
-  margin-top: 20px;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centra el contenido verticalmente */
-  align-items: center; /* Centra el contenido horizontalmente */
-  text-align: center; /* Centra el texto */
-  padding: 20px; 
-  width: 250px; /* Aumenta el ancho de las tarjetas */
-}
+ 
