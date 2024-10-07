@@ -6,9 +6,9 @@
       <div class="image-container">
         <img mat-card-image [src]="member.photo" alt="{{ member.name }}">
       </div>
-      <mat-card-title>{{ member.name }}</mat-card-title>
-      <mat-card-content>{{ member.specialty }}</mat-card-content>
-      <mat-card-content>
+      <mat-card-title class="custom-title">{{ member.name }}</mat-card-title>
+      <mat-card-subtitle class="custom-subtitle">{{ member.specialty }}</mat-card-subtitle>
+      <mat-card-content class="custom-content">
         <p>{{ member.bio }}</p>
       </mat-card-content>
     </mat-card>

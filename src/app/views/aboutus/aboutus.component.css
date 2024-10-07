@@ -71,5 +71,5 @@
   align-items: center; /* Centra el contenido horizontalmente */
   text-align: center; /* Centra el texto */
   padding: 20px; 
-  width: 300px; /* Aumenta el ancho de las tarjetas */
+  width: 250px; /* Aumenta el ancho de las tarjetas */
 }
