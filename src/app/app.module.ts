@@ -38,7 +38,8 @@ import { CarrucelwelcomeComponent } from './layout/carrucelwelcome/carrucelwelco
 import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
 import { TermsComponent } from './views/terms/terms.component';
 import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
-import { TeamMembersComponent } from './layout/team-members/team-members.component';   
+import { TeamMembersComponent } from './layout/team-members/team-members.component';
+   
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
 }
