@@ -2,19 +2,19 @@
   <nav mat-toolbar class="navbar">
     <div class="navbar-left" routerLink="">
       <div class="navbar-toggle" (click)="toggleMenu()">&#9776;</div>
-      <img src="img/caranav.png" alt="Logo" class="navbar-logo">
-      <span class="navbar-title" routerLink="">CHEVALIER</span>
+      <img src="img/caranav.png" routerLink="/home" alt="Logo" class="navbar-logo">
+      <span class="navbar-title" routerLink="/home">CHEVALIER</span>
     </div>
 
     <!-- Botón del menú hamburguesa para dispositivos móviles -->
     
 
     <div class="navbar-center" [ngClass]="{ 'mobile': isMenuOpen }">
-      <a mat-button routerLink="" (click)="closeMenu()">{{ 'NAVBAR.HOME' | translate }}</a>
-      <a mat-button routerLink="/aboutus" (click)="closeMenu()">{{ 'NAVBAR.ABOUT' | translate }}</a>
-      <a mat-button routerLink="/ourservices" (click)="closeMenu()">{{ 'NAVBAR.SERVICES' | translate }}</a>
-      <a mat-button routerLink="/products" (click)="closeMenu()">{{ 'NAVBAR.PRODUCTS' | translate }}</a>
-      <a mat-button routerLink="/comments" (click)="closeMenu()">{{ 'NAVBAR.COMMENTS' | translate }}</a>
+      <a mat-button routerLink="/home" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.HOME' | translate }}</a>
+      <a mat-button routerLink="/aboutus" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.ABOUT' | translate }}</a>
+      <a mat-button routerLink="/ourservices" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.SERVICES' | translate }}</a>
+      <a mat-button routerLink="/products" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.PRODUCTS' | translate }}</a>
+      <a mat-button routerLink="/comments" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.COMMENTS' | translate }}</a>
     </div>
 
     <div class="navbar-right">

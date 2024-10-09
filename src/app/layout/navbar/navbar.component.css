@@ -61,7 +61,8 @@
 }
 
 .navbar-center a:hover {
-  color: #FFD700;
+  color: #5A7D9A; /* Cambia el color de los enlaces al pasar el mouse por encima */
+  border-bottom: 2px solid #5A7D9A; /* Añadir borde al pasar el mouse */
 }
 
 /* Estilos de la parte derecha (iconos y select) */
@@ -82,7 +83,9 @@
   /* Aplicar color dorado (#FFD700) en hover */
   transform: scale(1.1); /* Efecto de agrandamiento al hacer hover */
 }
-
+.navbar-logo, .navbar-title {
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre estos elementos */
+}
 /* Reglas para pantallas pequeñas */
 @media (max-width: 768px) {
   .navbar-title {
@@ -125,7 +128,10 @@
     flex-direction: row-reverse;
   }
 }
-
+.navbar-center a.active {
+  color: #5A7D9A; /* Azul claro suave para el enlace activo */
+  border-bottom: 2px solid #5A7D9A; /* Borde suave debajo del enlace activo */
+}
 /* Reglas para pantallas grandes */
 @media (min-width: 769px) {
   .navbar-center {
@@ -136,4 +142,10 @@
   .navbar-toggle {
     display: none;
   }
+ 
+
+  .mat-select {
+    width: 100%; /* Asegúrate de que el select también se ajuste */
+  }
+
 }

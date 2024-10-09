@@ -13,7 +13,7 @@ import { TermsComponent } from './views/terms/terms.component';
 import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
 const routes: Routes = [
   
-  {path:'',component:WelcomeComponent },
+  {path:'home',component:WelcomeComponent },
   {path:'aboutus',component:AboutusComponent  },
   {path:'ourservices',component:OurservicesComponent },
   {path:'products',component:ProductsComponent},
@@ -24,6 +24,11 @@ const routes: Routes = [
   {path:'comments',component:FeedbackFormComponent  },
   {path:'terms',component:TermsComponent  },
   {path:'linkssocial',component:SocialMediaLinksComponent  },
+    // Redireccionar la ruta vacía ('') a 'home'
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+    // Redireccionar cualquier ruta no existente ('**') a 'home'
+    { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
