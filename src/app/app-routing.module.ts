@@ -24,8 +24,7 @@ const routes: Routes = [
   {path:'comments',component:FeedbackFormComponent  },
   {path:'terms',component:TermsComponent  },
   {path:'linkssocial',component:SocialMediaLinksComponent  },
-    // Redireccionar la ruta vacía ('') a 'home'
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+ 
 
  
 ];
