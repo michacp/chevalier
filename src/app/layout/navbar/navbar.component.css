@@ -111,7 +111,7 @@
   .navbar-center.mobile {
     display: flex;
   }
-
+ 
   /* Mostrar el botón "hamburger" */
   .navbar-toggle {
     display: block;
@@ -127,6 +127,7 @@
   .navbar-right {
     flex-direction: row-reverse;
   }
+ 
 }
 .navbar-center a.active {
   color: #5A7D9A; /* Azul claro suave para el enlace activo */
@@ -134,6 +135,7 @@
 }
 /* Reglas para pantallas grandes */
 @media (min-width: 769px) {
+
   .navbar-center {
     display: flex;
   }
