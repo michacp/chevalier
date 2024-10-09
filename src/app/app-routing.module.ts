@@ -27,8 +27,7 @@ const routes: Routes = [
     // Redireccionar la ruta vacía ('') a 'home'
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-    // Redireccionar cualquier ruta no existente ('**') a 'home'
-    { path: '**', redirectTo: 'home' }
+ 
 ];
 
 @NgModule({
