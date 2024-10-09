@@ -34,13 +34,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              
-  {
-    "glob": "sitemap.xml",
-    "input": "src",
-    "output": "/"
-  }
+              } 
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
