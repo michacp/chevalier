@@ -13,7 +13,7 @@ import { TermsComponent } from './views/terms/terms.component';
 import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
 const routes: Routes = [
   
-  {path:'home',component:WelcomeComponent },
+  {path:'',component:WelcomeComponent },
   {path:'aboutus',component:AboutusComponent  },
   {path:'ourservices',component:OurservicesComponent },
   {path:'products',component:ProductsComponent},

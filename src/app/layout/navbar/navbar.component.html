@@ -10,7 +10,7 @@
     
 
     <div class="navbar-center" [ngClass]="{ 'mobile': isMenuOpen }">
-      <a mat-button routerLink="/home" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.HOME' | translate }}</a>
+      <a mat-button routerLink="/" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.HOME' | translate }}</a>
       <a mat-button routerLink="/aboutus" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.ABOUT' | translate }}</a>
       <a mat-button routerLink="/ourservices" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.SERVICES' | translate }}</a>
       <a mat-button routerLink="/products" routerLinkActive="active" (click)="closeMenu()">{{ 'NAVBAR.PRODUCTS' | translate }}</a>
