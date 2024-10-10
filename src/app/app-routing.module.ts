@@ -11,6 +11,7 @@ import { DataDeletionComponent } from './views/data-deletion/data-deletion.compo
 import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
 import { TermsComponent } from './views/terms/terms.component';
 import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
+import { LoginComponent } from './views/login/login.component';
 const routes: Routes = [
   
   {path:'',component:WelcomeComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path:'terms',component:TermsComponent  },
   {path:'linkssocial',component:SocialMediaLinksComponent  },
  
-
+  {path:'login',component:LoginComponent },
  
 ];
 
