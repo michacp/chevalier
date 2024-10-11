@@ -1,26 +1,32 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private API_URL = 'http://localhost:4000/api/auth/'; // URL del backend
+  private API_URL = environment.apiUrl+'/api/'; // URL del backend
 
   constructor() {}
 
   // Método de login
-  async login(username: string, password: string) {
+  async login(data:any) {
+    console.log(this.API_URL)
     try {
-      const response = await axios.post(`${this.API_URL}login`, {
-        username,
-        password
-      });
+      const response = await axios.post(`${this.API_URL}login`,data);
+ 
+      const { accessToken, user } = response.data;
 
-      if (response.data.accessToken) {
-        localStorage.setItem('user', JSON.stringify(response.data));
+      // Guardar el token en el localStorage o sessionStorage
+      if (data.rememberMe) {
+        localStorage.setItem('token', accessToken); // Token persistente
+        localStorage.setItem('user', JSON.stringify(user)); // Datos del usuario persistentes
+      } else {
+        sessionStorage.setItem('token', accessToken); // Token temporal
+        sessionStorage.setItem('user', JSON.stringify(user)); // Datos del usuario temporales
       }
 
-      return response.data;
+      return user; // Retornar los datos del usuario
     } catch (error) {
       throw new Error('Login failed: ' + error);
     }
@@ -28,18 +34,16 @@ export class AuthService {
 
   // Método de logout
   logout() {
+    localStorage.removeItem('token');
     localStorage.removeItem('user');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
   }
 
-  // Obtener el token JWT del localStorage
-  getToken(): string | null {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    return user?.accessToken || null;
-  }
+
 
   // Comprobar si el usuario está autenticado
   isAuthenticated(): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    return !!user && !!user.accessToken;
+    return !!localStorage.getItem('token') || !!sessionStorage.getItem('token');
   }
 }

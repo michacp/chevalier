@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../service/auth/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,19 +11,21 @@ export class LoginComponent {
   loginForm: FormGroup;
   hide = true; // Para mostrar/ocultar contraseña
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private auth:AuthService,private router:Router) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      email: ['admin@example.com', [Validators.required, Validators.email]],
+      password: ['123456', Validators.required],
       rememberMe: [false] // Campo para "Recuérdame"
     });
   }
 
-  onSubmit() {
-    console.log("asda")
+ async onSubmit() { 
     if (this.loginForm.valid) {
+   const logindata=  await this.auth.login(this.loginForm.value) 
       const formValues = this.loginForm.value;
-
+if(logindata){
+  this.router.navigate(['/erp']);
+}
       // Procesar la solicitud de inicio de sesión
       const loginData = {
         email: formValues.email,

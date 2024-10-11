@@ -2,12 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ErpRoutingModule } from './erp-routing.module';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { ErpComponent } from './erp.component';
+import { TopbarComponent } from './layout/topbar/topbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    ErpComponent,
+    TopbarComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,

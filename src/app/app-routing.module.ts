@@ -12,6 +12,7 @@ import { FeedbackFormComponent } from './views/feedback-form/feedback-form.compo
 import { TermsComponent } from './views/terms/terms.component';
 import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
 import { LoginComponent } from './views/login/login.component';
+import { authGuard } from './guards/auth.guard';
 const routes: Routes = [
   
   {path:'',component:WelcomeComponent },
@@ -27,7 +28,12 @@ const routes: Routes = [
   {path:'linkssocial',component:SocialMediaLinksComponent  },
  
   {path:'login',component:LoginComponent },
- 
+   // Lazy load para el módulo ERP
+   {
+    path: 'erp',
+    loadChildren: () => import('./erp/erp.module').then(m => m.ErpModule),
+    canActivate: [authGuard ] // Protege el módulo ERP con authGuard 
+  }, 
 ];
 
 @NgModule({

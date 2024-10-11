@@ -1,0 +1,22 @@
+<div [class.minimized]="isSidebarMinimized" class="sidebar">
+    <div class="sidebar-header">
+      <img *ngIf="!isSidebarMinimized" src="/img/cara.png" alt="Logo" class="logo">
+      <img *ngIf="isSidebarMinimized" src="/img/cara.png" alt="Logo" class="logo-small">
+      <span *ngIf="!isSidebarMinimized">CHEVALIER</span>
+    </div>
+  
+    <div class="sidebar-user">
+      <img [src]="user?.profilePicture" alt="User Image" class="user-img">
+      <span *ngIf="!isSidebarMinimized">{{ user?.username }}</span>
+    </div>
+  
+    <ul class="sidebar-menu">
+      <li>
+        <button class="menu-btn">
+          <i class="fas fa-tachometer-alt"></i> 
+          <span *ngIf="!isSidebarMinimized">Dashboard</span>
+        </button>
+      </li>
+      <!-- Añadir más elementos de menú aquí -->
+    </ul>
+  </div>
