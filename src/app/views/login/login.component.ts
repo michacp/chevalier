@@ -13,8 +13,8 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder,private auth:AuthService,private router:Router) {
     this.loginForm = this.fb.group({
-      email: ['michacp@hotmail.com', [Validators.required, Validators.email]],
-      password: ['123456', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
       rememberMe: [false] // Campo para "Recuérdame"
     });
   }
