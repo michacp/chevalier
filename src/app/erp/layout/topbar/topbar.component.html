@@ -1,15 +1,19 @@
-<div class="topbar">
-    <div class="topbar-left">
-      <button (click)="toggleSidebar()" class="icon-btn">
-        <i class="fas fa-bars"></i> <!-- Icono para minimizar sidebar -->
-      </button>
-    </div>
-    <div class="topbar-right">
-      <button class="icon-btn">
-        <i class="fas fa-bell"></i> <!-- Icono de notificaciones -->
-      </button>
-      <button (click)="logout()" class="icon-btn">
-        <i class="fas fa-sign-out-alt"></i> <!-- Icono de cerrar sesión -->
-      </button>
+<div class="topbar d-flex justify-content-between align-items-center px-3">
+  <div class="branding d-flex align-items-center">
+    <img src="img/cara blanco.png" class="logo me-3" alt="Logo">
+    <span class="chevalier me-3">CHEVALIER</span> <!-- Añadido margen a la derecha de CHEVALIER -->
+    <!-- Icono para minimizar la sidebar -->
+    <div class="toggle-sidebar-icon ms-3">
+      <i class="bi bi-list" (click)="toggleSidebar()"></i> <!-- Espaciado para separarlo -->
     </div>
   </div>
+
+  <div class="topbar-right d-flex align-items-center">
+    <div class="notifications me-3">
+      <i class="bi bi-bell"></i> <!-- Icono de notificaciones de Bootstrap Icons -->
+    </div>
+    <div class="logout me-3">
+      <button class="btn btn-outline-warning" (click)="logout()">Cerrar Sesión</button>
+    </div>
+  </div>
+</div>

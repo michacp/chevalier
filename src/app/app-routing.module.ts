@@ -26,7 +26,6 @@ const routes: Routes = [
   {path:'comments',component:FeedbackFormComponent  },
   {path:'terms',component:TermsComponent  },
   {path:'linkssocial',component:SocialMediaLinksComponent  },
- 
   {path:'login',component:LoginComponent },
    // Lazy load para el módulo ERP
    {

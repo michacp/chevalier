@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <!-- Filtros -->
+ <!-- Filtros -->
+ <div class="card p-4">
+    <div class="row">
+      <!-- Fecha y Hora Inicial con Bootstrap -->
+      <div class="col-md-3">
+        <label for="fechaHoraInicio" class="form-label">Fecha y Hora Inicial</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          id="fechaHoraInicio"
+          [(ngModel)]="filtros.fechaHoraInicio"
+        />
+      </div>
+
+      <!-- Fecha y Hora Final con Bootstrap -->
+      <div class="col-md-3">
+        <label for="fechaHoraFin" class="form-label">Fecha y Hora Final</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          id="fechaHoraFin"
+          [(ngModel)]="filtros.fechaHoraFin"
+        />
+      </div>
+
+      <!-- Tipo de Reporte con Angular Material -->
+      <div class="col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de Reporte</mat-label>
+          <mat-select [(value)]="filtros.tipoReporte">
+            <mat-option value="Diario">Diario</mat-option>
+            <mat-option value="Semanal">Semanal</mat-option>
+            <mat-option value="Mensual">Mensual</mat-option>
+            <mat-option value="Anual">Anual</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Selección de Barbero con Angular Material -->
+      <div class="col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Barbero</mat-label>
+          <mat-select [(value)]="filtros.barbero">
+            <mat-option value="todos">Todos</mat-option>
+            <mat-option *ngFor="let barbero of barberos" [value]="barbero.id">
+              {{ barbero.nombre }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Botón para Aplicar Filtros con Angular Material -->
+    <div class="text-center mt-3">
+      <button mat-raised-button color="primary" (click)="aplicarFiltros()">Aplicar Filtros</button>
+    </div>
+  </div>
+  
+    <!-- Resumen de Ingresos -->
+    <!-- <mat-card class="mt-4">
+      <h3>Resumen de Ingresos</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Ingreso Total</h4>
+          <p>{{ resumenIngresos.ingresoTotal | currency }}</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Promedio de Ingresos</h4>
+          <p>{{ resumenIngresos.promedioDiario | currency }} diario</p>
+          <p>{{ resumenIngresos.promedioSemanal | currency }} semanal</p>
+          <p>{{ resumenIngresos.promedioMensual | currency }} mensual</p>
+          <p>{{ resumenIngresos.promedioAnual | currency }} anual</p>
+        </div>
+      </div>
+    </mat-card> -->
+  
+    <!-- Tabla de Detalle -->
+    <!-- <mat-card class="mt-4">
+      <h3>Detalle de Ingresos por Barbero</h3>
+      <table class="table table-striped table-responsive">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Servicio</th>
+            <th>Barbero</th>
+            <th>Ingreso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detalle of detallesIngresos">
+            <td>{{ detalle.fecha }}</td>
+            <td>{{ detalle.servicio }}</td>
+            <td>{{ detalle.barbero }}</td>
+            <td>{{ detalle.ingreso | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card> -->
+  
+    <!-- Botones de Exportación -->
+    <div class="text-center mt-4">
+      <button mat-raised-button color="accent">Exportar a PDF</button>
+      <button mat-raised-button color="accent">Exportar a Excel</button>
+      <button mat-raised-button color="accent">Imprimir</button>
+    </div>
+  </div>
+  

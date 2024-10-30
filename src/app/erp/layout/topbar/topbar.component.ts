@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { SidebarService } from '../../service/sidebar/sidebar.service';
+import { AuthService } from '../../../service/auth/auth.service'; 
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css'
 })
 export class TopbarComponent {
-  constructor(private router: Router) {}
+  constructor( private sidebarService: SidebarService,private authservi:AuthService) {}
 
   logout() {
     // Borrar la sesión
-    localStorage.removeItem('userToken');
+    this.authservi.logout() 
     // Redireccionar al login
-    this.router.navigate(['/login']);
+   
   }
 
   toggleSidebar() {
-    // Emitir un evento para minimizar o maximizar la sidebar
+    this.sidebarService.toggleMinimized();  // Llamar al servicio para minimizar/maximizar la sidebar
   }
+ 
 }
