@@ -17,7 +17,7 @@ import { ListHairdresserI } from '../../models/hairdresser.interface';
 export class SalesListComponent implements OnInit {
   sales: ListSalesI[] = [];
   filteredSales = new MatTableDataSource<ListSalesI>([]);
-  displayedColumns: string[] = ['saleNumber', 'productService', 'barber', 'seller', 'client', 'total'];
+  displayedColumns: string[] = ['saleNumber', 'productService','saleDate' , 'barber', 'seller', 'client', 'total'];
   barbers: ListHairdresserI[] = [];
   productorservices: ListTypeproductserviceI[] = [];
   selectedBarber: string | null = null;
@@ -42,7 +42,7 @@ export class SalesListComponent implements OnInit {
     this.filteredSales.data = this.sales;
     this.barbers = data.hairdresser;
     this.productorservices = data.getproductservicestypes;
-    console.log(data)
+     console.log(this.filteredSales.data)
   }
 
   applyFilters(): void {

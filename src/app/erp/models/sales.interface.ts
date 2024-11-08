@@ -8,6 +8,7 @@ export interface ListSalesI {
     productService: string; // Nombre de producto o servicio
     seller: string; // Nombre del vendedor
     type: 'producto' | 'servicio'; // Tipo de venta
+
 }
  
   

@@ -78,7 +78,7 @@ export class ServiceandcutsComponent {
       if(result.close){
         this.normalfind(result.data)
       }
-      console.log('Modal Closed with:', result);
+       
     });
   }
 
