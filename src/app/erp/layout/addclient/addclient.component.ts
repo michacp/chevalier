@@ -9,7 +9,7 @@ import { ClientsService } from '../../service/clients/clients.service';
 })
 export class AddclientComponent {
   clientForm: FormGroup;
-  @Output() closeModalEvent = new EventEmitter<any>();
+  @Output() closeModalEvent: EventEmitter<any> = new EventEmitter<any>();
   @HostListener('document:keydown.escape', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {
     this.dialogRef.close();  // Cierra el modal al presionar Escape
@@ -31,29 +31,23 @@ export class AddclientComponent {
     });
   }
 
-  onClose(close: boolean): void {
-    this.closeModal(this.clientForm.value, close);
-    this.dialogRef.close();
-  }
+ 
 
-  closeModal(data: any, close: boolean): void {
+  closeModal( close: boolean,data: any=''): void {
     const datos = { data: data, close: close };
-    this.closeModalEvent.emit({ data: datos });
+    this.closeModalEvent.emit( datos);
+    this.dialogRef.close();
   }
 
   onCancel(): void {
-    this.dialogRef.close();
+    this.closeModal(false)
+    
   }
 
 
-  saveClient() { 
+ async saveClient() { 
 
-    this.clientsService.saveClient(this.clientForm.value)
-      .then(response => {
-        console.log('Client saved successfully:', response);
-      })
-      .catch(error => {
-        console.error('Error saving client:', error);
-      });
+  const data=await  this.clientsService.saveClient(this.clientForm.value) 
+  this.closeModal(true,data)
   }
 }
