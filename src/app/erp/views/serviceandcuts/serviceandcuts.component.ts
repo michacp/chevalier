@@ -200,8 +200,7 @@ async savedatasales(formulario:any,servicios:any,total:any){
     productosservcio:datosFiltrados,
     total
   }
- const data= this.sales.Salessave(formset)
- console.log(data)
+ const data= this.sales.Salessave(formset) 
 }
 
 

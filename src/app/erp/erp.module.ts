@@ -28,6 +28,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SalesListComponent } from './views/sales-list/sales-list.component';
 import { ReportsComponent } from './views/reports/reports.component'; 
 import { MatCardModule } from '@angular/material/card';
+import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';
 @NgModule({
   declarations: [
     ErpComponent,
@@ -36,7 +37,8 @@ import { MatCardModule } from '@angular/material/card';
     ServiceandcutsComponent,
     AddclientComponent,
     SalesListComponent,
-    ReportsComponent
+    ReportsComponent,
+    PdfReportComponent
   ],
   imports: [
     CommonModule,

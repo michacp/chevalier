@@ -61,4 +61,22 @@ export class SalesService {
       throw error;
     }
   }
+  async Salesreports(data:any): Promise<any> {
+    try {
+      const response = await axios.post(`${this.API_URL}salesreport`,data);
+      return response.data;
+    } catch (error) {
+      console.error('Error saving client:', error);
+      throw error;
+    }
+  }
+  async Salesreportsminimal(data:any): Promise<any> {
+    try {
+      const response = await axios.post(`${this.API_URL}salesreportminimal`,data);
+      return response.data;
+    } catch (error) {
+      console.error('Error saving client:', error);
+      throw error;
+    }
+  }
 }
