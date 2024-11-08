@@ -30,3 +30,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: rgba(255, 255, 255, 0.8) !important; /* Blanco con 80% de transparencia */
   font-weight: bold;
 }
+
+.success-snackbar-icon {
+  margin-right: 16px;
+  font-size: 24px;
+  color: #ffffff; /* Verde */
+}
+
+.success-snackbar-icon::before {
+  content: "\E5CA"; /* Icono de éxito (verdadero) */
+  font-family: 'Material Icons';
+}
+
+.error-snackbar-icon {
+  margin-right: 16px;
+  font-size: 24px;
+  color: #ffffff; /* Rojo */
+}
+
+.error-snackbar-icon::before {
+  content: "\E5CD"; /* Icono de error (advertencia) */
+  font-family: 'Material Icons';
+}
+.custom-snackbar-width {
+  max-width: 400px; /* Ajusta el ancho según prefieras */
+  width: 100%;
+  padding: 8px 16px; /* Ajusta el padding para cambiar el alto */
+  font-size: 14px; /* Cambia el tamaño de fuente si quieres afectar el alto */
+  line-height: 1.5; /* Ajusta el interlineado si deseas más control sobre el alto */
+}

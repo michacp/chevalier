@@ -8,11 +8,11 @@ export class NotyfService {
   constructor(private snackBar: MatSnackBar) {}
 
   success(message: string) {
-    this.showNotification(message, ['success-snackbar']);
+    this.showNotification(message, [  'success-snackbar', 'success-snackbar-icon' ]);
   }
 
   error(message: string) {
-    this.showNotification(message, ['error-snackbar']);
+    this.showNotification(message, ['error-snackbar', 'error-snackbar-icon' ]);
   }
 
   private showNotification(message: string, panelClass: string[]) {
@@ -20,7 +20,7 @@ export class NotyfService {
       duration: 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
-      panelClass
+      panelClass 
     };
 
     // Crear una nueva instancia de snackbar cada vez
