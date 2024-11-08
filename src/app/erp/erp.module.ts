@@ -28,7 +28,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SalesListComponent } from './views/sales-list/sales-list.component';
 import { ReportsComponent } from './views/reports/reports.component'; 
 import { MatCardModule } from '@angular/material/card';
-import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';
+import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';  
+ 
 @NgModule({
   declarations: [
     ErpComponent,
@@ -40,7 +41,8 @@ import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';
     ReportsComponent,
     PdfReportComponent
   ],
-  imports: [
+  imports: [  
+
     CommonModule,
     ErpRoutingModule,
     FormsModule,
@@ -58,8 +60,9 @@ import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';
     MatSelectModule,
     MatSnackBarModule, 
     MatPaginatorModule, 
-    MatCardModule 
+    MatCardModule,  
+     
   ],
-  providers: [ClientsService, TokenInterceptorService],
+  providers: [ClientsService, TokenInterceptorService ],
 })
 export class ErpModule { }

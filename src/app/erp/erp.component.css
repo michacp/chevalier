@@ -10,3 +10,14 @@
     margin-left: 250px; /* Margen cuando la sidebar está maximizada */
   }
  
+  .success-snackbar {
+    background-color: rgba(40, 167, 69, 0.5); /* Verde con 50% de transparencia */
+    color: rgba(255, 255, 255, 0.8); /* Blanco con 80% de transparencia */
+    font-weight: bold;
+  }
+  
+  .error-snackbar {
+    background-color: rgba(220, 53, 69, 0.5); /* Rojo con 50% de transparencia */
+    color: rgba(255, 255, 255, 0.8); /* Blanco con 80% de transparencia */
+    font-weight: bold;
+  }

@@ -41,7 +41,7 @@ import { SocialMediaLinksComponent } from './views/social-media-links/social-med
 import { TeamMembersComponent } from './layout/team-members/team-members.component';
 import { LoginComponent } from './views/login/login.component'; 
 
-
+ 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
