@@ -211,7 +211,7 @@
 
     <!-- Botón para registrar corte -->
     <div class="form-group">
-      <button mat-raised-button color="primary"  (click)="onSubmit()" [disabled]="!corteForm.valid">Registrar Corte</button>
+      <button mat-raised-button color="primary"  (click)="onSubmit()" [disabled]="!corteForm.valid || isSubmitting">Registrar Corte</button>
     </div>
   </div>
 </form>

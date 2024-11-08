@@ -179,11 +179,21 @@ export class ServiceandcutsComponent {
     }
 
   }
-
+  isSubmitting = false;
   // Método para manejar el envío del formulario
   onSubmit() {
-    if (this.corteForm.valid) {
+    if (this.corteForm.valid|| this.isSubmitting) {
+      this.isSubmitting = true;
+
+      // Realiza el envío del formulario
+      // Aquí podrías enviar los datos al servidor
+      // Simulamos un retraso de 2 segundos para la respuesta
+      setTimeout(() => {
+        // Aquí restablece el estado del botón después de completar la acción
+        this.isSubmitting = false;
+      }, 2000); // Cambia el tiempo según lo que necesites
       this.savedatasales(this.corteForm.value, this.serviciosAgregados, this.total)
+   
     }
   }
   async savedatasales(formulario: any, servicios: any, total: any) {
