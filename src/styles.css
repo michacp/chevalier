@@ -6,3 +6,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     visibility: hidden;
   }
  
+  .success-snackbar {
+    background-color: rgba(40, 167, 69, 0.9); /* Verde con 50% de transparencia */
+    color: rgba(255, 255, 255, 1); /* Blanco con 80% de transparencia */
+    font-weight: bold;
+  }
+  
+  .error-snackbar {
+    background-color: rgba(220, 53, 69, 0.9); /* Rojo con 50% de transparencia */
+    color: rgba(255, 255, 255,1); /* Blanco con 80% de transparencia */
+    font-weight: bold;
+  }
+  /* Estilos específicos para sobrescribir el color de fondo en éxito */
+.mat-mdc-snack-bar-container.success-snackbar .mat-mdc-snackbar-surface {
+  background-color: rgba(40, 167, 69, 0.5) !important; /* Verde con 50% de transparencia */
+  color: rgba(255, 255, 255, 0.8) !important; /* Blanco con 80% de transparencia */
+  font-weight: bold;
+}
+
+/* Estilos específicos para sobrescribir el color de fondo en error */
+.mat-mdc-snack-bar-container.error-snackbar .mat-mdc-snackbar-surface {
+  background-color: rgba(220, 53, 69, 0.5) !important; /* Rojo con 50% de transparencia */
+  color: rgba(255, 255, 255, 0.8) !important; /* Blanco con 80% de transparencia */
+  font-weight: bold;
+}
