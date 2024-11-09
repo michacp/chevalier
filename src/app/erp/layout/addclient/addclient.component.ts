@@ -10,10 +10,9 @@ import { ClientsService } from '../../service/clients/clients.service';
 export class AddclientComponent {
   clientForm: FormGroup;
   @Output() closeModalEvent: EventEmitter<any> = new EventEmitter<any>();
-  @HostListener('document:keydown.escape', ['$event'])
-  onKeydownHandler(event: KeyboardEvent) {
-    this.dialogRef.close();  // Cierra el modal al presionar Escape
-  }
+  cedulaExists: boolean = false;
+  initialCedulaValue: string = ''; // Guarda el valor de la cédula duplicada
+
   constructor(
     public dialogRef: MatDialogRef<AddclientComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -25,29 +24,52 @@ export class AddclientComponent {
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
       direccion: [''],
-      telefono: ['', [ Validators.pattern(/^\d{7,10}$/)]],
+      telefono: ['', [Validators.pattern(/^\d{7,10}$/)]],
       correo: ['', [Validators.email]],
-      fechaNacimiento: [''], 
+      fechaNacimiento: [''],
+    });
+
+    // Observa cambios en el campo de cédula
+    this.clientForm.get('cedula')?.valueChanges.subscribe((value) => {
+      if (this.cedulaExists && value !== this.initialCedulaValue) {
+        this.cedulaExists = false; // Habilita los campos si la cédula es distinta al valor duplicado
+        this.clientForm.enable();  // Habilita todo el formulario
+      }
     });
   }
 
- 
-
-  closeModal( close: boolean,data: any=''): void {
-    const datos = { data: data, close: close };
-    this.closeModalEvent.emit( datos);
-    this.dialogRef.close();
+  async checkCedula() {
+    const cedulaValue = this.clientForm.get('cedula')?.value;
+    
+    if (cedulaValue) {
+      try {
+        // Llama al servicio para verificar si la cédula ya existe
+        const response = await this.clientsService.findClient({ find: cedulaValue })
+        if (response && response.length > 0) {
+          this.cedulaExists = true;
+          this.initialCedulaValue = cedulaValue; // Guarda el valor actual de la cédula como el valor duplicado
+          this.clientForm.disable(); // Deshabilita el formulario
+          this.clientForm.get('cedula')?.enable(); // Habilita solo el campo de cédula
+        } 
+      } catch (error) {
+        this.cedulaExists = false;
+        this.clientForm.enable(); // Habilita todo el formulario si la cédula no existe
+      }
+    }
   }
 
   onCancel(): void {
-    this.closeModal(false)
-    
+    this.closeModal(false);
   }
 
+  async saveClient() {
+    const data = await this.clientsService.saveClient(this.clientForm.value);
+    this.closeModal(true, data);
+  }
 
- async saveClient() { 
-
-  const data=await  this.clientsService.saveClient(this.clientForm.value) 
-  this.closeModal(true,data)
+  closeModal(close: boolean, data: any = ''): void {
+    const datos = { data: data, close: close };
+    this.closeModalEvent.emit(datos);
+    this.dialogRef.close();
   }
 }
