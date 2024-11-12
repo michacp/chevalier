@@ -85,6 +85,11 @@ export class ServiceandcutsComponent {
   async normalfind(clienteBuscadorValue:any){
     const data = await this.clients.findClient({ find: clienteBuscadorValue })
     this.clientes = data
+    this.corteForm.patchValue({
+      clienteBuscador: data[0],
+       
+    });
+    this.salesfinddiscount(clienteBuscadorValue)
   }
 
 
@@ -129,7 +134,11 @@ export class ServiceandcutsComponent {
     this.barberos = data.hairdresser
     this.servicios = data.services
     this.formasPagos = data.paymentmethods
-    this.formasPagosFiltradas = this.formasPagos;
+    this.formasPagosFiltradas = this.formasPagos;   
+    this.corteForm.patchValue({
+      formaPagoBuscador: this.formasPagos[0],
+       
+    }); 
   }
   // Método para agregar servicio
   agregarServicio(serv: any) {
@@ -305,6 +314,7 @@ export class ServiceandcutsComponent {
   }
   // Método para mostrar el nombre de la forma de pago
   displayFormaPago(formaPago: ListpaymentMethodsI): string {
+    
     return formaPago ? formaPago.name : '';
   }
   async searchclients() {
@@ -326,8 +336,13 @@ export class ServiceandcutsComponent {
   }
 
   async salesfinddiscount(data: any) {
+ 
     const datas = await this.sales.getSalesDiscount({ find: data })
     this.descuentos = datas
+    this.corteForm.patchValue({
+      descuentoBuscador:  this.descuentos[0],
+       
+    }); 
   }
 
 
