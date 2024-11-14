@@ -93,8 +93,7 @@ export class ServiceandcutsComponent {
   }
 
 
-  ngOnInit() {
-    this.getSalesDataList( )
+  ngOnInit() { 
     this.getnewdata()
     this.corteForm = this.fb.group({
       clienteBuscador: ['', Validators.required],
@@ -140,6 +139,7 @@ export class ServiceandcutsComponent {
       formaPagoBuscador: this.formasPagos[0],
        
     }); 
+    this.sales1 = data.products; 
   }
   // Método para agregar servicio
   agregarServicio(serv: any) {
@@ -379,14 +379,7 @@ export class ServiceandcutsComponent {
   }
 
 
-  async getSalesDataList( ): Promise<void> {
-    const data = await this.sales.Saleslist({
-      page: 1,
-      limit:5, 
-    });
-    this.sales1 = data.products; 
-    console.log(this.sales1)
-  }
+ 
 
 
 }
