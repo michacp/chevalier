@@ -266,7 +266,7 @@
                   <small class="text-secondary">{{ sale.client }}</small>
                   <small><strong>{{ sale.barber }}</strong> - {{ sale.seller }}</small>
                   <div class="text-muted mt-1">
-                    <small>{{ sale.saleDate | date: 'medium' }}</small>
+                    <small>{{ sale.saleDate | date: 'medium' : 'UTC'}}</small>
                   </div>
                 </div>
               </div>
