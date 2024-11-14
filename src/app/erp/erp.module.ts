@@ -29,7 +29,8 @@ import { SalesListComponent } from './views/sales-list/sales-list.component';
 import { ReportsComponent } from './views/reports/reports.component'; 
 import { MatCardModule } from '@angular/material/card';
 import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';  
- 
+import { MatDividerModule } from '@angular/material/divider';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
   declarations: [
     ErpComponent,
@@ -61,8 +62,10 @@ import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';
     MatSnackBarModule, 
     MatPaginatorModule, 
     MatCardModule,  
+    MatDividerModule,
      
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
   providers: [ClientsService, TokenInterceptorService ],
 })
 export class ErpModule { }

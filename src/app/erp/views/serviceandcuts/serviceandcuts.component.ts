@@ -8,9 +8,9 @@ import { ProductsService } from '../../service/products/products.service';
 import { ListProductsI } from '../../models/products.inteface';
 import { ListHairdresserI } from '../../models/hairdresser.interface';
 import { ListpaymentMethodsI, ListdiscountsI, ListfinancialentitysI } from '../../models/payment.interface';
-import { SalesService } from '../../service/sales/sales.service';
+import { SalesService } from '../../service/sales/sales.service'; 
 import { Observable } from 'rxjs';
-
+import { ListSalesI, ListTypeproductserviceI } from '../../models/sales.interface';
 @Component({
   selector: 'app-serviceandcuts',
   templateUrl: './serviceandcuts.component.html',
@@ -49,7 +49,7 @@ export class ServiceandcutsComponent {
   // Datos de formas de pago
   formasPagos: ListpaymentMethodsI[] = [];
   formasPagosFiltradas: ListpaymentMethodsI[] = [];
-
+  sales1: ListSalesI[] = [];
 
   // Servicios agregados
   serviciosAgregados: ListProductsI[] = [];
@@ -94,6 +94,7 @@ export class ServiceandcutsComponent {
 
 
   ngOnInit() {
+    this.getSalesDataList( )
     this.getnewdata()
     this.corteForm = this.fb.group({
       clienteBuscador: ['', Validators.required],
@@ -376,4 +377,16 @@ export class ServiceandcutsComponent {
     // Si no cumple, retorna false o realiza alguna otra acción 
     return false;
   }
+
+
+  async getSalesDataList( ): Promise<void> {
+    const data = await this.sales.Saleslist({
+      page: 1,
+      limit:5, 
+    });
+    this.sales1 = data.products; 
+    console.log(this.sales1)
+  }
+
+
 }

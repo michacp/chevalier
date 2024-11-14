@@ -41,8 +41,7 @@ export class SalesListComponent implements OnInit {
     this.sales = data.products;
     this.filteredSales.data = this.sales;
     this.barbers = data.hairdresser;
-    this.productorservices = data.getproductservicestypes;
-     console.log(this.filteredSales.data)
+    this.productorservices = data.getproductservicestypes; 
   }
 
   applyFilters(): void {
