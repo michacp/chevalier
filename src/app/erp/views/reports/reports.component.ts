@@ -15,13 +15,23 @@ export class ReportsComponent {
     tipoReporte: 'normal',
     barbero: null
   };
-  displayedColumns: string[] = ['servicio', 'ingresoTotal', '#Hoy', 'totalHoy', '#Semana', 'totalSemana', '#Mes', 'totalMes', '#Ano', 'totalAno'];
+  mostrarIngresos: boolean = false; // Cambia según tu lógica
+  toggleIngresos(condicion:boolean): void { 
+    this.displayedColumns = condicion
+    ? ['servicio', '#Total', 'ingresoTotal']
+    : ['servicio', '#Hoy', 'totalHoy', '#Semana', 'totalSemana', '#Mes', 'totalMes', '#Ano', 'totalAno'];
+  }
+  displayedColumns: string[] = this.mostrarIngresos
+  ? ['servicio', '#Total', 'ingresoTotal']
+  : ['servicio', '#Hoy', 'totalHoy', '#Semana', 'totalSemana', '#Mes', 'totalMes', '#Ano', 'totalAno'];
+
   barberos: ListHairdresserI[] = [];
   textoFecha: string = '';
 
   // Variables para el resumen y detalles
   resumenIngresos = {
     servicio:"Total",
+    countTotal: 0,
     ingresoTotal: 0,
     countHoy:0,
     totalHoy: 0,
@@ -68,12 +78,19 @@ export class ReportsComponent {
 
     // Asignar los barberos al dropdown
     this.barberos = data.hairdresser;
+
     //this.detallesIngresos = data.report;
     // Asignar el resumen de ingresos y los detalles de servicios a las variables
     if (data.report && data.report.resumenIngresos && data.report.resumenIngresos.length > 0) {
       const resumen = data.report.resumenIngresos[0].resumenIngresos;
+      if(resumen.countTotal&&resumen.ingresoTotal){
+        this.toggleIngresos(true)
+      }else{
+        this.toggleIngresos(false)
+      }
       this.resumenIngresos = {
         servicio:"Total",
+        countTotal:resumen.countTotal || 0,
         ingresoTotal: resumen.ingresoTotal || 0,
         countHoy:resumen.countHoy || 0,
         totalHoy: resumen.totalHoy || 0,
@@ -88,6 +105,7 @@ export class ReportsComponent {
       this.resumenIngresos = {
 
         servicio:"Total",
+        countTotal:0,
         ingresoTotal:   0,
         countHoy:  0,
         totalHoy:   0,
@@ -103,6 +121,7 @@ export class ReportsComponent {
     if (data.report && data.report.serviciosreportes) {
       this.detallesIngresos = data.report.serviciosreportes.map((item:any)=> ({
         servicio:item.servicio,
+        countTotal: item.countTotal || 0,
         ingresoTotal: item.ingresoTotal || 0,
         countHoy:item.countHoy|| 0,
         totalHoy: item.totalHoy || 0,
