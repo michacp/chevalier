@@ -15,7 +15,7 @@ export class ReportsComponent {
     tipoReporte: 'normal',
     barbero: null
   };
-  displayedColumns: string[] = ['servicio', 'ingresoTotal', 'totalHoy', 'totalSemana', 'totalMes', 'totalAno'];
+  displayedColumns: string[] = ['servicio', 'ingresoTotal', '#Hoy', 'totalHoy', '#Semana', 'totalSemana', '#Mes', 'totalMes', '#Ano', 'totalAno'];
   barberos: ListHairdresserI[] = [];
   textoFecha: string = '';
 
@@ -23,9 +23,13 @@ export class ReportsComponent {
   resumenIngresos = {
     servicio:"Total",
     ingresoTotal: 0,
+    countHoy:0,
     totalHoy: 0,
+    countSemana: 0,
     totalSemana: 0,
+    countMes: 0,
     totalMes: 0,
+    countAno: 0,
     totalAno: 0
   };
   detallesIngresos: any[] = [];
@@ -71,9 +75,13 @@ export class ReportsComponent {
       this.resumenIngresos = {
         servicio:"Total",
         ingresoTotal: resumen.ingresoTotal || 0,
+        countHoy:resumen.countHoy || 0,
         totalHoy: resumen.totalHoy || 0,
         totalSemana: resumen.totalSemana || 0,
+        countSemana: resumen.countSemana || 0,
+        countMes:resumen.countMes|| 0,
         totalMes: resumen.totalMes || 0,
+        countAno:resumen.countAno || 0,
         totalAno: resumen.totalAno || 0
       };
     }else{
@@ -81,9 +89,13 @@ export class ReportsComponent {
 
         servicio:"Total",
         ingresoTotal:   0,
+        countHoy:  0,
         totalHoy:   0,
+        countSemana:0,
         totalSemana:   0,
+        countMes: 0,
         totalMes:  0,
+        countAno: 0,
         totalAno:  0
       };
     }
@@ -92,9 +104,13 @@ export class ReportsComponent {
       this.detallesIngresos = data.report.serviciosreportes.map((item:any)=> ({
         servicio:item.servicio,
         ingresoTotal: item.ingresoTotal || 0,
+        countHoy:item.countHoy|| 0,
         totalHoy: item.totalHoy || 0,
+        countSemana:item.countSemana || 0,
         totalSemana: item.totalSemana || 0,
+        countMes:item.countMes || 0,
         totalMes: item.totalMes || 0,
+        countAno:item.countAno || 0,
         totalAno: item.totalAno || 0
       } )); 
       this.detallesIngresos.push(this.resumenIngresos)
@@ -131,5 +147,10 @@ export class ReportsComponent {
     };
   }
 
+
+
+  isLastRow(row: any): boolean {
+    return this.detallesIngresos[this.detallesIngresos.length - 1] === row;
+  }
 
 }
