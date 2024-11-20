@@ -27,8 +27,37 @@ export class PdfReportComponent {
 
   // Función para el botón de Reporte Resumido
  async generarReporteResumido()  {
-  const report=await   this.salesservice.Salesreportsminimal(this.data)
-  console.log(report)
+  try {
+    // Llama al servicio para obtener el PDF en base64
+    const report = await this.salesservice.Salesreportsminimal(this.data);
+
+    if (report && report.pdfBase64) {  // Asegúrate de que el PDF esté en el objeto report
+      // Convierte el base64 a un Blob
+      const byteCharacters = atob(report.pdfBase64);
+      const byteNumbers = new Array(byteCharacters.length);
+      
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: 'application/pdf' });
+
+      // Crea una URL para el Blob
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      // Abre el PDF en una nueva pestaña
+      window.open(blobUrl, '_blank');
+
+      // Opcionalmente, libera la memoria cuando ya no necesites la URL del Blob
+      // window.URL.revokeObjectURL(blobUrl);
+    } else {
+      console.error('No se pudo obtener el PDF.');
+    }
+  } catch (error) {
+    console.error('Error al generar el reporte:', error);
+  }
+
   }
 
   // Función para el botón de Reporte Detallado
