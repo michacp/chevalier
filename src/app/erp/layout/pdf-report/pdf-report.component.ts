@@ -10,7 +10,7 @@ export class PdfReportComponent {
   constructor(private salesservice: SalesService,
     public dialogRef: MatDialogRef<PdfReportComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any  // Recibe los datos enviados 
-  ) { }
+  ) { } 
   datos = {
     title: '',
     date: ''
