@@ -381,5 +381,21 @@ export class ServiceandcutsComponent {
 
  
 
-
+print(){
+  this.sales.Salesprintticket({
+    "clienteCedula": "1234567890",
+    "clienteNombre": "Juan Pérez",
+    "numeroComprobante": "001-123456",
+    "servicios": [
+      { "nombre": "Corte de cabello", "precio": 15.00 },
+      { "nombre": "Afeitado", "precio": 10.00 }
+    ],
+    "total": 25.00,
+    "descuento": 5.00,
+    "barbero": "Carlos Martínez",
+    "fecha": "25/11/2024",
+    "formaPago": "Tarjeta de crédito",
+    "observaciones": "Cliente solicitó recorte especial."
+  })
+}
 }
