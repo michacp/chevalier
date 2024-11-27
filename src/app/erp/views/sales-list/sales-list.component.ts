@@ -17,7 +17,7 @@ import { ListHairdresserI } from '../../models/hairdresser.interface';
 export class SalesListComponent implements OnInit {
   sales: ListSalesI[] = [];
   filteredSales = new MatTableDataSource<ListSalesI>([]);
-  displayedColumns: string[] = ['saleNumber', 'productService','saleDate' , 'barber', 'seller', 'client', 'total'];
+  displayedColumns: string[] = ['saleNumber', 'productService', 'saleDate', 'barber', 'seller', 'client', 'total', 'print'];
   barbers: ListHairdresserI[] = [];
   productorservices: ListTypeproductserviceI[] = [];
   selectedBarber: string | null = null;
@@ -25,7 +25,7 @@ export class SalesListComponent implements OnInit {
   searchTerm: string = '';
   pageSize = 30;
   currentPage = 1;
-
+totalsales=0
   constructor(private salesservice: SalesService) { }
 
   ngOnInit(): void {
@@ -38,6 +38,7 @@ export class SalesListComponent implements OnInit {
       limit: this.pageSize,
       filters
     });
+    this.totalsales=data.total
     this.sales = data.products;
     this.filteredSales.data = this.sales;
     this.barbers = data.hairdresser;
@@ -54,10 +55,19 @@ export class SalesListComponent implements OnInit {
   }
 
   onPageChange(event: PageEvent): void {
-    this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex + 1;
-    this.applyFilters();
+    console.log('error')
+    this.pageSize = event.pageSize;      // Nuevo tamaño de página
+    this.currentPage = event.pageIndex + 1; // Nueva página (0-indexada, ajustada a 1-indexada)
+    this.applyFilters(); // Recarga los datos con los filtros actuales
   }
+async  printTicket(sale: any){
+  try {
+    const datas =await this.salesservice.Salesgetdataprintticket({id:sale})
+    await this.salesservice.Salesprintticket(datas) 
+} catch (error) {
+  console.log(error)
+}
 
+  }
 
 }

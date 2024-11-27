@@ -240,44 +240,70 @@
   <div class="col">
     <div class="container mt-4">
       <div class="row">
-        <div class="col-12" *ngFor="let sale of sales1">
-          <mat-card class="shadow-sm border-primary elegant-card">
-            <!-- Título alineado a la izquierda -->
-            <mat-card-header class="position-relative">
-              <h5 class="custom-heading text-left font-weight-bold text-primary"><strong>{{ sale.productService }}</strong></h5>
-
-              
-              <!-- Raya decorativa dorada cubriendo todo el ancho de la tarjeta -->
-              
-            </mat-card-header>
+        <div class="col-12" *ngFor="let sale of groupedSales">
+          <mat-card class="shadow-sm border-primary elegant-card p-3">
+            <!-- Cabecera de la tarjeta -->
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="custom-heading text-primary m-0">
+                 #{{ sale.saleNumber }}
+              </h6>
+              <small class="text-secondary">{{ sale.saleDate | date: 'short' : 'UTC' }}</small>
+            </div>
     
-            <mat-card-content>
-               <hr class="full-width-divider"> 
-              <!-- Información compacta de la venta -->
-              <div class="d-flex justify-content-between align-items-center">
-                <!-- Columna con número de venta y total con fondo dorado claro -->
-                <div class="d-flex flex-column text-center bg-light-gold p-2 rounded">
-                  <span class="text-secondary">#<strong>{{ sale.saleNumber }}</strong> </span>
-                  <span class="text-success font-weight-bold mt-1">${{ sale.total }}</span>
-                </div>
+            <!-- Línea decorativa -->
+            <hr class="full-width-divider my-2" />
     
-                <!-- Columna con información de cliente, barbero y vendedor -->
-                <div class="d-flex flex-column text-left">
-                  <small class="text-secondary">{{ sale.client }}</small>
-                  <small><strong>{{ sale.barber }}</strong> - {{ sale.seller }}</small>
-                  <div class="text-muted mt-1">
-                    <small>{{ sale.saleDate | date: 'medium' : 'UTC'}}</small>
-                  </div>
-                </div>
+            <!-- Contenido compactado -->
+            <div class="row">
+              <div class="col-12"> 
+                <span>{{ sale.client.names }} {{ sale.client.lastNames }} - {{ sale.paymentMethod.name }}</span>
               </div>
-            </mat-card-content>
+              <div class="col-12">
+                <strong> {{ sale.barber.firstname }} {{ sale.barber.lastname }} </strong> - 
+                <span>{{ sale.cashier.firstname }} {{ sale.cashier.lastname }}</span>
+              </div>
+         
+            </div>
+    
+            <!-- Productos -->
+            <div class="mt-2">
+              <strong>Productos:</strong>
+              <ul class="list-unstyled mb-1">
+                <li *ngFor="let product of sale.productsOrServices">
+                  <small>- {{ product.productName }} (${{ product.price }})</small>
+                </li>
+              </ul>
+            </div>
+    
+            <!-- Subtotal y descuento -->
+            <div class="mt-2">
+              <strong>Subtotal:</strong>
+              ${{ getTotalWithoutDiscount(sale.productsOrServices) | number: '1.2-2' }}
+            </div>
+            <div class="mt-1" *ngIf="sale.discount.value > 0">
+              <strong>Descuento:</strong>
+              <span>
+                {{ sale.discount.type === 'PERCENTAGE' 
+                  ? sale.discount.value + '%' 
+                  : '$' + sale.discount.value }}
+              </span>
+              <small class="text-muted">
+                ({{ sale.discount.type === 'PERCENTAGE' ? 'Porcentual' : 'Fijo' }})
+              </small>
+            </div>
+    
+            <!-- Total y Botón -->
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="bg-light-gold px-2 py-1 rounded">
+                <strong>Total:</strong> ${{ getTotal(sale.productsOrServices, sale.discount) | number: '1.2-2' }}
+              </div>
+              <button mat-raised-button color="primary" class="btn-sm" (click)="getdataprinttiket(sale._id)">
+                <mat-icon>print</mat-icon> Imprimir
+              </button>
+            </div>
           </mat-card>
         </div>
       </div>
     </div>
-    
-    
-
   </div>
-  <button mat-button color="warn" (click)="print()">print</button>
 </div>

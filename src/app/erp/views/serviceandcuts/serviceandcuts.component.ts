@@ -10,7 +10,7 @@ import { ListHairdresserI } from '../../models/hairdresser.interface';
 import { ListpaymentMethodsI, ListdiscountsI, ListfinancialentitysI } from '../../models/payment.interface';
 import { SalesService } from '../../service/sales/sales.service'; 
 import { Observable } from 'rxjs';
-import { ListSalesI, ListTypeproductserviceI } from '../../models/sales.interface';
+import { ListSalesI, GroupedSalesI} from '../../models/sales.interface';
 @Component({
   selector: 'app-serviceandcuts',
   templateUrl: './serviceandcuts.component.html',
@@ -50,7 +50,7 @@ export class ServiceandcutsComponent {
   formasPagos: ListpaymentMethodsI[] = [];
   formasPagosFiltradas: ListpaymentMethodsI[] = [];
   sales1: ListSalesI[] = [];
-
+  groupedSales:GroupedSalesI[]=[];
   // Servicios agregados
   serviciosAgregados: ListProductsI[] = [];
   total = 0;
@@ -140,7 +140,32 @@ export class ServiceandcutsComponent {
        
     }); 
     this.sales1 = data.products; 
+    this.groupedSales = data.products; 
   }
+ 
+  getTotalWithoutDiscount(productsOrServices: { price: number }[]): number {
+    return productsOrServices.reduce((total, item) => total + item.price, 0);
+  }
+// Calcular el total de los productos o servicios incluyendo descuentos
+getTotal(
+  productsOrServices: { price: number }[],
+  discount: { value: number; type: string }
+): number {
+  const subtotal = productsOrServices.reduce((total, item) => total + item.price, 0);
+
+  if (discount.type === 'PERCENTAGE') {
+    const discountValue = (subtotal * discount.value) / 100;
+    return +(subtotal - discountValue).toFixed(2); // Redondear a 2 decimales
+  } else if (discount.type === 'FIXED') {
+    return Math.max(subtotal - discount.value, 0); // Evitar valores negativos
+  }
+
+  // Si el tipo de descuento no es válido, retornar subtotal
+  return subtotal;
+}
+
+
+
   // Método para agregar servicio
   agregarServicio(serv: any) {
     const servicio = this.corteForm.get('servicioBuscador')?.value as ListProductsI;
@@ -225,7 +250,10 @@ export class ServiceandcutsComponent {
       total
     }
     const data = await this.sales.Salessave(formset)
+    
     if (data._id) {
+      this.print(data)
+      
       this.ngOnInit()
       this.serviciosAgregados = []
     }
@@ -379,23 +407,12 @@ export class ServiceandcutsComponent {
   }
 
 
- 
+ async getdataprinttiket(data:any){
+  const datas =await this.sales.Salesgetdataprintticket({id:data})
+  this.print(datas)
+ }
 
-print(){
-  this.sales.Salesprintticket({
-    "clienteCedula": "1234567890",
-    "clienteNombre": "Juan Pérez",
-    "numeroComprobante": "001-123456",
-    "servicios": [
-      { "nombre": "Corte de cabello", "precio": 15.00 },
-      { "nombre": "Afeitado", "precio": 10.00 }
-    ],
-    "total": 25.00,
-    "descuento": 5.00,
-    "barbero": "Carlos Martínez",
-    "fecha": "25/11/2024",
-    "formaPago": "Tarjeta de crédito",
-    "observaciones": "Cliente solicitó recorte especial."
-  })
+async print(data:any){
+ await this.sales.Salesprintticket(data)
 }
 }
