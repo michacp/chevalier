@@ -54,8 +54,7 @@ totalsales=0
     this.getSalesDataList(filters);
   }
 
-  onPageChange(event: PageEvent): void {
-    console.log('error')
+  onPageChange(event: PageEvent): void { 
     this.pageSize = event.pageSize;      // Nuevo tamaño de página
     this.currentPage = event.pageIndex + 1; // Nueva página (0-indexada, ajustada a 1-indexada)
     this.applyFilters(); // Recarga los datos con los filtros actuales
