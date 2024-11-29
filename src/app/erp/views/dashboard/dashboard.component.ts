@@ -14,6 +14,7 @@ export class DashboardComponent {
   private semanasales: Grafico[] = [];
   private semanaanterior: Grafico[] = [];
    summarizedData: Grafico[] = [];
+   summarizedDataservices: Grafico[] = [];
   transformedData: { name: string; data: { x: string; y: number }[] }[] = [];
   isDataLoaded: boolean = false; // Variable para controlar la carga de datos
 
@@ -36,6 +37,7 @@ export class DashboardComponent {
       this.semanaanterior = response.lastWeek;
       this.transformedData = this.transformData(response.thisWeekpeerbarber);
       this.summarizedData = this.summarizeData(response.thisWeekpeerbarber);
+      this.summarizedDataservices =  response.thisWeekservices 
       this.isDataLoaded = true; // Marca los datos como cargados
     } catch (error) {
       console.error('Error al obtener datos:', error);
