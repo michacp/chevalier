@@ -46,7 +46,7 @@ export class CustomChartComponent {
 
   updateChart(): void {
     this.chartSeries = this.series.map(serie => ({
-      name: serie.name,
+      name: `${serie.name} (Total: ${this.calculateTotal(serie.data)})`,
       data: serie.data.map(point => point.y)
     }));
     this.xAxis = {
@@ -60,5 +60,9 @@ export class CustomChartComponent {
       text: this.title,
       align: 'center'
     };
+  }
+
+  private calculateTotal(data: { x: string; y: number }[]): number {
+    return data.reduce((sum, point) => sum + point.y, 0);
   }
 }
