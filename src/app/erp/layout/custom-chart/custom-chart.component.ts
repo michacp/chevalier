@@ -17,11 +17,12 @@ export class CustomChartComponent {
   @Input() series: ChartData[] = []; // Datos de las series
   @Input() type: 'line' | 'bar' | 'area' = 'line'; // Tipo de gráfico
   @Input() title: string = 'Gráfico dinámico'; // Título del gráfico
+  
 
   chartSeries: ApexAxisChartSeries = [];
   chartDetails: ApexChart = {
     type: this.type,
-    height: 350
+    height: 450
   };
   xAxis: ApexXAxis = {
     categories: []
