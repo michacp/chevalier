@@ -39,9 +39,7 @@ import { FeedbackFormComponent } from './views/feedback-form/feedback-form.compo
 import { TermsComponent } from './views/terms/terms.component';
 import { SocialMediaLinksComponent } from './views/social-media-links/social-media-links.component';
 import { TeamMembersComponent } from './layout/team-members/team-members.component';
-import { LoginComponent } from './views/login/login.component'; 
-
- 
+import { LoginComponent } from './views/login/login.component';   
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'i18n/', '.json');
@@ -93,7 +91,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),  
+    }), 
   ],
   providers: [
     provideClientHydration(),

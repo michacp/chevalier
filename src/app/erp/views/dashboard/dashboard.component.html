@@ -1,10 +1,18 @@
-<div class="login-container"><p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-<p>dashboard works!</p>
-</div>
+<div *ngIf="hasRole(['ADMIN', 'SUPERVISOR']) && isDataLoaded" class="row">
+    <div class="col-sm-6">
+      <app-custom-chart 
+        [data]="getSemanaSalesData()"
+        [type]="'line'"
+        [title]="'Ventas semana actual'"
+        [seriesName]="'Ventas ($)'"
+      ></app-custom-chart>
+    </div>
+    <div class="col-sm-6">
+      <app-custom-chart 
+        [data]="getSemanaAnteriorData()"
+        [type]="'line'"
+        [title]="'Ventas semana anterior'"
+        [seriesName]="'Ventas ($)'"
+      ></app-custom-chart>
+    </div>
+  </div>

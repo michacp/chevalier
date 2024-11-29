@@ -42,23 +42,30 @@ export class TokenInterceptorService {
 
             case 401:
               this.notyf.error('Sesión expirada, intentando refrescar el token...');
-              
+              localStorage.removeItem('token');
+              localStorage.removeItem('user');
+              sessionStorage.removeItem('token');
+              sessionStorage.removeItem('user');
+              this.router.navigate(['/login']);
               // Intento de refrescar el token
-              try {
-                const refreshToken = localStorage.getItem('refreshToken');
-                if (refreshToken) {
-                  const newToken = await this.refreshToken(refreshToken);
-                  if (newToken) {
-                    localStorage.setItem('token', newToken);
-                    error.config.headers['Authorization'] = `Bearer ${newToken}`;
-                    return axios.request(error.config); // Reintentar la solicitud original con el nuevo token
-                  }
-                }
-              } catch (refreshError) {
-                this.notyf.error('No se pudo refrescar el token, por favor inicia sesión nuevamente');
-                localStorage.removeItem('authToken');
-                this.router.navigate(['/login']);
-              }
+              // try {
+              //   const refreshToken = localStorage.getItem('refreshToken');
+              //   if (refreshToken) {
+              //     const newToken = await this.refreshToken(refreshToken);
+              //     if (newToken) {
+              //       localStorage.setItem('token', newToken);
+              //       error.config.headers['Authorization'] = `Bearer ${newToken}`;
+              //       return axios.request(error.config); // Reintentar la solicitud original con el nuevo token
+              //     }
+              //   }
+              // } catch (refreshError) {
+              //   this.notyf.error('No se pudo refrescar el token, por favor inicia sesión nuevamente');
+              //   localStorage.removeItem('token');
+              //   localStorage.removeItem('user');
+              //   sessionStorage.removeItem('token');
+              //   sessionStorage.removeItem('user');
+              //   this.router.navigate(['/login']);
+              // }
               break;
 
             case 403:

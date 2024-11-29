@@ -88,6 +88,24 @@ export class SalesService {
       throw error;
     }
   }
+
+  async Salesgetdatagraph(): Promise<any> {
+    try {
+      const response = await axios.post(`${this.API_URL}salesreportgrahp`);
+      return response.data;
+    } catch (error) {
+      console.error('Error saving client:', error);
+      throw error;
+    }
+  }
+
+
+
+
+
+
+
+
   async Salesprintticket(data:any): Promise<any> {
     try {
       const response = await axios.post(`https://192.168.31.240:3051/printticktets`,data);

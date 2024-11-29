@@ -29,8 +29,13 @@ import { SalesListComponent } from './views/sales-list/sales-list.component';
 import { ReportsComponent } from './views/reports/reports.component'; 
 import { MatCardModule } from '@angular/material/card';
 import { PdfReportComponent } from './layout/pdf-report/pdf-report.component';  
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+
 import { MatDividerModule } from '@angular/material/divider';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CustomChartComponent } from './layout/custom-chart/custom-chart.component'; 
+ 
+import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
   declarations: [
     ErpComponent,
@@ -40,7 +45,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AddclientComponent,
     SalesListComponent,
     ReportsComponent,
-    PdfReportComponent
+    PdfReportComponent,
+    CustomChartComponent,
+    DashboardComponent 
   ],
   imports: [  
 
@@ -62,10 +69,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatSnackBarModule, 
     MatPaginatorModule, 
     MatCardModule,  
-    MatDividerModule,
-     
+    MatDividerModule,  
+    NgApexchartsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 
   providers: [ClientsService, TokenInterceptorService ],
+  exports: [
+    CustomChartComponent, // Exporta este componente para que pueda usarse en otros módulos
+  ],
 })
 export class ErpModule { }
