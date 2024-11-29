@@ -16,4 +16,14 @@
           [title]="'Comparativa de Ventas de esta semana'">
         </app-custom-chart>
       </div>
+
+      <div class="col-6">
+        <app-custom-chart 
+        [series]="[
+        { name: 'Semana Actual', color: '#1f77b4', data:  summarizedData } 
+      ]"
+          [type]="'bar'"
+          [title]="'Comparativa de Ventas Totales por barbero de esta semana'">
+        </app-custom-chart>
+      </div>
   </div>

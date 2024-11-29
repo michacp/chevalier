@@ -13,6 +13,7 @@ interface Grafico {
 export class DashboardComponent {
   private semanasales: Grafico[] = [];
   private semanaanterior: Grafico[] = [];
+   summarizedData: Grafico[] = [];
   transformedData: { name: string; data: { x: string; y: number }[] }[] = [];
   isDataLoaded: boolean = false; // Variable para controlar la carga de datos
 
@@ -34,6 +35,7 @@ export class DashboardComponent {
       this.semanasales = response.thisWeek;
       this.semanaanterior = response.lastWeek;
       this.transformedData = this.transformData(response.thisWeekpeerbarber);
+      this.summarizedData = this.summarizeData(response.thisWeekpeerbarber);
       this.isDataLoaded = true; // Marca los datos como cargados
     } catch (error) {
       console.error('Error al obtener datos:', error);
@@ -62,6 +64,15 @@ export class DashboardComponent {
   getSemanaAnteriorData(): Grafico[] {
     return this.semanaanterior.length > 0 ? this.semanaanterior : [{ x: 'Sin datos', y: 0 }];
   }
+
+  summarizeData(data: any[]): { x: string; y: number }[] {
+    return data.map(person => {
+      const total = person.data.reduce((sum: number, day: { x: string; y: number }) => sum + day.y, 0);
+      return { x: person.name, y:total };
+    });
+  }
+
+
 }
 
 
