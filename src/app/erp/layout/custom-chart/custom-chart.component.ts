@@ -24,6 +24,7 @@ export class CustomChartComponent {
     type: this.type,
     height: 450
   };
+ 
   xAxis: ApexXAxis = {
     categories: []
   };
@@ -35,7 +36,7 @@ export class CustomChartComponent {
     align: 'center'
   };
   legend: ApexLegend = {
-    position: 'top', // Posición de la leyenda
+    position: 'bottom', // Posición de la leyenda
     horizontalAlign: 'center'
   };
 
