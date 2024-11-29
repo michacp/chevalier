@@ -1,18 +1,12 @@
 <div *ngIf="hasRole(['ADMIN', 'SUPERVISOR']) && isDataLoaded" class="row">
-    <div class="col-sm-6">
+    <div class="col-12">
       <app-custom-chart 
-        [data]="getSemanaSalesData()"
+        [series]="[
+          { name: 'Semana Actual', color: '#1f77b4', data: getSemanaSalesData() },
+          { name: 'Semana Anterior', color: '#ff7f0e', data: getSemanaAnteriorData() }
+        ]"
         [type]="'line'"
-        [title]="'Ventas semana actual'"
-        [seriesName]="'Ventas ($)'"
-      ></app-custom-chart>
-    </div>
-    <div class="col-sm-6">
-      <app-custom-chart 
-        [data]="getSemanaAnteriorData()"
-        [type]="'line'"
-        [title]="'Ventas semana anterior'"
-        [seriesName]="'Ventas ($)'"
-      ></app-custom-chart>
+        [title]="'Comparativa de Ventas Semanales'">
+      </app-custom-chart>
     </div>
   </div>

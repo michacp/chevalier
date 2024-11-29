@@ -1,16 +1,23 @@
-import { Component, Input, OnChanges, SimpleChanges  } from '@angular/core';
-import { ApexAxisChartSeries, ApexChart, ApexXAxis, ApexDataLabels, ApexTitleSubtitle } from 'ng-apexcharts';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ApexAxisChartSeries, ApexChart, ApexXAxis, ApexDataLabels, ApexTitleSubtitle, ApexLegend } from 'ng-apexcharts';
+
+interface ChartData {
+  name: string; // Nombre de la serie
+  color?: string; // Color de la serie
+  data: { x: string; y: number }[]; // Datos de la serie
+}
+
+
 @Component({
   selector: 'app-custom-chart',
   templateUrl: './custom-chart.component.html',
   styleUrl: './custom-chart.component.css'
 })
 export class CustomChartComponent {
-  @Input() data: { x: string; y: number }[] = []; // Datos del gráfico
+  @Input() series: ChartData[] = []; // Datos de las series
   @Input() type: 'line' | 'bar' | 'area' = 'line'; // Tipo de gráfico
   @Input() title: string = 'Gráfico dinámico'; // Título del gráfico
-  @Input() seriesName: string = 'Valores'; // Nombre de la serie
- 
+
   chartSeries: ApexAxisChartSeries = [];
   chartDetails: ApexChart = {
     type: this.type,
@@ -26,27 +33,28 @@ export class CustomChartComponent {
     text: this.title,
     align: 'center'
   };
+  legend: ApexLegend = {
+    position: 'top', // Posición de la leyenda
+    horizontalAlign: 'center'
+  };
 
-  ngOnInit(): void {
-    
- console.log(this.data)
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['series']) {
       this.updateChart();
- 
+    }
   }
 
   updateChart(): void {
-    this.chartSeries = [
-      {
-        name: this.seriesName,
-        data: this.data.map(point => point.y)
-      }
-    ];
+    this.chartSeries = this.series.map(serie => ({
+      name: serie.name,
+      data: serie.data.map(point => point.y)
+    }));
+    this.xAxis = {
+      categories: this.series[0]?.data.map(point => point.x) || []
+    };
     this.chartDetails = {
       ...this.chartDetails,
       type: this.type
-    };
-    this.xAxis = {
-      categories: this.data.map(point => point.x)
     };
     this.chartTitle = {
       text: this.title,
