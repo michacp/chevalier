@@ -14,6 +14,7 @@ export class DashboardComponent {
   private semanasales: Grafico[] = [];
   private semanaanterior: Grafico[] = [];
    summarizedData: Grafico[] = [];
+   summarizedDatalastweek: Grafico[] = [];
    summarizedDataservices: Grafico[] = [];
   transformedData: { name: string; data: { x: string; y: number }[] }[] = [];
   transformedDatalastweek: { name: string; data: { x: string; y: number }[] }[] = [];
@@ -36,9 +37,9 @@ export class DashboardComponent {
       const response = await this.salesService.Salesgetdatagraph();
       this.semanasales = response.thisWeek;
       this.semanaanterior = response.lastWeek;
-      this.transformedData = this.transformData(response.thisWeekpeerbarber);
-      this.transformedDatalastweek = this.transformData(response.lastWeekpeerbarber);
+      this.transformedData = this.transformData(response.thisWeekpeerbarber); 
       this.summarizedData = this.summarizeData(response.thisWeekpeerbarber);
+      this.summarizedDatalastweek = this.summarizeData(response.lastWeekpeerbarber);
       this.summarizedDataservices =  response.thisWeekservices 
       this.isDataLoaded = true; // Marca los datos como cargados
     } catch (error) {
