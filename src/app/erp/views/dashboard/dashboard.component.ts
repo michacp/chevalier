@@ -38,6 +38,8 @@ export class DashboardComponent {
       this.semanasales = response.thisWeek;
       this.semanaanterior = response.lastWeek;
       this.transformedData = this.transformData(response.thisWeekpeerbarber); 
+      this.transformedDatalastweek = this.transformData(response.lastWeekpeerbarber); 
+
       this.summarizedData = this.summarizeData(response.thisWeekpeerbarber);
       this.summarizedDatalastweek = this.summarizeData(response.lastWeekpeerbarber);
       this.summarizedDataservices =  response.thisWeekservices 
