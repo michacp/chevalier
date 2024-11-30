@@ -16,7 +16,14 @@
           [title]="'Comparativa de Ventas de esta semana'">
         </app-custom-chart>
       </div>
-
+      
+      <div class="col-6">
+        <app-custom-chart 
+          [series]="transformedDatalastweek"
+          [type]="'line'"
+          [title]="'Comparativa de Ventas de esta semana'">
+        </app-custom-chart>
+      </div>
       <div class="col-6">
         <app-custom-chart 
         [series]="[
