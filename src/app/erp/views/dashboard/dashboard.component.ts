@@ -73,10 +73,12 @@ export class DashboardComponent {
   }
 
   summarizeData(data: any[]): { x: string; y: number }[] {
-    return data.map(person => {
-      const total = person.data.reduce((sum: number, day: { x: string; y: number }) => sum + day.y, 0);
-      return { x: person.name, y:total };
-    });
+    return data
+      .map(person => {
+        const total = person.data.reduce((sum: number, day: { x: string; y: number }) => sum + day.y, 0);
+        return { x: person.name, y: total };
+      })
+      .sort((a, b) => a.x.localeCompare(b.x)); // Ordenar alfabéticamente por `x`
   }
 
 
