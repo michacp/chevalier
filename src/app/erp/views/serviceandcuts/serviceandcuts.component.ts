@@ -385,7 +385,7 @@ export class ServiceandcutsComponent {
 if (hasFalseIsGlobal) {
   this.openDialogDiscount(datas)
 }
-    
+     
     this.descuentos = datas; 
     this.calcularTotal(); 
   
