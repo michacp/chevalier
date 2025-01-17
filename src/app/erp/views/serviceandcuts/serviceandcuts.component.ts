@@ -389,7 +389,7 @@ if (hasFalseIsGlobal) {
     this.descuentos = datas; 
     this.calcularTotal(); 
  
-  }
+  } 
   openDialogDiscount(data:ListDiscounts[]): void {
     
     const aux=this.corteForm.value
