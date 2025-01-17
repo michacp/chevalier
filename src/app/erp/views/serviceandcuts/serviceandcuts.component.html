@@ -45,7 +45,6 @@
                   </mat-form-field>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="col-sm-6">
@@ -55,7 +54,7 @@
                 <div class="row">
                   <mat-form-field appearance="fill">
                     <mat-label>Buscar Servicio</mat-label>
-                    <input type="text" matInput placeholder="Buscar Servicio" [matAutocomplete]="autoServicio"
+                    <input type="text" matInput #searchInput placeholder="Buscar Servicio" [matAutocomplete]="autoServicio"
                       formControlName="servicioBuscador" (keyup.enter)="searchproducts()">
                     <!-- Aquí se agrega el botón con el icono de lupa -->
                     <button mat-icon-button matSuffix (click)="searchproducts()" aria-label="Buscar cliente">
@@ -90,6 +89,19 @@
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>
+
+              <!-- <app-search-autocomplete
+              [label]="'Buscar Barbero'"
+              [placeholder]="'Buscar Barbero'"
+              [data]="barberos"
+              [displayWithFn]="displayHairdresser"
+              [control]="barberoControl"
+              
+              (optionSelected)="onHairdresserSelected($event)"
+            ></app-search-autocomplete> -->
+
+
+
             </div>
           </div>
           <div class="col-sm-6">
@@ -138,22 +150,6 @@
 
 
         <div class="row">
-          <div class="col-sm-6">
-            <div class="row">
-              <mat-form-field appearance="fill">
-                <mat-label>Buscar Descuento</mat-label>
-                <input type="text" matInput placeholder="Buscar Descuento" [matAutocomplete]="autoDescuento"
-                  formControlName="descuentoBuscador">
-                <mat-autocomplete #autoDescuento="matAutocomplete" [displayWith]="displayDescuento"
-                  (optionSelected)="calcularTotal()">
-                  <mat-option *ngFor="let descuento of descuentos" [value]="descuento">
-                    {{ descuento.name }} ({{ descuento.discountType === 'PERCENTAGE' ? descuento.value + '%' : '$' +
-                    descuento.value }})
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-            </div>
-          </div>
           <div class="col-sm-6">
             <div class="row">
               <mat-form-field appearance="fill" class="full-width">
@@ -211,6 +207,20 @@
                 </ng-container>
               </td>
             </ng-container>
+            <!-- descuento columna -->
+            <ng-container matColumnDef="descuento">
+              <th mat-header-cell *matHeaderCellDef> Descuentos </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-form-field appearance="fill">
+                  <mat-select [(ngModel)]="element.selectedDiscount" [ngModelOptions]="{standalone: true}"
+                    placeholder="Selecciona un descuento" (selectionChange)="calcularTotal() " >
+                    <mat-option *ngFor="let discount of element.discount" [value]="discount">
+                      <strong>{{ discount.discountType === 'PERCENTAGE' ? '%' : discount.discountType === 'FIXED' ? '$' : '' }}</strong>{{ discount.value }} ({{ discount.name | slice:0:10 }})
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </ng-container>
             <!-- Acciones Column -->
             <ng-container matColumnDef="acciones">
               <th mat-header-cell *matHeaderCellDef> Acciones </th>
@@ -225,10 +235,19 @@
         </div>
 
         <!-- Total de los Servicios -->
-        <div class="total-container">
-          <label>Total: {{ totalConDescuento | currency }}</label>
+        <div class="row">
+          <div class="totales-container">
+            <div class="subtotal-container">
+              <label>Subtotal: {{ totales.subtotal | currency }}</label>
+            </div>
+            <div class="descuento-container">
+              <label>Descuento total: {{ totales.totalDescuento | currency }}</label>
+            </div>
+            <div class="total-container">
+              <label>Total: {{ totales.total | currency }}</label>
+            </div>
+          </div>
         </div>
-
         <!-- Botón para registrar corte -->
         <div class="form-group">
           <button mat-raised-button color="primary" (click)="onSubmit()"
@@ -237,6 +256,10 @@
       </div>
     </form>
   </div>
+
+
+  <!-- tabla de los ultimos cortes -->
+
   <div class="col">
     <div class="container mt-4">
       <div class="row">
@@ -245,57 +268,59 @@
             <!-- Cabecera de la tarjeta -->
             <div class="d-flex justify-content-between align-items-center">
               <h6 class="custom-heading text-primary m-0">
-                 #{{ sale.saleNumber }}
+                #{{ sale.saleNumber }}
               </h6>
-              <small class="text-secondary">{{ sale.saleDate   }}</small>
+              <small class="text-secondary">{{ sale.saleDate }}</small>
             </div>
-    
+
             <!-- Línea decorativa -->
             <hr class="full-width-divider my-2" />
-    
+
             <!-- Contenido compactado -->
             <div class="row">
-              <div class="col-12"> 
+              <div class="col-12">
                 <span>{{ sale.client.names }} {{ sale.client.lastNames }} - {{ sale.paymentMethod.name }}</span>
               </div>
               <div class="col-12">
-                <strong> {{ sale.barber.firstname }} {{ sale.barber.lastname }} </strong> - 
+                <strong> {{ sale.barber.firstname }} {{ sale.barber.lastname }} </strong> -
                 <span>{{ sale.cashier.firstname }} {{ sale.cashier.lastname }}</span>
               </div>
-         
             </div>
-    
+
             <!-- Productos -->
             <div class="mt-2">
               <strong>Productos:</strong>
               <ul class="list-unstyled mb-1">
                 <li *ngFor="let product of sale.productsOrServices">
-                  <small>- {{ product.productName }} (${{ product.price }})</small>
+                  <small>
+                    - {{ product.productName }} (${{ product.price }})
+                    <span *ngIf="product.discountDetails.value > 0">
+                      - Descuento:
+                      {{ product.discountDetails.type === 'PERCENTAGE'
+                      ? product.discountDetails.value + '%'
+                      : '$' + product.discountDetails.value }}
+                      <small class="text-muted">
+                        ({{ product.discountDetails.type === 'PERCENTAGE' ? 'Porcentual' : 'Fijo' }})
+                      </small>
+                    </span>
+                  </small>
                 </li>
               </ul>
             </div>
-    
-            <!-- Subtotal y descuento -->
+
+            <!-- Subtotal y total -->
             <div class="mt-2">
               <strong>Subtotal:</strong>
-              ${{ getTotalWithoutDiscount(sale.productsOrServices) | number: '1.2-2' }}
+              ${{ getSubtotal(sale.productsOrServices) | number: '1.2-2' }}
             </div>
-            <div class="mt-1" *ngIf="sale.discount.value > 0">
-              <strong>Descuento:</strong>
-              <span>
-                {{ sale.discount.type === 'PERCENTAGE' 
-                  ? sale.discount.value + '%' 
-                  : '$' + sale.discount.value }}
-              </span>
-              <small class="text-muted">
-                ({{ sale.discount.type === 'PERCENTAGE' ? 'Porcentual' : 'Fijo' }})
-              </small>
+            <!-- Total Descuentos -->
+            <div class="mt-2">
+              <strong>Total Descuentos:</strong>
+              ${{ getTotalDiscounts(sale.productsOrServices) | number: '1.2-2' }}
             </div>
-    
-            <!-- Total y Botón -->
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="bg-light-gold px-2 py-1 rounded">
-                <strong>Total:</strong> ${{ getTotal(sale.productsOrServices, sale.discount) | number: '1.2-2' }}
+                <strong>Total:</strong> ${{ getTotalWithDiscounts(sale.productsOrServices) | number: '1.2-2' }}
               </div>
               <button mat-raised-button color="primary" class="btn-sm" (click)="getdataprinttiket(sale._id)">
                 <mat-icon>print</mat-icon> Imprimir

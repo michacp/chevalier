@@ -36,6 +36,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CustomChartComponent } from './layout/custom-chart/custom-chart.component'; 
  
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { DiscountModalComponent } from './layout/discount-modal/discount-modal.component';
+import { SearchAutocompleteComponent } from './layout/search-autocomplete/search-autocomplete.component';
 @NgModule({
   declarations: [
     ErpComponent,
@@ -47,7 +49,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     ReportsComponent,
     PdfReportComponent,
     CustomChartComponent,
-    DashboardComponent 
+    DashboardComponent,
+    DiscountModalComponent,
+    SearchAutocompleteComponent 
   ],
   imports: [  
 

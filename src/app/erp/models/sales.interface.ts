@@ -15,27 +15,27 @@ export interface GroupedSalesI {
   saleNumber: number; // Número de la venta
   observations: string; // Observaciones sobre la venta
   client: {
-    dni: string;
-    names: string;
-    lastNames: string;
+    dni: string; // Documento de identificación del cliente
+    names: string; // Nombres del cliente
+    lastNames: string; // Apellidos del cliente
   };
   barber: {
-    firstname: string;
-    lastname: string;
+    firstname: string; // Nombre del barbero
+    lastname: string; // Apellido del barbero
   };
   cashier: {
-    firstname: string;
-    lastname: string;
+    firstname: string; // Nombre del cajero
+    lastname: string; // Apellido del cajero
   };
   productsOrServices: {
     item: string; // ID del producto o servicio
     price: number; // Precio del producto o servicio
     productName: string; // Nombre del producto o servicio
+    discountDetails: {
+      value: number; // Valor del descuento
+      type: 'PERCENTAGE' | 'FIXED'; // Tipo de descuento (porcentaje o fijo)
+    };
   }[];
-  discount: {
-    value: number; // Valor del descuento
-    type: string; // Tipo de descuento (e.g., 'PERCENTAGE')
-  };
   saleDate: string; // Fecha de la venta
   paymentMethod: {
     name: string; // Método de pago (e.g., 'EFECTIVO')
