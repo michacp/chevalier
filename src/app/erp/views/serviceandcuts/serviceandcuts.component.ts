@@ -388,7 +388,7 @@ if (hasFalseIsGlobal) {
     
     this.descuentos = datas; 
     this.calcularTotal(); 
- 
+  
   } 
   openDialogDiscount(data:ListDiscounts[]): void {
     
