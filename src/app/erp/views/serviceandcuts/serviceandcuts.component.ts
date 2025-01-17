@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, ViewChild  } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AddclientComponent } from '../../layout/addclient/addclient.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ClientsService } from '../../service/clients/clients.service';
 import { ListClientsI } from '../../models/clients.inteface';
 import { ProductsService } from '../../service/products/products.service';
-import { ListProductsI } from '../../models/products.inteface';
+import { ListProductsI, ListProductsSelectedI, ListDiscounts } from '../../models/products.inteface';
 import { ListHairdresserI } from '../../models/hairdresser.interface';
 import { ListpaymentMethodsI, ListdiscountsI, ListfinancialentitysI } from '../../models/payment.interface';
-import { SalesService } from '../../service/sales/sales.service'; 
+import { SalesService } from '../../service/sales/sales.service';
 import { Observable } from 'rxjs';
-import { ListSalesI, GroupedSalesI} from '../../models/sales.interface';
+import { ListSalesI, GroupedSalesI } from '../../models/sales.interface';
+import { DiscountModalComponent } from '../../layout/discount-modal/discount-modal.component';
 @Component({
   selector: 'app-serviceandcuts',
   templateUrl: './serviceandcuts.component.html',
   styleUrl: './serviceandcuts.component.css'
 })
 export class ServiceandcutsComponent {
+  @ViewChild('searchInput') searchInput!: ElementRef;
   corteForm!: FormGroup;
   modalVisible: boolean = false;
   openModal() {
@@ -44,19 +46,21 @@ export class ServiceandcutsComponent {
   barberos: ListHairdresserI[] = [];
 
   servicios: ListProductsI[] = [];
+  todosLosServicios: ListProductsI[] = [];
   // Datos de descuentos
-  descuentos: ListdiscountsI[] = [];
+  descuentos: ListDiscounts[] = [];
   // Datos de formas de pago
   formasPagos: ListpaymentMethodsI[] = [];
   formasPagosFiltradas: ListpaymentMethodsI[] = [];
   sales1: ListSalesI[] = [];
-  groupedSales:GroupedSalesI[]=[];
+  groupedSales: GroupedSalesI[] = [];
   // Servicios agregados
-  serviciosAgregados: ListProductsI[] = [];
+  serviciosAgregados: ListProductsSelectedI[] = [];
+
   total = 0;
   totalConDescuento = 0;
   // Columnas para la tabla
-  displayedColumns: string[] = ['servicio', 'precio', 'acciones'];
+  displayedColumns: string[] = ['servicio', 'precio', 'descuento', 'acciones'];
 
   // Datos del encabezado de la factura
   facturaInfo = {
@@ -75,31 +79,30 @@ export class ServiceandcutsComponent {
     });
 
     dialogRef.componentInstance.closeModalEvent.subscribe((result: any) => {
-      if(result.close){
+      if (result.close) {
         this.normalfind(result.data)
       }
-       
+
     });
   }
 
-  async normalfind(clienteBuscadorValue:any){
+  async normalfind(clienteBuscadorValue: any) {
     const data = await this.clients.findClient({ find: clienteBuscadorValue })
     this.clientes = data
     this.corteForm.patchValue({
       clienteBuscador: data[0],
-       
+
     });
     this.salesfinddiscount(clienteBuscadorValue)
   }
 
 
-  ngOnInit() { 
+  ngOnInit() {
     this.getnewdata()
     this.corteForm = this.fb.group({
       clienteBuscador: ['', Validators.required],
       servicioBuscador: ['', Validators.required],
-      barberoBuscador: ['', Validators.required],
-      descuentoBuscador: ['', Validators.required],
+      barberoBuscador: new FormControl(''),//['', Validators.required], 
       observaciones: [''],
       formaPagoBuscador: ['', Validators.required], // Agregar el control para forma de pago
       entidadBancariaBuscador: [''],
@@ -129,40 +132,42 @@ export class ServiceandcutsComponent {
 
   async getnewdata() {
     const data = await this.sales.getNewSalesData()
+    console.log(data)
     this.facturaInfo.cobrador = data.user
     this.facturaInfo.fecha = data.date
     this.barberos = data.hairdresser
     this.servicios = data.services
+    this.todosLosServicios = data.services
     this.formasPagos = data.paymentmethods
-    this.formasPagosFiltradas = this.formasPagos;   
+    this.formasPagosFiltradas = this.formasPagos;
     this.corteForm.patchValue({
       formaPagoBuscador: this.formasPagos[0],
-       
-    }); 
-    this.sales1 = data.products; 
-    this.groupedSales = data.products; 
+
+    });
+    this.sales1 = data.products;
+    this.groupedSales = data.products;
   }
- 
+
   getTotalWithoutDiscount(productsOrServices: { price: number }[]): number {
     return productsOrServices.reduce((total, item) => total + item.price, 0);
   }
-// Calcular el total de los productos o servicios incluyendo descuentos
-getTotal(
-  productsOrServices: { price: number }[],
-  discount: { value: number; type: string }
-): number {
-  const subtotal = productsOrServices.reduce((total, item) => total + item.price, 0);
+  // Calcular el total de los productos o servicios incluyendo descuentos
+  getTotal(
+    productsOrServices: { price: number }[],
+    discount: { value: number; type: string }
+  ): number {
+    const subtotal = productsOrServices.reduce((total, item) => total + item.price, 0);
 
-  if (discount.type === 'PERCENTAGE') {
-    const discountValue = (subtotal * discount.value) / 100;
-    return +(subtotal - discountValue).toFixed(2); // Redondear a 2 decimales
-  } else if (discount.type === 'FIXED') {
-    return Math.max(subtotal - discount.value, 0); // Evitar valores negativos
+    if (discount.type === 'PERCENTAGE') {
+      const discountValue = (subtotal * discount.value) / 100;
+      return +(subtotal - discountValue).toFixed(2); // Redondear a 2 decimales
+    } else if (discount.type === 'FIXED') {
+      return Math.max(subtotal - discount.value, 0); // Evitar valores negativos
+    }
+
+    // Si el tipo de descuento no es válido, retornar subtotal
+    return subtotal;
   }
-
-  // Si el tipo de descuento no es válido, retornar subtotal
-  return subtotal;
-}
 
 
 
@@ -191,16 +196,23 @@ getTotal(
     if (element.selectedPrice === 'custom' && element.customPrice) {
       element.price = element.customPrice; // Actualiza el precio con el valor ingresado en el input
     }
-    console.log(element)
-    element.price = element.customPrice;
+
+    //element.price = element.customPrice;
     this.calcularTotal(); // Actualizar el total cuando se cambia el precio personalizado
   }
 
 
   // Calcular el total de servicios agregados
+  totales = {
+    subtotal: 0,
+    totalDescuento: 0,
+    total: 0
+  };
   calcularTotal() {
-    this.total = this.serviciosAgregados.reduce((acc, curr) => acc + (curr.price || 0), 0);
-    this.calcularTotalConDescuento(this.corteForm.get('descuentoBuscador')?.value);
+    this.aplicarDescuentos(this.serviciosAgregados, this.descuentos)
+    this.calcularTotales(this.serviciosAgregados);
+
+
 
   }
   // Método para eliminar un servicio de la lista
@@ -217,7 +229,7 @@ getTotal(
   isSubmitting = false;
   // Método para manejar el envío del formulario
   onSubmit() {
-    if (this.corteForm.valid|| this.isSubmitting) {
+    if (this.corteForm.valid || this.isSubmitting) {
       this.isSubmitting = true;
 
       // Realiza el envío del formulario
@@ -227,8 +239,8 @@ getTotal(
         // Aquí restablece el estado del botón después de completar la acción
         this.isSubmitting = false;
       }, 2000); // Cambia el tiempo según lo que necesites
-      this.savedatasales(this.corteForm.value, this.serviciosAgregados, this.total)
-   
+      this.savedatasales(this.corteForm.value, this.serviciosAgregados, this.totales)
+
     }
   }
   async savedatasales(formulario: any, servicios: any, total: any) {
@@ -236,12 +248,12 @@ getTotal(
       return {
         _id: servicio._id,
         price: servicio.price,
+        discount:servicio.selectedDiscount._id
       };
     });
     const formset = {
       cliente: formulario.clienteBuscador._id,
-      barbero: formulario.barberoBuscador._id,
-      descuento: formulario.descuentoBuscador._id,
+      barbero: formulario.barberoBuscador._id, 
       observaciones: formulario.observaciones,
       formaPago: formulario.formaPagoBuscador._id,
       entidadBancaria: formulario.entidadBancariaBuscador._id || "",
@@ -250,10 +262,10 @@ getTotal(
       total
     }
     const data = await this.sales.Salessave(formset)
-    
+
     if (data._id) {
       this.print(data)
-      
+
       this.ngOnInit()
       this.serviciosAgregados = []
     }
@@ -343,7 +355,7 @@ getTotal(
   }
   // Método para mostrar el nombre de la forma de pago
   displayFormaPago(formaPago: ListpaymentMethodsI): string {
-    
+
     return formaPago ? formaPago.name : '';
   }
   async searchclients() {
@@ -365,15 +377,33 @@ getTotal(
   }
 
   async salesfinddiscount(data: any) {
- 
-    const datas = await this.sales.getSalesDiscount({ find: data })
-    this.descuentos = datas
-    this.corteForm.patchValue({
-      descuentoBuscador:  this.descuentos[0],
-       
-    }); 
-  }
 
+    const datas:ListDiscounts[] = await this.sales.getSalesDiscount({ find: data });
+     console.log(datas)
+    const hasFalseIsGlobal = datas.some(discount  => discount.isGlobal === false);
+ 
+if (hasFalseIsGlobal) {
+  this.openDialogDiscount(datas)
+}
+     
+    this.descuentos = datas; 
+    this.calcularTotal(); 
+  
+  } 
+  openDialogDiscount(data:ListDiscounts[]): void {
+    
+    const aux=this.corteForm.value
+    const aux1=aux.clienteBuscador 
+    const dialogRef = this.dialog.open(DiscountModalComponent, {
+      width: '600px', 
+      data: { descuentos: data,aux:aux1}, // Pasamos el data al modal
+      disableClose: true,
+    }); 
+     // Escuchar el evento afterClosed
+  dialogRef.afterClosed().subscribe((result) => {
+    this.searchInput.nativeElement.focus();
+  });
+  }
 
   async searchproducts() {
 
@@ -407,12 +437,150 @@ getTotal(
   }
 
 
- async getdataprinttiket(data:any){
-  const datas =await this.sales.Salesgetdataprintticket({id:data})
-  this.print(datas)
- }
+  async getdataprinttiket(data: any) {
+    const datas = await this.sales.Salesgetdataprintticket({ id: data })
 
-async print(data:any){
- await this.sales.Salesprintticket(data)
-}
+    this.print(datas)
+  }
+
+  async print(data: any) {
+
+    await this.sales.Salesprintticket(data)
+  }
+
+
+
+
+
+
+
+
+
+
+
+  aplicarDescuentos(
+    serviciosAgregados: ListProductsSelectedI[],
+    descuentos: ListDiscounts[]
+  ): void {
+    if (serviciosAgregados.length === 0 || descuentos.length === 0) {
+      console.warn("No hay servicios agregados o descuentos disponibles para procesar.");
+      return;
+    }
+ 
+    serviciosAgregados.forEach(servicio => {
+      // Guardar el descuento seleccionado actual
+      const previousSelectedDiscount = servicio.selectedDiscount ? 
+      {_id:servicio.selectedDiscount._id,discountType:servicio.selectedDiscount.discountType,value:servicio.selectedDiscount.value} 
+      : undefined; 
+      // Inicializar o reconstruir la propiedad discount
+      servicio.discount = [];
+ 
+      descuentos.forEach(descuento => {
+        if (descuento.productsOrServices.length === 0) {
+          // Si no hay productos específicos, aplicar el descuento a todos
+          servicio.discount?.push({
+            _id: descuento._id,
+            discountType: descuento.discountType,
+            value: descuento.value,
+            name:descuento.name
+          });
+        } else {
+          // Comparar los IDs y aplicar el descuento si coincide
+          const match = descuento.productsOrServices.some(
+            product => product._id === servicio._id
+          );
+
+          if (match) {
+            servicio.discount?.push({
+              _id: descuento._id,
+              discountType: descuento.discountType,
+              value: descuento.value,
+              name:descuento.name
+            });
+          }
+        }
+      });
+
+      // Restaurar el descuento seleccionado si es válido
+      if (
+        previousSelectedDiscount &&
+        servicio.discount.some(
+          discount => discount._id === previousSelectedDiscount._id
+        )
+      ) {
+ 
+        const index = servicio.discount.findIndex((discount) => {
+          return discount._id === previousSelectedDiscount._id 
+            && discount.discountType === previousSelectedDiscount.discountType 
+            && discount.value === previousSelectedDiscount.value;
+        }) 
+         servicio.selectedDiscount =  servicio.discount?.[index] || null;; 
+      } else { 
+        servicio.selectedDiscount = servicio.discount?.[0] || null; 
+      }
+    }); 
+  }  
+
+  calcularTotales(servicios: any[]) {
+    console.log(servicios);
+    let subtotal = 0;
+    let totalDescuento = 0;
+  
+    servicios.forEach(servicio => {
+      const precio = servicio.price || 0;
+      const descuento = servicio.selectedDiscount?.value || 0;
+      const tipoDescuento = servicio.selectedDiscount?.discountType;
+  
+      let descuentoAplicado = 0;
+  
+      // Verificar el tipo de descuento
+      if (tipoDescuento === 'PERCENTAGE') {
+        descuentoAplicado = (descuento / 100) * precio; // Descuento en porcentaje
+      } else if (tipoDescuento === 'FIXED') {
+        descuentoAplicado = descuento; // Descuento fijo
+      }
+  
+      subtotal += precio;
+      totalDescuento += descuentoAplicado;
+    });
+  
+    // Actualizar los totales calculados
+    this.totales = {
+      subtotal,
+      totalDescuento,
+      total: subtotal - totalDescuento
+    };
+  }
+
+  getSubtotal(productsOrServices: any[]): number {
+    return productsOrServices.reduce((acc, product) => acc + product.price, 0);
+  } 
+
+  getTotalDiscounts(productsOrServices: any[]): number {
+    return productsOrServices.reduce((acc, product) => {
+      const discount = product.discountDetails.value || 0;
+  
+      if (product.discountDetails.type === 'PERCENTAGE') {
+        return acc + (product.price * discount) / 100;
+      } else if (product.discountDetails.type === 'FIXED') {
+        return acc + discount;
+      }
+  
+      return acc; // Si no tiene descuento
+    }, 0);
+  }
+  getTotalWithDiscounts(productsOrServices: any[]): number {
+    return productsOrServices.reduce((acc, product) => {
+      const discount = product.discountDetails.value || 0;
+      let discountedPrice = product.price;
+  
+      if (product.discountDetails.type === 'PERCENTAGE') {
+        discountedPrice -= (product.price * discount) / 100;
+      } else if (product.discountDetails.type === 'FIXED') {
+        discountedPrice -= discount;
+      }
+  
+      return acc + Math.max(discountedPrice, 0); // Evitar precios negativos
+    }, 0);
+  }
 }
