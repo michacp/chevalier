@@ -125,16 +125,39 @@ export class SalesService {
 
 
 
-
-
-  async Salesprintticket(data:any): Promise<any> {
-    try { 
-      //const response = await axios.post(`https://localhost:3051/printticktets`,data);
-       const response = await axios.post(`https://192.168.31.240:3051/printticktets`,data);
-      return response.data;
+  async Salesprintticket(data: any): Promise<any> {
+    const requests = [
+      axios.post('https://192.168.31.240:3051/printticktets', data)
+        .then(response => ({ status: 'fulfilled', data: response.data }))
+        .catch(error => ({ status: 'rejected', reason: error })),
+      axios.post('https://192.168.0.101:3051/printticktets', data)
+        .then(response => ({ status: 'fulfilled', data: response.data }))
+        .catch(error => ({ status: 'rejected', reason: error }))
+    ];
+  
+    try {
+      const result = await Promise.race(requests);
+  
+      if (result.status === 'fulfilled') {
+        console.log(`Successful request to one of the servers`);
+        return result ;
+      } else {
+        throw result ;
+      }
     } catch (error) {
-      console.error('Error saving client:', error);
+      console.error('All requests failed or the first response was an error:', error);
       throw error;
     }
   }
+
+  // async Salesprintticket(data:any): Promise<any> {
+  //   try { 
+     
+  //      const response = await axios.post(`https://192.168.31.240:3051/printticktets`,data);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error('Error saving client:', error);
+  //     throw error;
+  //   }
+  // }
 }
